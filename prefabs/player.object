@@ -1,0 +1,95 @@
+{
+  "RootObject": {
+    "Id": "1d4e71cf-39b8-459e-8b45-ef42d9ef3a24",
+    "Name": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 72,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "PlayerController",
+        "__enabled": true,
+        "AirControl": 30,
+        "AlwaysRun": true,
+        "AnimationHelper": "48cf989d-c85b-4b0b-98c0-df41a78717ce",
+        "Body": "48cf989d-c85b-4b0b-98c0-df41a78717ce",
+        "BodyHeight": 72,
+        "CrouchSpeed": 80,
+        "DuckOffset": 40,
+        "Eye": "1fbee77f-2362-4b1c-a9f7-0daddde8ff6f",
+        "EyeHeight": 64,
+        "FirstPerson": true,
+        "Gravity": "0,0,800",
+        "NormalSpeed": 190,
+        "RunSpeed": 320,
+        "WalkSpeed": 120
+      }
+    ],
+    "Children": [
+      {
+        "Id": "48cf989d-c85b-4b0b-98c0-df41a78717ce",
+        "Name": "Body",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialOverride": null,
+            "Model": "models/citizen/citizen.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimation",
+            "__enabled": true,
+            "EyeSource": "1fbee77f-2362-4b1c-a9f7-0daddde8ff6f",
+            "Height": 1,
+            "IkLeftFoot": null,
+            "IkLeftHand": null,
+            "IkRightFoot": null,
+            "IkRightHand": null,
+            "LookAtObject": null,
+            "Target": "48cf989d-c85b-4b0b-98c0-df41a78717ce"
+          }
+        ]
+      },
+      {
+        "Id": "1fbee77f-2362-4b1c-a9f7-0daddde8ff6f",
+        "Name": "Camera",
+        "Position": "0,0,64",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "__enabled": true,
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 90,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "ZFar": 10000,
+            "ZNear": 10
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

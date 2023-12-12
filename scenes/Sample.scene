@@ -1,0 +1,102 @@
+{
+  "GameObjects": [
+    {
+      "Id": "e4863f26-f2ce-47a8-a98a-15161090b5a9",
+      "Name": "Plane",
+      "Scale": "8,8,8",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "c5d1948b-d475-4f42-b420-2f5f11beb6f4",
+      "Name": "Spawnpoint",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "a9ac5843-818d-4b49-b0db-d8d7c8e45cd2",
+      "Name": "2D Skybox",
+      "Position": "-248.8391,-285.6779,450.1703",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/light_test_sky_default.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "08c16106-9035-4de4-a0b9-41ca54e87470",
+      "Name": "Object",
+      "Position": "-542.9517,-1047.749,859.9713",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "facepunch.flatgrass"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "021c13f6-84b2-4ad8-ab61-dcd64a64a50f",
+      "Name": "Sun",
+      "Position": "-729.7126,-873.0622,868.4174",
+      "Rotation": "-0.1743471,0.1981709,0.3070827,0.9143476",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "0ac0ce83-a0fc-401f-ada2-036db9d23de8",
+      "Name": "Object",
+      "Position": "23.80267,21.59155,17.06309",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "__enabled": true,
+          "PlayerPrefab": "prefabs/player.object",
+          "SpawnPoint": "c5d1948b-d475-4f42-b420-2f5f11beb6f4"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "Lerping": true,
+    "UseFixedUpdate": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "MaxFixedUpdates": 5,
+    "FixedUpdateFrequency": 50,
+    "NetworkFrequency": 60
+  },
+  "Title": "sample",
+  "Description": "",
+  "__references": []
+}

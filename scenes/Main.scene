@@ -1,0 +1,72 @@
+{
+  "GameObjects": [
+    {
+      "Id": "8be1616f-9c6c-4d27-a50d-3eb22dadc2c9",
+      "Name": "Plane",
+      "Scale": "8,8,8",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/dev/plane.vmdl",
+          "Static": true,
+          "Surface": null
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "100,100,0.1",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "dfe5ef0e-9a50-4ae8-8112-aab3d435cac2",
+      "Name": "Sun",
+      "Position": "0,0,128",
+      "Rotation": "-0.03864762,0.5262804,0.0622109,0.8471512",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "1d4e71cf-39b8-459e-8b45-ef42d9ef3a24",
+      "Name": "player",
+      "Position": "-59.88828,43.80334,64.39999",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.object"
+    }
+  ],
+  "SceneProperties": {
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NetworkFrequency": 60,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "FixedUpdateFrequency": 50
+  },
+  "Title": "main",
+  "Description": "",
+  "__references": []
+}
