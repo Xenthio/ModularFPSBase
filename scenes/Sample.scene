@@ -37,7 +37,7 @@
         {
           "__type": "SkyBox2D",
           "__enabled": true,
-          "SkyMaterial": "materials/skybox/light_test_sky_default.vmat",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny.vmat",
           "Tint": "1,1,1,1"
         }
       ]
@@ -66,35 +66,28 @@
         {
           "__type": "DirectionalLight",
           "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
+          "LightColor": "7,6.79468,6.39611,1",
           "Shadows": true,
           "SkyColor": "0.05882,0.07451,0.08235,1"
         }
       ]
     },
     {
-      "Id": "0ac0ce83-a0fc-401f-ada2-036db9d23de8",
-      "Name": "Object",
-      "Position": "23.80267,21.59155,17.06309",
+      "Id": "0059ce54-04eb-448e-8655-ddffd0901c49",
+      "Name": "player",
+      "Position": "-25.97769,96.54982,36",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "NetworkManager",
-          "__enabled": true,
-          "PlayerPrefab": "prefabs/player.object",
-          "SpawnPoint": "c5d1948b-d475-4f42-b420-2f5f11beb6f4"
-        }
-      ]
+      "__Prefab": "prefabs/player.object"
     }
   ],
   "SceneProperties": {
-    "Lerping": true,
-    "UseFixedUpdate": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NetworkFrequency": 60,
+    "Lerping": true,
     "MaxFixedUpdates": 5,
-    "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60
+    "FixedUpdateFrequency": 50
   },
   "Title": "sample",
   "Description": "",

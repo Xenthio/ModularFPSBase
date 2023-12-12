@@ -31,6 +31,12 @@
         "NormalSpeed": 190,
         "RunSpeed": 320,
         "WalkSpeed": 120
+      },
+      {
+        "__type": "LifeComponent",
+        "__enabled": true,
+        "Health": 100,
+        "LifeState": "Alive"
       }
     ],
     "Children": [
