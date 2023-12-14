@@ -8,8 +8,13 @@ namespace FPSKit;
 
 public class LifeComponent : Component
 {
+	/// <summary>
+	/// How much Health Points this object has
+	/// </summary>
 	[Property] public float Health { get; set; } = 100.0f;
-
+	/// <summary>
+	/// State of life this object has
+	/// </summary>
 	[Property] public LifeState LifeState { get; set; } = LifeState.Alive;
 
 	public Action<float,string[]> OnTakeDamage;
