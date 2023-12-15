@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Sandbox;
 
 namespace FPSKit;
+// delete this
 public class GameController : GameObject
 { 
 	public GameController()
