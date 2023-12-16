@@ -7,15 +7,6 @@ using System.Threading.Tasks;
 using Sandbox;
 
 namespace FPSKit;
-public class GameController : GameObject
-{ 
-	public GameController()
-	{
-		Enabled = true;
-		Parent = GameManager.ActiveScene;
-		Components.GetOrCreate<NetworkManager>();
-	}
-}
 public class NetworkManager : Component, Component.INetworkListener
 {
 	[Property] public GameObject PlayerPrefab { get; set; }
