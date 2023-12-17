@@ -42,7 +42,7 @@ public class PlayerController : Component, INetworkSerializable
 		var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
 		if ( cam is not null )
 		{
-			EyeAngles = Eye.Transform.Rotation.Angles();
+			EyeAngles = Eye.Transform.LocalRotation.Angles();
 			EyeAngles.roll = 0;
 		}
 	}
@@ -62,19 +62,19 @@ public class PlayerController : Component, INetworkSerializable
 
 			//doing all ducking stuff per frame is broken for some reason, so I had to add our own lerp for a every frame updated value
 			_duckAmountPerFrame = _duckAmountPerFrame.LerpTo( IsDucking ? DuckOffset : 0, 8 * Time.Delta );
-			Eye.Transform.LocalPosition = new Vector3(0,0,EyeHeight - _duckAmountPerFrame );
+			Eye.Transform.LocalPosition = GameObject.Transform.Rotation.Up * (EyeHeight - _duckAmountPerFrame);
 
-			var lookDir = EyeAngles.ToRotation();
+			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 
 			if ( FirstPerson )
 			{
 				cam.Transform.Position = Eye.Transform.Position;
-				cam.Transform.Rotation = lookDir;
+				cam.Transform.Rotation = Eye.Transform.Rotation;
 			}
 			else
 			{
-				cam.Transform.Position = Transform.Position + lookDir.Backward * 300 + Vector3.Up * 75.0f;
-				cam.Transform.Rotation = lookDir;
+				cam.Transform.Position = Transform.Position + Eye.Transform.Rotation.Backward * 300 + Vector3.Up * 75.0f;
+				cam.Transform.Rotation = Eye.Transform.Rotation;
 			}
 
 
@@ -195,7 +195,8 @@ public class PlayerController : Component, INetworkSerializable
 
 		var cc = GameObject.Components.Get<CharacterController>();
 
-		IsDucking = Input.Down( "Duck" );
+		var uncrouchedBbox = new BBox( new Vector3( 0f - cc.Radius, 0f - cc.Radius, 0f ), new Vector3( cc.Radius, cc.Radius, BodyHeight ) );
+		IsDucking = Input.Down( "Duck" ) || IsDucking && Scene.PhysicsWorld.Trace.Box( uncrouchedBbox, GameObject.Transform.Position, GameObject.Transform.Position).Run().Hit;
 
 		if ( IsDucking )
 		{
@@ -215,7 +216,7 @@ public class PlayerController : Component, INetworkSerializable
 	}
 	public void BuildWishVelocity()
 	{
-		var rot = EyeAngles.ToRotation();
+		var rot = Eye.Transform.Rotation;
 
 		WishVelocity = 0;
 
@@ -229,7 +230,7 @@ public class PlayerController : Component, INetworkSerializable
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
 		if ( Input.Down( "Walk" ) ) WishVelocity *= WalkSpeed;
-		else if ( Input.Down( "Duck" ) ) WishVelocity *= CrouchSpeed;
+		else if ( Input.Down( "Duck" ) || IsDucking ) WishVelocity *= CrouchSpeed;
 		else if ( Input.Down( "Run" ) || AlwaysRun ) WishVelocity *= RunSpeed;
 		else WishVelocity *= NormalSpeed;
 	}
