@@ -1,0 +1,12 @@
+{
+  "RootObject": {
+    "Id": "4cd9a843-8cac-4062-914f-9cd6ca66acf9",
+    "Name": "requirements",
+    "Tags": "maincamera",
+    "Enabled": true
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

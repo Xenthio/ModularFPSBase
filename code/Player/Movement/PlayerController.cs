@@ -42,7 +42,7 @@ public class PlayerController : Component, INetworkSerializable
 		var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
 		if ( cam is not null )
 		{
-			EyeAngles = cam.Transform.Rotation.Angles();
+			EyeAngles = Eye.Transform.Rotation.Angles();
 			EyeAngles.roll = 0;
 		}
 	}
@@ -62,7 +62,7 @@ public class PlayerController : Component, INetworkSerializable
 
 			//doing all ducking stuff per frame is broken for some reason, so I had to add our own lerp for a every frame updated value
 			_duckAmountPerFrame = _duckAmountPerFrame.LerpTo( IsDucking ? DuckOffset : 0, 8 * Time.Delta );
-			cam.Transform.LocalPosition = new Vector3(0,0,EyeHeight - _duckAmountPerFrame );
+			Eye.Transform.LocalPosition = new Vector3(0,0,EyeHeight - _duckAmountPerFrame );
 
 			var lookDir = EyeAngles.ToRotation();
 
@@ -106,7 +106,8 @@ public class PlayerController : Component, INetworkSerializable
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 2.0f );
 			}
 			var mdl = Body.Components.Get<SkinnedModelRenderer>();
-			mdl.Tint = FirstPerson ? Color.Transparent : Color.White;
+			
+			mdl.Tint = FirstPerson && !mdl.IsProxy ? Color.Transparent : Color.White;
 		}
 
 

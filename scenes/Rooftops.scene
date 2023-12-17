@@ -1,0 +1,460 @@
+{
+  "GameObjects": [
+    {
+      "Id": "b40b520f-f817-4b5a-b65b-83348fa3b793",
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "thieves.rooftops"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "e8e7f92f-957a-4633-8052-d2d9419065d8",
+      "Name": "Camera",
+      "Position": "0,2268.311,86",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__enabled": true,
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "Bloom",
+          "__enabled": true,
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {},
+            {
+              "x": 0.5307882,
+              "y": 0.24696001,
+              "in": -0.83028805,
+              "out": 0.83028805
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 1,
+          "Threshold": 0.5,
+          "ThresholdWidth": 1
+        },
+        {
+          "__type": "Tonemapping",
+          "__enabled": true,
+          "ExposureCompensation": 0,
+          "MaximumExposure": 6,
+          "MinimumExposure": 0,
+          "Rate": 1
+        }
+      ]
+    },
+    {
+      "Id": "49efb184-1406-479c-9f81-1e83ad30f7b7",
+      "Name": "Sun",
+      "Position": "0,2179.554,128",
+      "Rotation": "0.08357476,0.262664,-0.2914574,0.9160106",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "1.82746,1.96078,2,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "4e288c8f-4ae3-4fcb-94fd-3b7c28e6e2a9",
+      "Name": "NetworkManager",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "__enabled": true,
+          "PlayerPrefab": "prefabs/player.prefab",
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "Id": "16e9110c-fe74-4782-8b7d-1fe671859eb1",
+      "Name": "2D Skybox",
+      "Position": "-53.22441,2194.75,62.11283",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/rustig_koppie_puresky_4k.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "c16390d1-37fe-4e52-938f-4c99b67ddd31",
+      "Name": "Spawn",
+      "Position": "-307.1853,207.7112,-192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        },
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/editor/playerstart.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "d469b2e8-c245-4543-9df9-a9a95876eae6",
+      "Name": "Spawn (1)",
+      "Position": "177.04,207.7112,-192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": true
+        },
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/editor/playerstart.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "1ed81b85-0048-4e81-b529-39dac2c30fd9",
+      "Name": "Spawn (2)",
+      "Position": "177.04,2205.785,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        },
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/editor/playerstart.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "b5f302d4-9368-44bc-89fc-165e8c011a9a",
+      "Name": "Spawn (4)",
+      "Position": "-392.7991,2328.697,0",
+      "Rotation": "0,0,0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        },
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/editor/playerstart.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "a5890dda-ddff-463a-abe2-41e73fb318dc",
+      "Name": "Spawn (3)",
+      "Position": "177.04,1187.739,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        },
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/editor/playerstart.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "129708f5-8c76-44b1-bd42-f82b067b4467",
+      "Name": "Cube (2)",
+      "Position": "562.0869,294.0289,-133.8684",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "0055332a-32ef-4799-a349-168b8ee13816",
+      "Name": "Cube (4)",
+      "Position": "562.0869,294.3578,-185.7309",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "a577bed0-89a0-4797-9b9a-d7ea4cd9ad54",
+      "Name": "Cube (1)",
+      "Position": "562.0869,228.5187,-141.895",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "b8ad6d34-a3b3-4600-a671-d921d744c8aa",
+      "Name": "Cube",
+      "Position": "-270.9395,-156.7754,-141.895",
+      "Scale": "0.5999999,3.5,3.099999",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "a47ca550-26f8-44b6-b94b-161542dfb919",
+      "Name": "Cube (5)",
+      "Position": "-121.0405,-156.7754,-141.895",
+      "Scale": "2.999999,0.7000011,0.09999951",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        },
+        {
+          "__type": "RotatePhysics",
+          "__enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "0a7f577c-11a6-455d-987b-8d68777107d5",
+      "Name": "Cube (3)",
+      "Position": "507.9207,324.6194,-141.895",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "rooftops",
+  "Description": "",
+  "__references": [
+    "thieves._joecrate12",
+    "thieves.crate5"
+  ]
+}

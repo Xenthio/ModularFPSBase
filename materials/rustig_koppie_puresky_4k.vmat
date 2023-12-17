@@ -1,0 +1,7 @@
+"Layer0"
+{
+	"shader"		"shaders/sky.shader_c"
+	"g_flBrightnessExposureBias"		"0.000000"
+	"g_flRenderOnlyExposureBias"		"0.000000"
+	"SkyTexture"		"materials/rustig_koppie_puresky_4k.exr"
+}

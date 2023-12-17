@@ -1,0 +1,24 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "rustig_koppie_puresky_4k",
+      "Type": "material",
+      "Org": "thieves",
+      "Ident": "rustig_koppie",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "ResourcePaths": null,
+      "HasCode": false,
+      "CodePath": null,
+      "Metadata": {
+        "SingleAssetSource": "materials/rustig_koppie_puresky_4k.vmat",
+        "Summary": "",
+        "Description": "",
+        "Public": true
+      }
+    }
+  }
+}
