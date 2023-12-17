@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "ad5e88cd-1cb4-4cf8-b275-6b074e91d9c8",
+    "Id": "cc09e852-4af5-4840-b1c5-9b72251b0b66",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -20,16 +20,17 @@
         "__enabled": true,
         "AirControl": 30,
         "AlwaysRun": true,
-        "AnimationHelper": "ddec6e37-c174-4e04-a7ee-17f47843667a",
-        "Body": "ddec6e37-c174-4e04-a7ee-17f47843667a",
+        "AnimationHelper": "49009765-fdd7-435e-9b4f-133da0d56913",
+        "Body": "49009765-fdd7-435e-9b4f-133da0d56913",
         "BodyHeight": 72,
         "CrouchSpeed": 80,
         "DuckOffset": 40,
-        "Eye": "a591325c-49a6-43be-a595-e81d2cb6179f",
+        "Eye": "4651cf16-144f-4789-9494-c5d6badace4f",
         "EyeHeight": 64,
         "FirstPerson": true,
         "Gravity": "0,0,800",
         "NormalSpeed": 190,
+        "PhysicsShadow": "eeb14c1d-62e3-4355-b3ed-8110a0c66cbf",
         "RunSpeed": 320,
         "WalkSpeed": 120
       },
@@ -47,7 +48,7 @@
     ],
     "Children": [
       {
-        "Id": "ddec6e37-c174-4e04-a7ee-17f47843667a",
+        "Id": "49009765-fdd7-435e-9b4f-133da0d56913",
         "Name": "Body",
         "Enabled": true,
         "Components": [
@@ -73,12 +74,12 @@
             "IkRightFoot": null,
             "IkRightHand": null,
             "LookAtObject": null,
-            "Target": "ddec6e37-c174-4e04-a7ee-17f47843667a"
+            "Target": "49009765-fdd7-435e-9b4f-133da0d56913"
           }
         ]
       },
       {
-        "Id": "929f9077-468b-4fc3-b3de-f4cd7f75a599",
+        "Id": "5829e70a-170b-4881-8256-df0b6bff1881",
         "Name": "HUD",
         "Tags": "hud",
         "Enabled": true,
@@ -98,10 +99,33 @@
         ]
       },
       {
-        "Id": "a591325c-49a6-43be-a595-e81d2cb6179f",
+        "Id": "4651cf16-144f-4789-9494-c5d6badace4f",
         "Name": "Eye",
         "Position": "0,0,64",
         "Enabled": true
+      },
+      {
+        "Id": "eeb14c1d-62e3-4355-b3ed-8110a0c66cbf",
+        "Name": "PhysicsShadow",
+        "Position": "0,0,36",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Rigidbody",
+            "__enabled": true,
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0
+          },
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Scale": "38,38,72",
+            "Static": false,
+            "Surface": null
+          }
+        ]
       }
     ]
   },

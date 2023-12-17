@@ -23,6 +23,7 @@ public class PlayerController : Component, INetworkSerializable
 
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Eye { get; set; }
+	[Property] public GameObject PhysicsShadow { get; set; }
 	[Property] public CitizenAnimation AnimationHelper { get; set; }
 	[Property] public bool FirstPerson { get; set; }
 	[Property] public bool AlwaysRun { get; set; }
@@ -156,12 +157,15 @@ public class PlayerController : Component, INetworkSerializable
 			fJumps += 1.0f;
 
 		}
-
 		if ( cc.IsOnGround )
 		{
 			var wishspeed = WishVelocity;
 
 			cc.Velocity = cc.Velocity.WithZ( 0 );
+
+			//ps.AngularVelocity = Vector3.Zero;
+			//ps.Velocity = Vector3.Zero;
+			PhysicsShadowUpdate();
 			cc.Accelerate( wishspeed );
 			cc.ApplyFriction( 4.0f );
 		}
@@ -172,8 +176,7 @@ public class PlayerController : Component, INetworkSerializable
 			cc.Velocity -= Gravity * Time.Delta * 0.5f;
 
 			if ( wishspeed.Length > AirControl )
-				wishspeed = wishspeed.ClampLength(AirControl);
-
+				wishspeed = wishspeed.ClampLength(AirControl); 
 			cc.Accelerate( wishspeed );
 			//cc.ApplyFriction( 0.1f );
 		}
@@ -189,6 +192,29 @@ public class PlayerController : Component, INetworkSerializable
 			cc.Velocity = cc.Velocity.WithZ( 0 );
 		}
 	}
+
+	public void PhysicsShadowUpdate()
+	{
+
+		var ps = PhysicsShadow.Components.Get<Rigidbody>();
+		var cc = GameObject.Components.Get<CharacterController>();
+		ps.PhysicsBody.UseController = true;
+		ps.PhysicsBody.SpeculativeContactEnabled = true;
+		ps.Transform.LocalPosition = ps.Transform.LocalPosition.WithZ((((BodyHeight - _duckAmountPerFrame)) / 2));
+
+		var tr = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Down ).WithoutTags( cc.IgnoreLayers ).Radius(32).Run();
+		var body = tr.Body;
+		if ( tr.Body == null ) return;
+		var vel = body.GetVelocityAtPoint( body.Transform.PointToLocal(tr.HitPosition) ) * 80000000;
+		cc.Velocity += vel;
+		
+		Log.Info( vel );
+		
+		//ps.PhysicsBody.Move( GameObject.Transform.World, 1f );
+		//ps.Transform.Rotation = new Rotation();
+		//ps.Velocity = Vector3.Zero + (Vector3.Down * 1);
+		//ps.AngularVelocity = Vector3.Zero;
+	}
 	public void CheckDuck()
 	{
 		var duckDelta = _duckAmount;
@@ -196,7 +222,7 @@ public class PlayerController : Component, INetworkSerializable
 		var cc = GameObject.Components.Get<CharacterController>();
 
 		var uncrouchedBbox = new BBox( new Vector3( 0f - cc.Radius, 0f - cc.Radius, 0f ), new Vector3( cc.Radius, cc.Radius, BodyHeight ) );
-		IsDucking = Input.Down( "Duck" ) || IsDucking && Scene.PhysicsWorld.Trace.Box( uncrouchedBbox, GameObject.Transform.Position, GameObject.Transform.Position).Run().Hit;
+		IsDucking = Input.Down( "Duck" ) || IsDucking && Scene.PhysicsWorld.Trace.Box( uncrouchedBbox, GameObject.Transform.Position, GameObject.Transform.Position).WithoutTags(cc.IgnoreLayers).Run().Hit;
 
 		if ( IsDucking )
 		{

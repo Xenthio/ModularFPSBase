@@ -372,8 +372,8 @@
     {
       "Id": "a47ca550-26f8-44b6-b94b-161542dfb919",
       "Name": "Cube (5)",
-      "Position": "-121.0405,-156.7754,-141.895",
-      "Scale": "2.999999,0.7000011,0.09999951",
+      "Position": "-121.0405,-156.7754,-173.9954",
+      "Scale": "3.499998,3.500001,0.09999951",
       "Enabled": true,
       "Components": [
         {
@@ -391,7 +391,7 @@
           "__enabled": true,
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
+          "Static": true,
           "Surface": null
         },
         {
