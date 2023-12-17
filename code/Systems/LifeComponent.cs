@@ -12,6 +12,12 @@ public class LifeComponent : Component
 	/// How much Health Points this object has
 	/// </summary>
 	[Property] public float Health { get; set; } = 100.0f;
+	
+	/// <summary>
+	/// How much Armour Points this object has, just for demo purposes remove if you dont need this
+	/// </summary>
+	[Property] public float Armour { get; set; } = 35.0f;
+	
 	/// <summary>
 	/// State of life this object has
 	/// </summary>

@@ -1,7 +1,9 @@
 {
   "RootObject": {
-    "Id": "1d4e71cf-39b8-459e-8b45-ef42d9ef3a24",
+    "Id": "9c76318e-8c23-42da-9f32-1d9c6b58e3e3",
     "Name": "player",
+    "Tags": "player",
+    "Networked": true,
     "Enabled": true,
     "Components": [
       {
@@ -19,12 +21,12 @@
         "__enabled": true,
         "AirControl": 30,
         "AlwaysRun": true,
-        "AnimationHelper": "48cf989d-c85b-4b0b-98c0-df41a78717ce",
-        "Body": "48cf989d-c85b-4b0b-98c0-df41a78717ce",
+        "AnimationHelper": "a0142bed-d659-4c25-b887-f4ab07b5489c",
+        "Body": "a0142bed-d659-4c25-b887-f4ab07b5489c",
         "BodyHeight": 72,
         "CrouchSpeed": 80,
         "DuckOffset": 40,
-        "Eye": "1fbee77f-2362-4b1c-a9f7-0daddde8ff6f",
+        "Eye": "0b6badfc-ae4c-4af0-8912-9ba3ea1f301a",
         "EyeHeight": 64,
         "FirstPerson": true,
         "Gravity": "0,0,800",
@@ -35,14 +37,20 @@
       {
         "__type": "LifeComponent",
         "__enabled": true,
+        "Armour": 35,
         "Health": 100,
         "LifeState": "Alive"
+      },
+      {
+        "__type": "InventoryComponent",
+        "__enabled": true
       }
     ],
     "Children": [
       {
-        "Id": "48cf989d-c85b-4b0b-98c0-df41a78717ce",
+        "Id": "a0142bed-d659-4c25-b887-f4ab07b5489c",
         "Name": "Body",
+        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -51,6 +59,7 @@
             "BodyGroups": 18446744073709551615,
             "BoneMergeTarget": null,
             "CreateBoneObjects": false,
+            "MaterialGroup": null,
             "MaterialOverride": null,
             "Model": "models/citizen/citizen.vmdl",
             "ShouldCastShadows": true,
@@ -59,19 +68,19 @@
           {
             "__type": "CitizenAnimation",
             "__enabled": true,
-            "EyeSource": "1fbee77f-2362-4b1c-a9f7-0daddde8ff6f",
+            "EyeSource": "0b6badfc-ae4c-4af0-8912-9ba3ea1f301a",
             "Height": 1,
             "IkLeftFoot": null,
             "IkLeftHand": null,
             "IkRightFoot": null,
             "IkRightHand": null,
             "LookAtObject": null,
-            "Target": "48cf989d-c85b-4b0b-98c0-df41a78717ce"
+            "Target": "a0142bed-d659-4c25-b887-f4ab07b5489c"
           }
         ]
       },
       {
-        "Id": "1fbee77f-2362-4b1c-a9f7-0daddde8ff6f",
+        "Id": "0b6badfc-ae4c-4af0-8912-9ba3ea1f301a",
         "Name": "Camera",
         "Position": "0,0,64",
         "Enabled": true,
@@ -82,13 +91,36 @@
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "All",
             "FieldOfView": 90,
+            "IsMainCamera": true,
             "Orthographic": false,
             "OrthographicHeight": 1204,
+            "Priority": 1,
             "RenderExcludeTags": "",
             "RenderTags": "",
             "TargetEye": "None",
+            "Viewport": "0,0,1,1",
             "ZFar": 10000,
             "ZNear": 10
+          }
+        ]
+      },
+      {
+        "Id": "2ac054fa-38d3-4c65-9201-97a93bbf4d3c",
+        "Name": "HUD",
+        "Tags": "hud",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ScreenPanel",
+            "__enabled": true,
+            "AutoScreenScale": true,
+            "Opacity": 1,
+            "Scale": 1,
+            "ZIndex": 100
+          },
+          {
+            "__type": "PlayerHUD",
+            "__enabled": true
           }
         ]
       }

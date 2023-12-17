@@ -1,0 +1,48 @@
+﻿﻿@using Sandbox;
+@using Sandbox.UI;
+@namespace FPSKit
+@inherits PanelComponent
+
+<root>
+
+    <div class="vitals">
+        <div class="health">
+            <div class="icon">heart_broken</div>
+            <div class="value">@(GameObject.Parent.Components.Get<LifeComponent>().Health)</div>
+           
+        </div>
+
+        <div class="armor">
+            <div class="icon">shield</div>
+			<div class="value">@(GameObject.Parent.Components.Get<LifeComponent>().Armour)</div>
+        </div>
+
+    </div>
+
+    <div class="item">
+
+        <div class="value">16</div>
+        <div class="subvalue">67</div>
+    </div>
+
+    <div class="overlay">
+       
+    </div>
+
+</root>
+
+@code
+{
+    // Update every frame. This is just done as a test, and definitely should not be done.
+    protected override int BuildHash() 
+	{
+		return System.HashCode.Combine(Time.Now);
+	}
+	
+
+
+    void GameObjectClicked( ModelRenderer mc )
+    {
+        mc.Transform.Position += Vector3.Up * 10.0f;
+    }
+}

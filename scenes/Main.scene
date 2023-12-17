@@ -10,6 +10,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -50,21 +51,22 @@
       ]
     },
     {
-      "Id": "1d4e71cf-39b8-459e-8b45-ef42d9ef3a24",
+      "Id": "3bec8d35-a781-46ef-ae38-fc042d056931",
       "Name": "player",
-      "Position": "-59.88828,43.80334,64.39999",
+      "Position": "-112.4052,26.42211,64.4",
+      "Networked": true,
       "Enabled": true,
-      "__Prefab": "prefabs/player.object"
+      "__Prefab": "prefabs/player.prefab"
     }
   ],
   "SceneProperties": {
-    "ThreadedAnimation": true,
-    "TimeScale": 1,
-    "UseFixedUpdate": true,
-    "NetworkFrequency": 60,
+    "FixedUpdateFrequency": 50,
     "Lerping": true,
     "MaxFixedUpdates": 5,
-    "FixedUpdateFrequency": 50
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
   },
   "Title": "main",
   "Description": "",
