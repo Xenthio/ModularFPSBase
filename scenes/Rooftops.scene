@@ -2092,6 +2092,7 @@
       "Id": "d555ac63-050d-4775-8603-d06fd889ea24",
       "Name": "Weapon",
       "Position": "240.1327,4.184235,-168.0001",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -2123,6 +2124,7 @@
           "__type": "GunComponent",
           "__enabled": true,
           "Damage": 10,
+          "Force": 10,
           "Recoil": 1,
           "ShootSound": "sounds/kenney/ui/ui.downvote.sound",
           "Spread": 0.5

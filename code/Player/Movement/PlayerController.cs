@@ -115,7 +115,8 @@ public class PlayerController : Component, INetworkSerializable
 			}
 			var mdl = Body.Components.Get<SkinnedModelRenderer>();
 
-			mdl.SceneModel.Flags.IsOpaque = !(FirstPerson && !mdl.IsProxy);
+			mdl.RenderType = FirstPerson && !mdl.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+			//mdl.SceneModel.Flags.IsOpaque = !(FirstPerson && !mdl.IsProxy);
 			//mdl.Tint = FirstPerson && !mdl.IsProxy ? Color.Transparent : Color.White;
 		}
 

@@ -40,7 +40,8 @@
         "__enabled": true,
         "Armour": 35,
         "Health": 100,
-        "LifeState": "Alive"
+        "LifeState": "Alive",
+        "PhysicsImpact": true
       },
       {
         "__type": "InventoryComponent",
