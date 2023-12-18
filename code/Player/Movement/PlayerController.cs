@@ -296,7 +296,7 @@ public class PlayerController : Component, INetworkSerializable
 		{
 			BaseVelocity = Vector3.Zero;
 			ps.PhysicsBody.Velocity = Vector3.Zero;
-			Log.Info( "transfer" );
+			//Log.Info( "transfer" );
 			cc.Velocity += vel;
 			PreviouslyPushed = tr.Hit;
 			PreviouslyOnGround = trdown.Hit;
