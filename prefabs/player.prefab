@@ -19,7 +19,7 @@
         "__type": "PlayerController",
         "__enabled": true,
         "AirControl": 30,
-        "AlwaysRun": true,
+        "AlwaysRun": false,
         "AnimationHelper": "ce63e081-e897-4251-9eb9-b6d6181cc3a3",
         "Body": "ce63e081-e897-4251-9eb9-b6d6181cc3a3",
         "BodyHeight": 72,

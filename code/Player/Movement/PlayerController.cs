@@ -111,7 +111,7 @@ public class PlayerController : Component, INetworkSerializable
 
 			if ( rotateDifference > 50.0f || cc.Velocity.Length > 10.0f )
 			{
-				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 2.0f );
+				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 4.0f );
 			}
 			var mdl = Body.Components.Get<SkinnedModelRenderer>();
 
@@ -127,7 +127,7 @@ public class PlayerController : Component, INetworkSerializable
 			AnimationHelper.IsGrounded = cc.IsOnGround;
 			AnimationHelper.FootShuffle = rotateDifference;
 			AnimationHelper.WithLook( Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
-			AnimationHelper.MoveStyle = IsRunning ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Walk;
+			AnimationHelper.MoveStyle = IsRunning ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Auto;
 			AnimationHelper.DuckLevel = _duckAmount / DuckOffset;
 		}
 	}
