@@ -1453,6 +1453,7 @@
       "Name": "bridgeplank",
       "Position": "-84,44,-192",
       "Rotation": "-0.05233598,-0,0,0.9986295",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {

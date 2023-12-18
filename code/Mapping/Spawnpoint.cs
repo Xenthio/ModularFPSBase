@@ -11,7 +11,11 @@ public sealed class Spawnpoint : Component
 	protected override void OnStart()
 	{
 		base.OnStart();
-		GameObject.Components.Get<ModelRenderer>().Destroy();
+		if (GameObject.Components.TryGet<ModelRenderer>(out var mdl ) )
+		{
+
+			mdl.Destroy();
+		}
 	}
 	protected override void OnUpdate()
 	{

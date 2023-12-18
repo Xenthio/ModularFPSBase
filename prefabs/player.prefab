@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "a4774bdf-2ab4-46c7-81c8-90fb4ab2116c",
+    "Id": "bb035d73-0419-4a72-93fa-0b78912d894b",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -20,18 +20,18 @@
         "__enabled": true,
         "AirControl": 30,
         "AlwaysRun": true,
-        "AnimationHelper": "2cb8e8c4-14d0-4839-8539-b9fb5dbbe6b3",
-        "Body": "2cb8e8c4-14d0-4839-8539-b9fb5dbbe6b3",
+        "AnimationHelper": null,
+        "Body": "bf745978-d6a1-467d-9694-f57aa0a3496b",
         "BodyHeight": 72,
         "CrouchSpeed": 80,
         "DuckOffset": 40,
-        "Eye": "1f6fe86a-80f8-4cd2-ba63-74d6318d40a9",
+        "Eye": "6b90aaf8-1530-441b-a739-7356cfee1fa9",
         "EyeHeight": 64,
         "FirstPerson": true,
         "Gravity": "0,0,800",
         "NormalSpeed": 190,
-        "PhysicsShadow": "fac61668-8e27-4262-a484-aec57f8ec330",
-        "PlayerShadow": "5caa6223-a1b8-4385-abd3-8fec566fb3fa",
+        "PhysicsShadow": "b01aebc3-370f-4086-b0f0-778839a967f3",
+        "PlayerShadow": "0cc56b24-ea7b-4ec9-b5d7-2cf1332c29a4",
         "RunSpeed": 320,
         "WalkSpeed": 120
       },
@@ -49,7 +49,7 @@
     ],
     "Children": [
       {
-        "Id": "2cb8e8c4-14d0-4839-8539-b9fb5dbbe6b3",
+        "Id": "bf745978-d6a1-467d-9694-f57aa0a3496b",
         "Name": "Body",
         "Enabled": true,
         "Components": [
@@ -66,21 +66,25 @@
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "CitizenAnimation",
+            "__type": "CitizenAnimationHelper",
             "__enabled": true,
-            "EyeSource": null,
+            "BodyWeight": 1,
+            "EyeSource": "6b90aaf8-1530-441b-a739-7356cfee1fa9",
+            "EyesWeight": 1,
+            "HeadWeight": 1,
             "Height": 1,
             "IkLeftFoot": null,
             "IkLeftHand": null,
             "IkRightFoot": null,
             "IkRightHand": null,
-            "LookAtObject": null,
-            "Target": "2cb8e8c4-14d0-4839-8539-b9fb5dbbe6b3"
+            "LookAt": null,
+            "LookAtEnabled": false,
+            "Target": "bf745978-d6a1-467d-9694-f57aa0a3496b"
           }
         ]
       },
       {
-        "Id": "32a21fd7-bd9d-447b-ad4e-31cc9c665873",
+        "Id": "0a7dbe1d-e536-4722-944b-6507ed02c8ad",
         "Name": "HUD",
         "Tags": "hud",
         "Enabled": true,
@@ -100,13 +104,13 @@
         ]
       },
       {
-        "Id": "1f6fe86a-80f8-4cd2-ba63-74d6318d40a9",
+        "Id": "6b90aaf8-1530-441b-a739-7356cfee1fa9",
         "Name": "Eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "fac61668-8e27-4262-a484-aec57f8ec330",
+        "Id": "b01aebc3-370f-4086-b0f0-778839a967f3",
         "Name": "PhysicsShadow",
         "Position": "0,0,36",
         "Enabled": true,
@@ -130,7 +134,7 @@
         ]
       },
       {
-        "Id": "5caa6223-a1b8-4385-abd3-8fec566fb3fa",
+        "Id": "0cc56b24-ea7b-4ec9-b5d7-2cf1332c29a4",
         "Name": "PlayerShadow",
         "Position": "0,0,36",
         "Tags": "playershadow",
@@ -149,7 +153,7 @@
             "__type": "Rigidbody",
             "__enabled": true,
             "AngularDamping": 0,
-            "Gravity": true,
+            "Gravity": false,
             "LinearDamping": 0
           }
         ]
