@@ -74,8 +74,26 @@
           "__enabled": true,
           "ExposureCompensation": 0,
           "MaximumExposure": 6,
-          "MinimumExposure": 0,
+          "MinimumExposure": 0.4,
           "Rate": 1
+        }
+      ]
+    },
+    {
+      "Id": "9be169a6-5cf7-4881-9c9d-1f698c019e2d",
+      "Name": "Envmap Probe",
+      "Position": "-416,0,128",
+      "Components": [
+        {
+          "__type": "EnvmapProbe",
+          "__enabled": true,
+          "Bounds": {
+            "Mins": "-1024,-1024,-1024",
+            "Maxs": "1024,1024,1024"
+          },
+          "Projection": "Box",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
         }
       ]
     },
@@ -117,7 +135,7 @@
         {
           "__type": "SkyBox2D",
           "__enabled": true,
-          "SkyMaterial": "materials/rustig_koppie_puresky_4k.vmat",
+          "SkyMaterial": "materials/skybox/rustig_koppie_puresky.vmat",
           "Tint": "1,1,1,1"
         }
       ]
@@ -338,6 +356,142 @@
       ]
     },
     {
+      "Id": "e439d5bb-bed5-4d70-acae-678dad4128c8",
+      "Name": "Cube (28)",
+      "Position": "449.6813,211.8098,-141.895",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "4cc111d5-b9c7-4ebe-bf0c-9ae0f2527788",
+      "Name": "Cube (25)",
+      "Position": "562.0869,107.0688,-107.7396",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "e326b4a2-f092-4c6f-bd27-ccf24cdd423a",
+      "Name": "Cube (26)",
+      "Position": "562.0869,45.94898,-107.7396",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "17ef1852-51ca-4747-a23c-ac4c31a0aeb3",
+      "Name": "Cube (27)",
+      "Position": "562.0869,-13.00562,-107.7396",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
       "Id": "b8ad6d34-a3b3-4600-a671-d921d744c8aa",
       "Name": "Cube",
       "Position": "-257.5267,-64,-141.895",
@@ -350,6 +504,254 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "f6177c81-f188-4ff7-918e-ec0a5e7bc278",
+      "Name": "Cube (21)",
+      "Position": "-137.8896,302.2592,-251.7449",
+      "Rotation": "-0.9170617,-0,0,0.3987454",
+      "Scale": "0.5999999,7.799998,3.099999",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "b5739330-9609-4126-aab3-e6de41265966",
+      "Name": "Cube (22)",
+      "Position": "-193.1865,277.6253,-239.7278",
+      "Rotation": "-0.9408827,-0,0,0.3387324",
+      "Scale": "0.5999999,7.799998,3.099999",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "fd9ab2d5-ea6a-4d1c-9646-25248161c3ee",
+      "Name": "Cube (24)",
+      "Position": "270.154,252.6729,-239.7278",
+      "Rotation": "-0.9408827,-0,0,0.3387324",
+      "Scale": "0.5999999,7.799998,3.099999",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "fb598b08-0a2e-4ec1-983d-543b09e4f092",
+      "Name": "Cube (29)",
+      "Position": "366.608,131.4224,-224",
+      "Scale": "9.500001,8.099997,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "322d7bd0-b48a-4359-9244-7fd52ca1b194",
+      "Name": "Cube (31)",
+      "Position": "-337.2825,357.2058,-224",
+      "Scale": "12,12,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "bf384c3a-eec0-4ab2-b5b4-a19d7aa8c127",
+      "Name": "Cube (32)",
+      "Position": "41.58489,128,-224",
+      "Scale": "4.199993,2.099996,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "b5ae475c-5f3e-48bc-93f2-0c1d3a0e0dc0",
+      "Name": "Cube (30)",
+      "Position": "366.608,520.7932,-80.67646",
+      "Scale": "8.299996,6.699998,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -447,7 +849,7 @@
     {
       "Id": "a47ca550-26f8-44b6-b94b-161542dfb919",
       "Name": "Cube (5)",
-      "Position": "-320,256,-176",
+      "Position": "-351.625,256,-176",
       "Scale": "3.499998,3.500001,0.3999995",
       "Enabled": true,
       "Components": [
@@ -456,7 +858,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -496,7 +898,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -536,7 +938,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -576,7 +978,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -616,7 +1018,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -656,7 +1058,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -736,7 +1138,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -765,10 +1167,10 @@
       ]
     },
     {
-      "Id": "bea20031-2d94-455e-be31-e3f57c3304ec",
-      "Name": "Cube (20)",
-      "Position": "-176.9617,480,-20.12144",
-      "Scale": "3.499998,0.400002,0.3999995",
+      "Id": "c0d2e0d5-517c-4dbb-8f10-8669e6460229",
+      "Name": "Cube (23)",
+      "Position": "418.6348,562.2764,-9.744995",
+      "Scale": "3.499998,3.500001,0.3999995",
       "Enabled": true,
       "Components": [
         {
@@ -776,7 +1178,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -800,7 +1202,47 @@
         {
           "__type": "RotatePhysics",
           "__enabled": true,
-          "RotateAmount": 1
+          "RotateAmount": 2
+        }
+      ]
+    },
+    {
+      "Id": "bea20031-2d94-455e-be31-e3f57c3304ec",
+      "Name": "Cube (20)",
+      "Position": "-183.4977,480,-36.32221",
+      "Scale": "4.399997,0.300002,0.6999995",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev_objects.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        },
+        {
+          "__type": "RotatePhysics",
+          "__enabled": true,
+          "RotateAmount": -1
         }
       ]
     },
@@ -1094,6 +1536,7 @@
   "Title": "rooftops",
   "Description": "",
   "__references": [
-    "facepunch.low_wood_fence_beam_1"
+    "facepunch.low_wood_fence_beam_1",
+    "polyhaven.rustig_koppie_puresky"
   ]
 }

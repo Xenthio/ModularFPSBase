@@ -25,6 +25,7 @@ public class PlayerController : Component, INetworkSerializable
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject PhysicsShadow { get; set; }
+	[Property] public GameObject PlayerShadow { get; set; }
 	[Property] public CitizenAnimation AnimationHelper { get; set; }
 	[Property] public bool FirstPerson { get; set; }
 	[Property] public bool AlwaysRun { get; set; }
@@ -50,8 +51,6 @@ public class PlayerController : Component, INetworkSerializable
 			EyeAngles.roll = 0;
 		}
 	}
-
-	bool PreviouslyOnGround = false;
 	protected override void OnUpdate()
 	{
 
@@ -165,7 +164,7 @@ public class PlayerController : Component, INetworkSerializable
 		//	cc.Velocity = cc.Velocity.WithZ( 0 );
 		//}
 
-		BuildWishVelocity();
+		WishVelocity = BuildWishVelocity();
 
 
 
@@ -187,6 +186,7 @@ public class PlayerController : Component, INetworkSerializable
 		PhysicsShadowUpdate();
 
 		PhysicsShadowReset();
+		PlayerShadowUpdate();
 		if ( cc.IsOnGround )
 		{
 			var wishspeed = WishVelocity;
@@ -209,9 +209,10 @@ public class PlayerController : Component, INetworkSerializable
 			//cc.ApplyFriction( 0.1f );
 		}
 
-		cc.Velocity += BaseVelocity;
+		var doBaseVelocity = cc.IsOnGround;
+		if ( doBaseVelocity ) cc.Velocity += BaseVelocity;
 		cc.Move();
-		cc.Velocity -= BaseVelocity;
+		if ( doBaseVelocity ) cc.Velocity -= BaseVelocity;
 
 		if ( true )
 		{
@@ -221,6 +222,25 @@ public class PlayerController : Component, INetworkSerializable
 
 
 	} 
+
+	void PlayerShadowUpdate()
+	{
+
+		var ps = PlayerShadow.Components.Get<Rigidbody>();
+		var cc = GameObject.Components.Get<CharacterController>();
+		ps.PhysicsBody.Mass = 70;
+		ps.PhysicsBody.UseController = false;
+		ps.PhysicsBody.AngularVelocity = Vector3.Zero;
+
+		var shvel = cc.Velocity;
+		shvel.x = MathF.MaxMagnitude( shvel.x, WishVelocity.x );
+		shvel.y = MathF.MaxMagnitude( shvel.y, WishVelocity.y );
+		shvel.z = MathF.MaxMagnitude( shvel.z, WishVelocity.z );
+
+		ps.PhysicsBody.Velocity = shvel;
+		ps.Transform.LocalPosition = Vector3.Zero.WithZ( (((BodyHeight - _duckAmountPerFrame)) / 2) );
+		ps.Transform.LocalRotation = GameObject.Transform.World.RotationToLocal( Rotation.Identity );
+	}
 	void PhysicsShadowReset()
 	{
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
@@ -237,63 +257,60 @@ public class PlayerController : Component, INetworkSerializable
 		if ( _physetup ) return;
 		_physetup = true;
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
-		ps.PhysicsBody.SpeculativeContactEnabled = true;
-		ps.PhysicsBody.Mass = 90;
+		ps.PhysicsBody.SpeculativeContactEnabled = false; 
+		ps.PhysicsBody.Mass = 70;
 		ps.PhysicsBody.LinearDamping = 0;
 		if ( ps.PhysicsBody.Surface == null )
 		{
 			var newsurf = new Surface()
 			{
-				Friction = 200000,
+				Friction = 2000000,
 				Elasticity = 0,
 			};
 			ps.PhysicsBody.Surface = newsurf;
 		}
 	}
+
+	bool PreviouslyOnGround = false;
+	bool PreviouslyPushed = false;
+
 	public void PhysicsShadowUpdate()
 	{
 		PhysicsBodyFirstTimeSetup();
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		var cc = GameObject.Components.Get<CharacterController>();
-		
+
 		var trdown = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Down ).WithoutTags( cc.IgnoreLayers ).Run();
+		
+		var tr = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position ).WithoutTags( cc.IgnoreLayers ).Run();
+
 		var body = trdown.Body;
 
 
 		var vel = ps.PhysicsBody.Velocity;
 		var angv = ps.PhysicsBody.AngularVelocity;
 
-		Log.Info( $"{PreviouslyOnGround} {cc.IsOnGround}" );
+		//Log.Info( $"{PreviouslyOnGround} {cc.IsOnGround}" );
 		// Do transfer from jumping or moving off something moving
-		if ( PreviouslyOnGround && !cc.IsOnGround )
+		if ((PreviouslyOnGround && !trdown.Hit) || (PreviouslyPushed && !tr.Hit))
 		{
 			BaseVelocity = Vector3.Zero;
+			ps.PhysicsBody.Velocity = Vector3.Zero;
 			Log.Info( "transfer" );
 			cc.Velocity += vel;
-			PreviouslyOnGround = cc.IsOnGround;
+			PreviouslyPushed = tr.Hit;
+			PreviouslyOnGround = trdown.Hit;
 			return;
 		}
-		PreviouslyOnGround = cc.IsOnGround;
+		PreviouslyPushed = tr.Hit;
+		PreviouslyOnGround = trdown.Hit;
 
 		if ( trdown.Body == null || trdown.Body.MotionEnabled == false )
 		{
-			if ( cc.IsOnGround && trdown.Body != null ) BaseVelocity = Vector3.Zero;
+			ps.PhysicsBody.Velocity = Vector3.Zero;
+			if ( cc.IsOnGround ) BaseVelocity = Vector3.Zero;
 			return;
-		}
-
-
-
-		
-
-
-		
-
-		//if ( vel.AlmostEqual( 0.0f, 0.001f ) ) vel = Vector3.Zero;
-		//if ( angv.AlmostEqual( 0.0f, 0.001f ) ) vel = Vector3.Zero;
-
-		var tr = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position ).WithoutTags( cc.IgnoreLayers ).Run();
-
-
+		} 
 
 
 		if (tr.Hit)
@@ -341,25 +358,27 @@ public class PlayerController : Component, INetworkSerializable
 			cc.GameObject.Transform.Position += new Vector3( 0, 0, duckDelta * -1);
 		}
 	}
-	public void BuildWishVelocity()
+	public Vector3 BuildWishVelocity()
 	{
+		Vector3 wishVelocity;
 		var rot = Eye.Transform.Rotation;
 
-		WishVelocity = 0;
+		wishVelocity = 0;
 
-		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward;
-		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
-		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left;
-		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right;
+		if ( Input.Down( "Forward" ) ) wishVelocity += rot.Forward;
+		if ( Input.Down( "Backward" ) ) wishVelocity += rot.Backward;
+		if ( Input.Down( "Left" ) ) wishVelocity += rot.Left;
+		if ( Input.Down( "Right" ) ) wishVelocity += rot.Right;
 
-		WishVelocity = WishVelocity.WithZ( 0 );
+		wishVelocity = wishVelocity.WithZ( 0 );
 
-		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
+		if ( !wishVelocity.IsNearZeroLength ) wishVelocity = wishVelocity.Normal;
 
-		if ( Input.Down( "Walk" ) ) WishVelocity *= WalkSpeed;
-		else if ( Input.Down( "Duck" ) || IsDucking ) WishVelocity *= CrouchSpeed;
-		else if ( Input.Down( "Run" ) || AlwaysRun ) WishVelocity *= RunSpeed;
-		else WishVelocity *= NormalSpeed;
+		if ( Input.Down( "Walk" ) ) wishVelocity *= WalkSpeed;
+		else if ( Input.Down( "Duck" ) || IsDucking ) wishVelocity *= CrouchSpeed;
+		else if ( Input.Down( "Run" ) || AlwaysRun ) wishVelocity *= RunSpeed;
+		else wishVelocity *= NormalSpeed;
+		return wishVelocity;
 	}
 
 	public void Write( ref ByteStream stream )
