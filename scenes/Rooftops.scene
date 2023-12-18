@@ -16,7 +16,7 @@
     {
       "Id": "e8e7f92f-957a-4633-8052-d2d9419065d8",
       "Name": "Camera",
-      "Position": "0,2268.311,86",
+      "Position": "0,2240,64",
       "Enabled": true,
       "Components": [
         {
@@ -82,7 +82,7 @@
     {
       "Id": "49efb184-1406-479c-9f81-1e83ad30f7b7",
       "Name": "Sun",
-      "Position": "0,2179.554,128",
+      "Position": "0,2304,64",
       "Rotation": "0.08357476,0.262664,-0.2914574,0.9160106",
       "Enabled": true,
       "Components": [
@@ -111,7 +111,7 @@
     {
       "Id": "16e9110c-fe74-4782-8b7d-1fe671859eb1",
       "Name": "2D Skybox",
-      "Position": "-53.22441,2194.75,62.11283",
+      "Position": "0,2176,64",
       "Enabled": true,
       "Components": [
         {
@@ -125,7 +125,7 @@
     {
       "Id": "c16390d1-37fe-4e52-938f-4c99b67ddd31",
       "Name": "Spawn",
-      "Position": "-307.1853,207.7112,-192",
+      "Position": "-307.1853,400,-192",
       "Enabled": true,
       "Components": [
         {
@@ -147,7 +147,8 @@
     {
       "Id": "d469b2e8-c245-4543-9df9-a9a95876eae6",
       "Name": "Spawn (1)",
-      "Position": "177.04,207.7112,-192",
+      "Position": "177.04,128,-192",
+      "Rotation": "-0.00000005960318,0.0000000003027926,-1,-0.0000006397578",
       "Enabled": true,
       "Components": [
         {
@@ -338,7 +339,7 @@
     {
       "Id": "b8ad6d34-a3b3-4600-a671-d921d744c8aa",
       "Name": "Cube",
-      "Position": "-270.9395,-156.7754,-141.895",
+      "Position": "-270.9395,-64,-141.895",
       "Scale": "0.5999999,3.5,3.099999",
       "Enabled": true,
       "Components": [
@@ -353,8 +354,9 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "ColliderBoxComponent",
+          "__type": "BoxCollider",
           "__enabled": true,
+          "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
           "Static": false,
@@ -372,8 +374,8 @@
     {
       "Id": "a47ca550-26f8-44b6-b94b-161542dfb919",
       "Name": "Cube (5)",
-      "Position": "-121.0405,-156.7754,-173.9954",
-      "Scale": "3.499998,3.500001,0.09999951",
+      "Position": "-320,256,-176",
+      "Scale": "3.499998,3.500001,0.3999995",
       "Enabled": true,
       "Components": [
         {
@@ -387,11 +389,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "ColliderBoxComponent",
+          "__type": "BoxCollider",
           "__enabled": true,
+          "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": true,
+          "Static": false,
           "Surface": null
         },
         {
@@ -403,7 +406,48 @@
         },
         {
           "__type": "RotatePhysics",
-          "__enabled": true
+          "__enabled": true,
+          "RotateAmount": 0.2
+        }
+      ]
+    },
+    {
+      "Id": "879e595b-b16a-4142-80bd-b985fffa0bbe",
+      "Name": "Cube (7)",
+      "Position": "-560,480,-176",
+      "Scale": "3.499998,3.500001,0.3999995",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        },
+        {
+          "__type": "RotatePhysics",
+          "__enabled": true,
+          "RotateAmount": -0.2
         }
       ]
     },
@@ -440,6 +484,148 @@
           "LinearDamping": 0
         }
       ]
+    },
+    {
+      "Id": "7ea98a5a-1173-41be-80b7-698a0f6031c7",
+      "Name": "Cube (6)",
+      "Position": "-304,324.6194,-141.895",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "f13f76a0-8f18-4dad-bad8-ec2cb727c8be",
+      "Name": "Cube (8)",
+      "Position": "-81.41089,-167.0919,-168.7332",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "4c8ec3e0-9ac4-4329-bcf0-015a0f1db529",
+      "Name": "bridgeplank",
+      "Position": "-84,44,-192",
+      "Rotation": "-0.05233598,-0,0,0.9986295",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/low_wood_fence/low_wood_fence_beam_1.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/low_wood_fence/low_wood_fence_beam_1.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        },
+        {
+          "__type": "bridgecreatorlol",
+          "__enabled": true,
+          "PlankCount": 52,
+          "Slack": 1,
+          "Spacing": 8
+        }
+      ]
+    },
+    {
+      "Id": "64052782-598f-454e-91ab-a41910f281b3",
+      "Name": "Cube",
+      "Position": "-104,-448,-172.9",
+      "Scale": "2.56,2.56,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/dev/box.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -454,6 +640,7 @@
   "Title": "rooftops",
   "Description": "",
   "__references": [
+    "facepunch.low_wood_fence_beam_1",
     "thieves._joecrate12",
     "thieves.crate5"
   ]

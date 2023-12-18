@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "cc09e852-4af5-4840-b1c5-9b72251b0b66",
+    "Id": "3fa8b309-d70f-4d87-87fb-52bf68111954",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -20,17 +20,17 @@
         "__enabled": true,
         "AirControl": 30,
         "AlwaysRun": true,
-        "AnimationHelper": "49009765-fdd7-435e-9b4f-133da0d56913",
-        "Body": "49009765-fdd7-435e-9b4f-133da0d56913",
+        "AnimationHelper": "6ab58df6-80f4-4281-9fe0-66bec316f948",
+        "Body": "6ab58df6-80f4-4281-9fe0-66bec316f948",
         "BodyHeight": 72,
         "CrouchSpeed": 80,
         "DuckOffset": 40,
-        "Eye": "4651cf16-144f-4789-9494-c5d6badace4f",
+        "Eye": "30dca5e7-55fd-474a-9124-99810c56a3b4",
         "EyeHeight": 64,
         "FirstPerson": true,
         "Gravity": "0,0,800",
         "NormalSpeed": 190,
-        "PhysicsShadow": "eeb14c1d-62e3-4355-b3ed-8110a0c66cbf",
+        "PhysicsShadow": "73213d3c-2498-42a4-8c8d-ecc98e6c01ce",
         "RunSpeed": 320,
         "WalkSpeed": 120
       },
@@ -48,7 +48,7 @@
     ],
     "Children": [
       {
-        "Id": "49009765-fdd7-435e-9b4f-133da0d56913",
+        "Id": "6ab58df6-80f4-4281-9fe0-66bec316f948",
         "Name": "Body",
         "Enabled": true,
         "Components": [
@@ -74,12 +74,12 @@
             "IkRightFoot": null,
             "IkRightHand": null,
             "LookAtObject": null,
-            "Target": "49009765-fdd7-435e-9b4f-133da0d56913"
+            "Target": "6ab58df6-80f4-4281-9fe0-66bec316f948"
           }
         ]
       },
       {
-        "Id": "5829e70a-170b-4881-8256-df0b6bff1881",
+        "Id": "5bc7a150-6edb-4bab-80b8-8bf1fd50ec14",
         "Name": "HUD",
         "Tags": "hud",
         "Enabled": true,
@@ -99,13 +99,13 @@
         ]
       },
       {
-        "Id": "4651cf16-144f-4789-9494-c5d6badace4f",
+        "Id": "30dca5e7-55fd-474a-9124-99810c56a3b4",
         "Name": "Eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "eeb14c1d-62e3-4355-b3ed-8110a0c66cbf",
+        "Id": "73213d3c-2498-42a4-8c8d-ecc98e6c01ce",
         "Name": "PhysicsShadow",
         "Position": "0,0,36",
         "Enabled": true,
@@ -118,10 +118,11 @@
             "LinearDamping": 0
           },
           {
-            "__type": "ColliderBoxComponent",
+            "__type": "BoxCollider",
             "__enabled": true,
+            "Center": "0,0,0",
             "IsTrigger": false,
-            "Scale": "38,38,72",
+            "Scale": "32,32,72",
             "Static": false,
             "Surface": null
           }
