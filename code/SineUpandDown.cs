@@ -1,20 +1,21 @@
 using Sandbox;
 
-public sealed class RotatePhysics : Component
-{
-	[Property] public float RotateAmount { get; set; } = 0.2f;
+public sealed class SineUpandDown : Component
+{ 
 	Transform trn;
+	Vector3 InitialPosition;
+	[Property] public int Strength { get; set; } = 128;
 	protected override void OnAwake()
 	{
 		base.OnAwake();
 		trn = GameObject.Transform.World;
+		InitialPosition = trn.Position;
 	}
 	protected override void OnFixedUpdate()
 	{
-		base.OnFixedUpdate(); 
+		base.OnFixedUpdate();
 		var rigidbody = GameObject.Components.Get<Rigidbody>();
-		
-		trn = trn.RotateAround( trn.Position, Rotation.FromYaw( RotateAmount * 4 ) );
+		trn.Position = InitialPosition + Vector3.Up * (MathF.Sin( Time.Now ) * Strength);
 		rigidbody.PhysicsBody.Move( trn, 2f * Time.Delta );
 		rigidbody.PhysicsBody.Mass = 5000;
 		rigidbody.PhysicsBody.UseController = true;

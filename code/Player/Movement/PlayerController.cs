@@ -51,8 +51,11 @@ public class PlayerController : Component, INetworkSerializable
 		}
 	}
 
+	bool PreviouslyOnGround = false;
 	protected override void OnUpdate()
 	{
+
+		PhysicsShadowReset();
 
 
 		// Eye input
@@ -140,11 +143,31 @@ public class PlayerController : Component, INetworkSerializable
 		if ( IsProxy )
 			return;
 
+		var cc = GameObject.Components.Get<CharacterController>();
+
+		//Log.Info( BaseVelocity.z );
+		if ( BaseVelocity.z > 100 ) 
+		{ 
+			cc.Punch( Vector3.Up * BaseVelocity.z );
+			cc.IsOnGround = false; 
+		}
 		CheckDuck();
+
+		if ( true ) // Not swimming or on ladder
+		{
+			cc.Velocity -= (Gravity * 0.5f) * Time.Delta;
+			cc.Velocity += new Vector3( 0, 0, BaseVelocity.z ) ;
+
+			BaseVelocity = BaseVelocity.WithZ( 0 );
+		}
+		//else
+		//{
+		//	cc.Velocity = cc.Velocity.WithZ( 0 );
+		//}
+
 		BuildWishVelocity();
 
-		var cc = GameObject.Components.Get<CharacterController>();
-		
+
 
 		if ( cc.IsOnGround && Input.Down( "Jump" ) )
 		{
@@ -161,15 +184,17 @@ public class PlayerController : Component, INetworkSerializable
 			fJumps += 1.0f;
 
 		}
+		PhysicsShadowUpdate();
+
+		PhysicsShadowReset();
 		if ( cc.IsOnGround )
 		{
 			var wishspeed = WishVelocity;
 
-			cc.Velocity = cc.Velocity.WithZ( 0 );
+			//cc.Velocity = cc.Velocity.WithZ( 0 );
 
 			//ps.AngularVelocity = Vector3.Zero;
 			//ps.Velocity = Vector3.Zero;
-			PhysicsShadowUpdate();
 			cc.Accelerate( wishspeed );
 			cc.ApplyFriction( 4.0f );
 		}
@@ -177,7 +202,6 @@ public class PlayerController : Component, INetworkSerializable
 		{
 			var wishspeed = WishVelocity;
 
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
 
 			if ( wishspeed.Length > AirControl )
 				wishspeed = wishspeed.ClampLength(AirControl); 
@@ -189,61 +213,97 @@ public class PlayerController : Component, INetworkSerializable
 		cc.Move();
 		cc.Velocity -= BaseVelocity;
 
-		if ( !cc.IsOnGround )
+		if ( true )
 		{
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
+			// finish gravity
+			cc.Velocity -= (Gravity * 0.5f) * Time.Delta;
 		}
-		else
-		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
-		}
-	}
 
-	public void PhysicsShadowUpdate()
+
+	} 
+	void PhysicsShadowReset()
 	{
-
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		var cc = GameObject.Components.Get<CharacterController>();
+		//ps.PhysicsBody.AngularVelocity = Vector3.Zero;
+		//ps.PhysicsBody.Velocity = Vector3.Zero;
+		ps.Transform.LocalPosition = Vector3.Zero.WithZ( (((BodyHeight - _duckAmountPerFrame)) / 2) );
+		ps.Transform.LocalRotation = GameObject.Transform.World.RotationToLocal( Rotation.Identity );
+	}
 
-		var trdown = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Down ).WithoutTags( cc.IgnoreLayers ).Run();
-		var body = trdown.Body;
+	bool _physetup = false;
+	void PhysicsBodyFirstTimeSetup()
+	{
+		if ( _physetup ) return;
+		_physetup = true;
+		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		ps.PhysicsBody.SpeculativeContactEnabled = true;
-		if ( trdown.Body == null || trdown.Body.MotionEnabled == false ) 
-		{
-			BaseVelocity = Vector3.Zero;
-			return;
-		}
-
-		ps.PhysicsBody.SpeculativeContactEnabled = true; 
-		ps.PhysicsBody.Mass = 100;
+		ps.PhysicsBody.Mass = 90;
 		ps.PhysicsBody.LinearDamping = 0;
 		if ( ps.PhysicsBody.Surface == null )
 		{
 			var newsurf = new Surface()
 			{
-				Friction = 0,
+				Friction = 200000,
 				Elasticity = 0,
 			};
 			ps.PhysicsBody.Surface = newsurf;
 		}
-
+	}
+	public void PhysicsShadowUpdate()
+	{
+		PhysicsBodyFirstTimeSetup();
+		var ps = PhysicsShadow.Components.Get<Rigidbody>();
+		var cc = GameObject.Components.Get<CharacterController>();
 		
+		var trdown = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Down ).WithoutTags( cc.IgnoreLayers ).Run();
+		var body = trdown.Body;
+
+
 		var vel = ps.PhysicsBody.Velocity;
 		var angv = ps.PhysicsBody.AngularVelocity;
-		//var angv = body.AngularVelocity;
 
-		if ( vel.AlmostEqual( 0.0f, 0.3f ) ) vel = Vector3.Zero;
-		if ( angv.AlmostEqual( 0.0f, 0.1f ) ) vel = Vector3.Zero;
+		Log.Info( $"{PreviouslyOnGround} {cc.IsOnGround}" );
+		// Do transfer from jumping or moving off something moving
+		if ( PreviouslyOnGround && !cc.IsOnGround )
+		{
+			BaseVelocity = Vector3.Zero;
+			Log.Info( "transfer" );
+			cc.Velocity += vel;
+			PreviouslyOnGround = cc.IsOnGround;
+			return;
+		}
+		PreviouslyOnGround = cc.IsOnGround;
+
+		if ( trdown.Body == null || trdown.Body.MotionEnabled == false )
+		{
+			if ( cc.IsOnGround && trdown.Body != null ) BaseVelocity = Vector3.Zero;
+			return;
+		}
+
+
+
+		
+
+
+		
+
+		//if ( vel.AlmostEqual( 0.0f, 0.001f ) ) vel = Vector3.Zero;
+		//if ( angv.AlmostEqual( 0.0f, 0.001f ) ) vel = Vector3.Zero;
 
 		var tr = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position ).WithoutTags( cc.IgnoreLayers ).Run();
 
+
+
+
 		if (tr.Hit)
 		{
-			GameObject.Transform.Position += vel * Time.Delta;
+			vel.z = MathF.Max( 0, vel.z );
+			GameObject.Transform.Position += vel * Time.Delta; 
 		}
 		else
-		{
-			BaseVelocity = vel;
+		{ 
+			if ( cc.IsOnGround ) BaseVelocity = vel;
 		} 
 
 		// do rotation
@@ -252,13 +312,9 @@ public class PlayerController : Component, INetworkSerializable
 		//only rotate yaw
 		var axis = angv.WithX( 0 ).WithY( 0 ); 
 		GameObject.Transform.Rotation = GameObject.Transform.Rotation.RotateAroundAxis( axis.Normal, axis.Length);
-
+		ps.AngularDamping = 10000;
 		//Log.Info( vel );
 		//Log.Info( angv );
-		
-		ps.PhysicsBody.AngularVelocity = Vector3.Zero;
-		ps.Transform.LocalPosition = Vector3.Zero.WithZ( (((BodyHeight - _duckAmountPerFrame)) / 2) );
-		ps.Transform.LocalRotation = GameObject.Transform.World.RotationToLocal(Rotation.Identity);
 	}
 	public void CheckDuck()
 	{
