@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "eea9fd2c-0f8b-4258-8235-7b8b4f160650",
+    "Id": "192ce172-2a33-436c-83d4-adf4be3d0862",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -20,18 +20,18 @@
         "__enabled": true,
         "AirControl": 30,
         "AlwaysRun": false,
-        "AnimationHelper": "ce63e081-e897-4251-9eb9-b6d6181cc3a3",
-        "Body": "ce63e081-e897-4251-9eb9-b6d6181cc3a3",
+        "AnimationHelper": "c1b211f0-fbe4-4266-b72d-0bbdc52fb0cd",
+        "Body": "c1b211f0-fbe4-4266-b72d-0bbdc52fb0cd",
         "BodyHeight": 72,
         "CrouchSpeed": 80,
         "DuckOffset": 40,
-        "Eye": "aa21f0dc-7d4e-43c5-b25f-9de3a0959844",
+        "Eye": "2f04e09c-4fb8-420e-946c-62fdabed26b6",
         "EyeHeight": 64,
         "FirstPerson": true,
         "Gravity": "0,0,800",
         "NormalSpeed": 190,
-        "PhysicsShadow": "f52a32a6-2c07-4d0d-8a9f-364e6dcdac63",
-        "PlayerShadow": "c0496d23-84f5-4f20-ab72-06935b12b53c",
+        "PhysicsShadow": "d6c24468-9361-454a-8c62-334149491e0a",
+        "PlayerShadow": "99ca7296-42bf-4c6b-bcfb-7ddb991aba02",
         "RunSpeed": 320,
         "WalkSpeed": 120
       },
@@ -44,12 +44,13 @@
       },
       {
         "__type": "InventoryComponent",
-        "__enabled": true
+        "__enabled": true,
+        "Eye": "2f04e09c-4fb8-420e-946c-62fdabed26b6"
       }
     ],
     "Children": [
       {
-        "Id": "ce63e081-e897-4251-9eb9-b6d6181cc3a3",
+        "Id": "c1b211f0-fbe4-4266-b72d-0bbdc52fb0cd",
         "Name": "Body",
         "Enabled": true,
         "Components": [
@@ -62,14 +63,14 @@
             "MaterialGroup": null,
             "MaterialOverride": null,
             "Model": "models/citizen/citizen.vmdl",
-            "ShouldCastShadows": true,
+            "RenderType": "On",
             "Tint": "1,1,1,1"
           },
           {
             "__type": "CitizenAnimationHelper",
             "__enabled": true,
             "BodyWeight": 1,
-            "EyeSource": "aa21f0dc-7d4e-43c5-b25f-9de3a0959844",
+            "EyeSource": "2f04e09c-4fb8-420e-946c-62fdabed26b6",
             "EyesWeight": 1,
             "HeadWeight": 1,
             "Height": 1,
@@ -79,12 +80,12 @@
             "IkRightHand": null,
             "LookAt": null,
             "LookAtEnabled": false,
-            "Target": "ce63e081-e897-4251-9eb9-b6d6181cc3a3"
+            "Target": "c1b211f0-fbe4-4266-b72d-0bbdc52fb0cd"
           }
         ]
       },
       {
-        "Id": "0de66194-4ace-43ce-b142-c97bd1abe774",
+        "Id": "306741f4-3cba-4d2f-91d5-3599cd46458c",
         "Name": "HUD",
         "Tags": "hud",
         "Enabled": true,
@@ -104,13 +105,13 @@
         ]
       },
       {
-        "Id": "aa21f0dc-7d4e-43c5-b25f-9de3a0959844",
+        "Id": "2f04e09c-4fb8-420e-946c-62fdabed26b6",
         "Name": "Eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "f52a32a6-2c07-4d0d-8a9f-364e6dcdac63",
+        "Id": "d6c24468-9361-454a-8c62-334149491e0a",
         "Name": "PhysicsShadow",
         "Position": "0,0,36",
         "Enabled": true,
@@ -134,7 +135,7 @@
         ]
       },
       {
-        "Id": "c0496d23-84f5-4f20-ab72-06935b12b53c",
+        "Id": "99ca7296-42bf-4c6b-bcfb-7ddb991aba02",
         "Name": "PlayerShadow",
         "Position": "0,0,36",
         "Tags": "playershadow",

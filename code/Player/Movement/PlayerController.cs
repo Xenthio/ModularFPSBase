@@ -308,6 +308,14 @@ public class PlayerController : Component, INetworkSerializable
 		PreviouslyPushed = tr.Hit;
 		PreviouslyOnGround = trdown.Hit;
 
+
+		// do rotation
+		var a = new Angles( angv.x, angv.y, angv.z );
+		//only rotate yaw
+		var axis = angv.WithX( 0 ).WithY( 0 );
+		GameObject.Transform.Rotation = GameObject.Transform.Rotation.RotateAroundAxis( axis.Normal, axis.Length );
+		ps.AngularDamping = 10000;
+
 		if ( trdown.Body == null || trdown.Body.MotionEnabled == false )
 		{
 			ps.PhysicsBody.Velocity = Vector3.Zero;
@@ -326,13 +334,7 @@ public class PlayerController : Component, INetworkSerializable
 			if ( cc.IsOnGround ) BaseVelocity = vel;
 		} 
 
-		// do rotation
-		var a = new Angles( angv.x, angv.y, angv.z ); 
 
-		//only rotate yaw
-		var axis = angv.WithX( 0 ).WithY( 0 ); 
-		GameObject.Transform.Rotation = GameObject.Transform.Rotation.RotateAroundAxis( axis.Normal, axis.Length);
-		ps.AngularDamping = 10000;
 		//Log.Info( vel );
 		//Log.Info( angv );
 	}
