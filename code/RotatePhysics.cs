@@ -9,12 +9,13 @@ public sealed class RotatePhysics : Component
 		base.OnAwake();
 		trn = GameObject.Transform.World;
 	}
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
+		base.OnFixedUpdate(); 
 		var rigidbody = GameObject.Components.Get<Rigidbody>();
 		
-		trn = trn.RotateAround( trn.Position, Rotation.FromYaw( RotateAmount ) );
-		rigidbody.PhysicsBody.Move( trn, 0.1f );
+		trn = trn.RotateAround( trn.Position, Rotation.FromYaw( RotateAmount * 4 ) );
+		rigidbody.PhysicsBody.Move( trn, 20f * Time.Delta );
 		rigidbody.PhysicsBody.Mass = 5000;
 		rigidbody.PhysicsBody.UseController = true;
 		//rigidbody.AngularVelocity = new Vector3 (0, 0, 2);

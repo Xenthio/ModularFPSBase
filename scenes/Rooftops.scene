@@ -149,6 +149,7 @@
       "Name": "Spawn (1)",
       "Position": "177.04,128,-192",
       "Rotation": "-0.00000005960318,0.0000000003027926,-1,-0.0000006397578",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -247,7 +248,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -255,7 +256,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
@@ -281,7 +282,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -289,7 +290,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/3t/industry/crates/rect_crate/crate5.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
@@ -315,7 +316,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -323,7 +324,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
@@ -364,7 +365,79 @@
         },
         {
           "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "be3b918e-f5b0-4856-bd6f-a98d5bddc3b7",
+      "Name": "Cube (9)",
+      "Position": "-91.63609,-69.68755,84.59634",
+      "Rotation": "0.3048648,0,0,0.9523956",
+      "Scale": "1.5,5,0.1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "c8213993-3335-427c-b52b-3e2b1ebd3d59",
+      "Name": "Cube (11)",
+      "Position": "-91.63609,-203.3073,236.5563",
+      "Rotation": "-0.3007059,-0,0,0.9537169",
+      "Scale": "1.5,5,0.1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": false,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
@@ -464,7 +537,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -472,7 +545,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
@@ -498,7 +571,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -506,7 +579,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
@@ -531,7 +604,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -539,7 +612,40 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/3t/industry/crates/cube_crate_wire_1/crate12.vmdl",
+          "Model": "models/citizen_props/crate01.vmdl",
+          "Static": false,
+          "Surface": "surfaces/wood.surface"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        }
+      ]
+    },
+    {
+      "Id": "47b0dbf2-a5e9-4ab5-9ebf-b43cdd99c298",
+      "Name": "Cube (10)",
+      "Position": "-85.14751,-241.5907,320.9742",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen_props/crate01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
@@ -640,8 +746,6 @@
   "Title": "rooftops",
   "Description": "",
   "__references": [
-    "facepunch.low_wood_fence_beam_1",
-    "thieves._joecrate12",
-    "thieves.crate5"
+    "facepunch.low_wood_fence_beam_1"
   ]
 }

@@ -38,6 +38,7 @@ public sealed class bridgecreatorlol : Component
 		}
 		copy.Transform.Rotation = Transform.Rotation;
 		copy.Transform.Position = Transform.Position;
+		copy.Transform.Scale = new Vector3(1.4f,1,1);
 		return copy;
 	}
 	GameObject CreateCopy(int i)
@@ -53,13 +54,15 @@ public sealed class bridgecreatorlol : Component
 		joint2.EnableCollision = false;
 		joint2.MaxAngle = 1;
 		joint2.MinAngle = 0;
-		joint2.Friction = 1000;
+		joint2.Friction = 100000;
+		joint2.BreakForce = 100;
 		joint2.Body = PreviouslyCreatedGameObject;
 
 		if ( i == 1 || i == PlankCount)
 		{
 			var joint3 = copy.Components.Create<HingeJoint>();
-			joint2.MaxAngle = 0;
+			joint3.MaxAngle = 1;
+			joint3.Friction = 100000;
 			joint3.EnableCollision = false; 
 		}
 		 

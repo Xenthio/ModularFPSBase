@@ -27,7 +27,7 @@
     "LeaderboardType": "None",
     "ProjectTemplate": null,
     "CsProjName": "",
-    "StartupScene": "scenes/sample.scene",
+    "StartupScene": "scenes/rooftops.scene",
     "Compiler": {
       "RootNamespace": "FPSKit",
       "DefineConstants": "SANDBOX;ADDON;DEBUG",
