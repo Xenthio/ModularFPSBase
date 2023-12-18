@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using Sandbox.Citizen;
 using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Runtime;
@@ -26,7 +27,7 @@ public class PlayerController : Component, INetworkSerializable
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject PhysicsShadow { get; set; }
 	[Property] public GameObject PlayerShadow { get; set; }
-	[Property] public CitizenAnimation AnimationHelper { get; set; }
+	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public bool FirstPerson { get; set; }
 	[Property] public bool AlwaysRun { get; set; }
 
@@ -56,6 +57,7 @@ public class PlayerController : Component, INetworkSerializable
 
 		PhysicsShadowReset();
 
+		if (Input.Pressed("View")) FirstPerson = !FirstPerson;
 
 		// Eye input
 		if ( !IsProxy )
@@ -79,7 +81,7 @@ public class PlayerController : Component, INetworkSerializable
 			}
 			else
 			{
-				cam.Transform.Position = Transform.Position + Eye.Transform.Rotation.Backward * 300 + Vector3.Up * 75.0f;
+				cam.Transform.Position = Eye.Transform.Position + Eye.Transform.Rotation.Backward * 200 + Vector3.Up * 0.0f;
 				cam.Transform.Rotation = Eye.Transform.Rotation;
 			}
 
@@ -96,14 +98,14 @@ public class PlayerController : Component, INetworkSerializable
 		// rotate body to look angles
 		if ( Body is not null )
 		{
-			var targetAngle = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+			var targetAngle = Rotation.FromYaw( Eye.Transform.Rotation.Yaw());
 
-			var v = cc.Velocity.WithZ( 0 );
+			//var v = WishVelocity.WithZ( 0 );
 
-			if ( v.Length > 10.0f )
-			{
-				targetAngle = Rotation.LookAt( v, Vector3.Up );
-			}
+			//if ( v.Length > 10.0f )
+			//{
+			//	targetAngle = Rotation.LookAt( v, Vector3.Up );
+			//}
 
 			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
 
@@ -112,8 +114,9 @@ public class PlayerController : Component, INetworkSerializable
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 2.0f );
 			}
 			var mdl = Body.Components.Get<SkinnedModelRenderer>();
-			
-			mdl.Tint = FirstPerson && !mdl.IsProxy ? Color.Transparent : Color.White;
+
+			mdl.SceneModel.Flags.IsOpaque = !(FirstPerson && !mdl.IsProxy);
+			//mdl.Tint = FirstPerson && !mdl.IsProxy ? Color.Transparent : Color.White;
 		}
 
 
@@ -123,8 +126,8 @@ public class PlayerController : Component, INetworkSerializable
 			AnimationHelper.WithWishVelocity( WishVelocity );
 			AnimationHelper.IsGrounded = cc.IsOnGround;
 			AnimationHelper.FootShuffle = rotateDifference;
-			AnimationHelper.WithLook( EyeAngles.Forward, 1, 1, 1.0f );
-			AnimationHelper.MoveStyle = IsRunning ? CitizenAnimation.MoveStyles.Run : CitizenAnimation.MoveStyles.Walk;
+			AnimationHelper.WithLook( Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
+			AnimationHelper.MoveStyle = IsRunning ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Walk;
 			AnimationHelper.DuckLevel = _duckAmount / DuckOffset;
 		}
 	}
