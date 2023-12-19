@@ -11,11 +11,11 @@ public class CarriableComponent : Component
 {
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	public InventoryComponent OwnerInventory;
-	public virtual void FixedEquipUpdate()
+	public virtual void FixedCarriableUpdate()
 	{
 
 	}
-	public virtual void EquipUpdate() 
+	public virtual void CarriableUpdate() 
 	{
 
 	}

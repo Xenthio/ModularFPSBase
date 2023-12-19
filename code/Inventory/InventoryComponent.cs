@@ -19,7 +19,7 @@ public class InventoryComponent : Component
 		base.OnUpdate();
 		if ( ActiveItem != null && ActiveItem.Components.TryGet<CarriableComponent>( out var activeequippable ) )
 		{
-			activeequippable.EquipUpdate();
+			activeequippable.CarriableUpdate();
 		}
 	}
 	protected override void OnFixedUpdate()
@@ -35,7 +35,7 @@ public class InventoryComponent : Component
 		}
 		if (ActiveItem != null && ActiveItem.Components.TryGet<CarriableComponent>( out var activeequippable ) )
 		{
-			activeequippable.FixedEquipUpdate();
+			activeequippable.FixedCarriableUpdate();
 		}
 
 		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<CarriableComponent>(out var equippableComponent))

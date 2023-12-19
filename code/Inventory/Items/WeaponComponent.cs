@@ -8,13 +8,13 @@ namespace FPSKit;
 
 public class WeaponComponent : CarriableComponent
 {
-	public override void FixedEquipUpdate()
+	public override void FixedCarriableUpdate()
 	{
-		base.FixedEquipUpdate();
+		base.FixedCarriableUpdate();
 	}
-	public override void EquipUpdate()
+	public override void CarriableUpdate()
 	{
-		base.EquipUpdate();
+		base.CarriableUpdate();
 
 		if ( Input.Pressed( "attack1" ) )
 		{ 
