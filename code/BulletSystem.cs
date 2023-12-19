@@ -12,7 +12,7 @@ public struct BulletInfo
 	public float Damage;
 	public float Spread;
 	public float Force;
-	public float Count;
+	public float Count = 1;
 	public float HeadshotMultiplier = 2;
 
 	public Action<SceneTraceResult> OnBulletHit;
@@ -31,22 +31,25 @@ public partial class Bullet
 			var position = info.Position;
 			var forward = info.Direction;
 
+			// TODO: Ignore player instead of this
+			position += forward * 16;
 			forward += Vector3.Random * info.Spread;
 
 			var tr = GameManager.ActiveScene.Trace.Ray( position, position + (forward * 10000) )
 				.UseHitboxes()
 				//.Ignore( info.Owner )
-				//.Ignore( info.IgnoreEntity )
-				.WithAnyTags( "solid", "player", "npc", "penetrable", "corpse", "glass", "water", "carriable", "debris" )
+				//.Ignore( info.IgnoreEntity ) 
 				.WithoutTags( "trigger", "skybox", "playerclip" )
 				.Run();
 
+			Gizmo.Draw.Line( tr.StartPosition, tr.EndPosition );
+			Gizmo.Draw.SolidSphere( tr.EndPosition, 2 );
 			if ( tr.Hit )
 			{
 				//tr.Surface.DoBulletImpact( tr );
 				var damage = info.Damage;
 
-				if ( tr.Hitbox.Tags.Has( "head" ) )
+				if ( tr.Hitbox?.Tags.Has( "head" ) ?? false )
 				{
 					damage *= info.HeadshotMultiplier;
 				}
@@ -57,9 +60,16 @@ public partial class Bullet
 					.WithAttacker( info.Owner )
 					.WithTag( "bullet" );
 
-				if ( tr.GameObject.Components.TryGet<LifeComponent>( out var life ) )
+				if ( tr.GameObject != null )
 				{
-					life.TakeDamage( dmgInfo );
+					if ( tr.GameObject.Components.TryGet<LifeComponent>( out var life ) )
+					{
+						life.TakeDamage( dmgInfo );
+					}
+					if ( tr.GameObject.Components.TryGet<Rigidbody>( out var rigidbody ) )
+					{
+						rigidbody.ApplyImpulseAt( tr.HitPosition, tr.Direction * (info.Force * 4096) );
+					}
 				}
 
 				if ( info.OnDealDamage != null ) info.OnDealDamage( dmgInfo );

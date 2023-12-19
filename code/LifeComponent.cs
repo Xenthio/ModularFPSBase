@@ -29,7 +29,7 @@ public class LifeComponent : Component
 		if ( LifeState == LifeState.Alive && Health <= 0 ) Kill();
 		if ( GameObject.Components.TryGet<Rigidbody>( out var rigidbody ) )
 		{
-			rigidbody.ApplyImpulseAt( info.Position, info.Force );
+			rigidbody.ApplyImpulseAt( info.Position, info.Force * 4096 );
 		}
 		if ( OnTakeDamage != null ) OnTakeDamage( info );
 	}
