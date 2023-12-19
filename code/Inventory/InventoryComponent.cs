@@ -17,7 +17,7 @@ public class InventoryComponent : Component
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-		if ( ActiveItem != null && ActiveItem.Components.TryGet<BaseEquippableComponent>( out var activeequippable ) )
+		if ( ActiveItem != null && ActiveItem.Components.TryGet<ItemComponent>( out var activeequippable ) )
 		{
 			activeequippable.EquipUpdate();
 		}
@@ -26,19 +26,19 @@ public class InventoryComponent : Component
 	{
 		base.OnFixedUpdate();
 		var tr = Scene.Trace.Ray( GameObject.Transform.Position, GameObject.Transform.Position ).Radius( 64 ).WithoutTags( "player" ).Run();
-		if (tr.Hit && tr.GameObject != null  && tr.GameObject.Components.TryGet<BaseEquippableComponent>(out var equippable))
+		if (tr.Hit && tr.GameObject != null  && tr.GameObject.Components.TryGet<ItemComponent>(out var equippable))
 		{
 			if (equippable.OwnerInventory == null) 
 			{
 				Add(tr.GameObject);
 			}
 		}
-		if (ActiveItem != null && ActiveItem.Components.TryGet<BaseEquippableComponent>( out var activeequippable ) )
+		if (ActiveItem != null && ActiveItem.Components.TryGet<ItemComponent>( out var activeequippable ) )
 		{
 			activeequippable.FixedEquipUpdate();
 		}
 
-		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<BaseEquippableComponent>(out var equippableComponent))
+		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<ItemComponent>(out var equippableComponent))
 		{
 			AnimationHelper.HoldType = equippableComponent.HoldType;
 		}
@@ -50,7 +50,7 @@ public class InventoryComponent : Component
 	public void Add(GameObject item)
 	{
 		item.Parent = GameObject;
-		if ( item.Components.TryGet<BaseEquippableComponent>(out var equippable ) )
+		if ( item.Components.TryGet<ItemComponent>(out var equippable ) )
 		{
 			equippable.OwnerInventory = this;
 		}

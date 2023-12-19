@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FPSKit;
 
-public class BaseEquippableComponent : Component
+public class ItemComponent : Component
 {
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	public InventoryComponent OwnerInventory;

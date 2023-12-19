@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace FPSKit;
 
-public class WeaponComponent : BaseEquippableComponent
+public class WeaponComponent : ItemComponent
 {
 	public override void FixedEquipUpdate()
 	{
 		base.FixedEquipUpdate();
-
 	}
 	public override void EquipUpdate()
 	{
 		base.EquipUpdate();
 
 		if ( Input.Pressed( "attack1" ) )
-		{
-			Log.Info( "attack!" );
+		{ 
 			PrimaryAttack();
+		}
+		if ( Input.Pressed( "attack2" ) )
+		{
+			SecondaryAttack();
 		}
 	}
 

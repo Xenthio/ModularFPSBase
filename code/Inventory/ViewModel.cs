@@ -14,7 +14,7 @@ public partial class ViewModel : Component
 	/// <summary>
 	/// A reference to the <see cref="Equippable"/> we want to listen to.
 	/// </summary>
-	public BaseEquippableComponent Equippable { get; set; }
+	public ItemComponent Equippable { get; set; }
 
 	/// <summary>
 	/// Look up the tree to find the camera.
