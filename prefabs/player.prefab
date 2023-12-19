@@ -6,14 +6,12 @@
     "Enabled": true,
     "Components": [
       {
-        "__type": "CharacterController",
+        "__type": "CameraController",
         "__enabled": true,
-        "Acceleration": 10,
-        "GroundAngle": 45,
-        "Height": 72,
-        "IgnoreLayers": "player",
-        "Radius": 16,
-        "StepHeight": 18
+        "Body": "674bd95d-6ead-4b59-8f83-abbbc8cd5992",
+        "Camera": "668692f0-2c59-4907-97a3-ea936c78214e",
+        "Eye": "8a682514-0045-46b6-a07e-bda091e1857f",
+        "FirstPerson": true
       },
       {
         "__type": "PlayerController",
@@ -35,12 +33,14 @@
         "WalkSpeed": 120
       },
       {
-        "__type": "CameraController",
+        "__type": "CharacterController",
         "__enabled": true,
-        "Body": "674bd95d-6ead-4b59-8f83-abbbc8cd5992",
-        "Camera": "668692f0-2c59-4907-97a3-ea936c78214e",
-        "Eye": "8a682514-0045-46b6-a07e-bda091e1857f",
-        "FirstPerson": true
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 72,
+        "IgnoreLayers": "player",
+        "Radius": 16,
+        "StepHeight": 18
       },
       {
         "__type": "LifeComponent",
