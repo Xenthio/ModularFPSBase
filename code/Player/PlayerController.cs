@@ -16,7 +16,6 @@ public class PlayerController : Component, INetworkSerializable
 	[Property, Group( "Measurements" )] public float DuckOffset { get; set; } = 40.0f;
 
 
-
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject PhysicsShadow { get; set; }
