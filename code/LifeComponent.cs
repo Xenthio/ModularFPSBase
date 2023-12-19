@@ -14,7 +14,7 @@ public class LifeComponent : Component
 	[Property] public float Health { get; set; } = 100.0f;
 	
 	/// <summary>
-	/// How much Armour Points this object has, just for demo purposes remove if you dont need this
+	/// How much Armour Points this object has, just for demo purposes remove if you don't need this
 	/// </summary>
 	[Property] public float Armour { get; set; } = 35.0f;
 	
@@ -31,19 +31,19 @@ public class LifeComponent : Component
 
 	public void TakeDamage( DamageInfo info )
 	{
-		Health -= info.Damage;
+		Health = MathF.Max(Health - info.Damage, 0);
 		if (LifeState == LifeState.Alive && Health <= 0) Kill();
 		if (GameObject.Components.TryGet<Rigidbody>(out var rigidbody))
 		{
 			rigidbody.ApplyImpulseAt( info.Position, info.Force );
 		}
-		OnTakeDamage(info);
+		if ( OnTakeDamage != null) OnTakeDamage( info);
 	}
 
 	public void Kill()
 	{
 		LifeState = LifeState.Dead;
-		OnKilled();
+		if ( OnKilled != null ) OnKilled();
 	}
 }
 
@@ -57,13 +57,24 @@ public enum LifeState
 
 public struct DamageInfo
 {
+	public DamageInfo()
+	{
+	}
+
 	public float Damage { get; set; }
-	public ITagSet Tags { get; set; }
+	public ITagSet Tags { get; set; } = new TagSet();
 	public int Bone { get; set; }
 	public Vector3 Position { get; set; }
 	public Vector3 Force { get; set; }
 	public GameObject Weapon { get; set; }
 	public GameObject Attacker { get; set; }
+
+	public static DamageInfo Generic( float damage )
+	{
+		var info = new DamageInfo();
+		info.Damage = damage; 
+		return info;
+	}
 	public static DamageInfo FromBullet(Vector3 position, Vector3 force, float damage)
 	{
 		var info = new DamageInfo();
