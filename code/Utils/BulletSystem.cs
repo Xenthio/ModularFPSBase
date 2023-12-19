@@ -1,9 +1,4 @@
-﻿using Sandbox;
-using System;
-using System.Diagnostics;
-using System.Linq;
-
-namespace FPSKit;
+﻿namespace FPSKit;
 public struct BulletInfo
 {
 	public BulletInfo()
@@ -51,7 +46,7 @@ public partial class Bullet
 				//tr.Surface.DoBulletImpact( tr );
 				var damage = info.Damage;
 
-				if ( tr.Hitbox.Tags.Has("head") )
+				if ( tr.Hitbox.Tags.Has( "head" ) )
 				{
 					damage *= info.HeadshotMultiplier;
 				}
@@ -62,10 +57,10 @@ public partial class Bullet
 					.WithAttacker( info.Owner )
 					.WithTag( "bullet" );
 
-				if (tr.GameObject.Components.TryGet<LifeComponent>(out var life))
+				if ( tr.GameObject.Components.TryGet<LifeComponent>( out var life ) )
 				{
 					life.TakeDamage( dmgInfo );
-				} 
+				}
 
 				if ( info.OnDealDamage != null ) info.OnDealDamage( dmgInfo );
 				if ( info.OnBulletHit != null ) info.OnBulletHit( tr );

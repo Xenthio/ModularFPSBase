@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class RotatePhysics : Component
 {
 	[Property] public float RotateAmount { get; set; } = 0.2f;
@@ -11,9 +9,9 @@ public sealed class RotatePhysics : Component
 	}
 	protected override void OnFixedUpdate()
 	{
-		base.OnFixedUpdate(); 
+		base.OnFixedUpdate();
 		var rigidbody = GameObject.Components.Get<Rigidbody>();
-		
+
 		trn = trn.RotateAround( trn.Position, Rotation.FromYaw( RotateAmount * 4 ) );
 		rigidbody.PhysicsBody.Move( trn, 1f * Time.Delta );
 		rigidbody.PhysicsBody.Mass = 5000;

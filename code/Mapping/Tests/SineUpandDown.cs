@@ -1,7 +1,5 @@
-using Sandbox;
-
 public sealed class SineUpandDown : Component
-{ 
+{
 	Transform trn;
 	Vector3 InitialPosition;
 	[Property] public int Strength { get; set; } = 128;

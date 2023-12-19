@@ -1,6 +1,3 @@
-using Sandbox;
-
-
 namespace FPSKit;
 
 [Title( "Spawnpoint" )]
@@ -11,7 +8,7 @@ public sealed class Spawnpoint : Component
 	protected override void OnStart()
 	{
 		base.OnStart();
-		if (GameObject.Components.TryGet<ModelRenderer>(out var mdl ) )
+		if ( GameObject.Components.TryGet<ModelRenderer>( out var mdl ) )
 		{
 
 			mdl.Destroy();

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FPSKit;
+﻿namespace FPSKit;
 
 /// <summary>
 /// A weapon's viewmodel. It's responsibility is to listen to events from a weapon.

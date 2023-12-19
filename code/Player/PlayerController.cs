@@ -1,9 +1,4 @@
-﻿using Sandbox;
-using Sandbox.Citizen;
-using System.Diagnostics.Contracts;
-using System.Drawing;
-using System.Net.NetworkInformation;
-using System.Runtime;
+﻿using Sandbox.Citizen;
 namespace FPSKit;
 
 public class PlayerController : Component, INetworkSerializable
@@ -44,7 +39,7 @@ public class PlayerController : Component, INetworkSerializable
 		if ( IsProxy )
 			return;
 
- 
+
 	}
 	protected override void OnUpdate()
 	{
@@ -70,7 +65,7 @@ public class PlayerController : Component, INetworkSerializable
 		// rotate body to look angles
 		if ( Body is not null )
 		{
-			var targetAngle = Rotation.FromYaw( Eye.Transform.Rotation.Yaw());
+			var targetAngle = Rotation.FromYaw( Eye.Transform.Rotation.Yaw() );
 
 			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
 
@@ -78,12 +73,12 @@ public class PlayerController : Component, INetworkSerializable
 			{
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 4.0f );
 			}
-		} 
+		}
 
 		if ( AnimationHelper is not null )
 		{
 			AnimationHelper.WithVelocity( cc.Velocity );
-			AnimationHelper.WithWishVelocity( WishVelocity ); 
+			AnimationHelper.WithWishVelocity( WishVelocity );
 			AnimationHelper.IsGrounded = cc.IsOnGround;
 			AnimationHelper.FootShuffle = rotateDifference;
 			AnimationHelper.WithLook( Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
@@ -108,17 +103,17 @@ public class PlayerController : Component, INetworkSerializable
 		var cc = GameObject.Components.Get<CharacterController>();
 
 		//Log.Info( BaseVelocity.z );
-		if ( BaseVelocity.z > 100 ) 
-		{ 
+		if ( BaseVelocity.z > 100 )
+		{
 			cc.Punch( Vector3.Up * BaseVelocity.z );
-			cc.IsOnGround = false; 
+			cc.IsOnGround = false;
 		}
 		CheckDuck();
 
 		if ( true ) // Not swimming or on ladder
 		{
 			cc.Velocity -= (Gravity * 0.5f) * Time.Delta;
-			cc.Velocity += new Vector3( 0, 0, BaseVelocity.z ) ;
+			cc.Velocity += new Vector3( 0, 0, BaseVelocity.z );
 
 			BaseVelocity = BaseVelocity.WithZ( 0 );
 		}
@@ -167,7 +162,7 @@ public class PlayerController : Component, INetworkSerializable
 
 
 			if ( wishspeed.Length > AirControl )
-				wishspeed = wishspeed.ClampLength(AirControl); 
+				wishspeed = wishspeed.ClampLength( AirControl );
 			cc.Accelerate( wishspeed );
 			//cc.ApplyFriction( 0.1f );
 		}
@@ -184,7 +179,7 @@ public class PlayerController : Component, INetworkSerializable
 		}
 
 
-	} 
+	}
 
 	void PlayerShadowUpdate()
 	{
@@ -220,7 +215,7 @@ public class PlayerController : Component, INetworkSerializable
 		if ( _physetup ) return;
 		_physetup = true;
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
-		ps.PhysicsBody.SpeculativeContactEnabled = false; 
+		ps.PhysicsBody.SpeculativeContactEnabled = false;
 		ps.PhysicsBody.Mass = 70;
 		ps.PhysicsBody.LinearDamping = 0;
 		if ( ps.PhysicsBody.Surface == null )
@@ -244,7 +239,7 @@ public class PlayerController : Component, INetworkSerializable
 		var cc = GameObject.Components.Get<CharacterController>();
 
 		var trdown = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Down ).WithoutTags( cc.IgnoreLayers ).Run();
-		
+
 		var tr = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position ).WithoutTags( cc.IgnoreLayers ).Run();
 
 		var body = trdown.Body;
@@ -255,7 +250,7 @@ public class PlayerController : Component, INetworkSerializable
 
 		//Log.Info( $"{PreviouslyOnGround} {cc.IsOnGround}" );
 		// Do transfer from jumping or moving off something moving
-		if ((PreviouslyOnGround && !trdown.Hit) || (PreviouslyPushed && !tr.Hit))
+		if ( (PreviouslyOnGround && !trdown.Hit) || (PreviouslyPushed && !tr.Hit) )
 		{
 			BaseVelocity = Vector3.Zero;
 			ps.PhysicsBody.Velocity = Vector3.Zero;
@@ -281,18 +276,18 @@ public class PlayerController : Component, INetworkSerializable
 			ps.PhysicsBody.Velocity = Vector3.Zero;
 			if ( cc.IsOnGround ) BaseVelocity = Vector3.Zero;
 			return;
-		} 
+		}
 
 
-		if (tr.Hit)
+		if ( tr.Hit )
 		{
 			vel.z = MathF.Max( 0, vel.z );
-			GameObject.Transform.Position += vel * Time.Delta; 
+			GameObject.Transform.Position += vel * Time.Delta;
 		}
 		else
-		{ 
+		{
 			if ( cc.IsOnGround ) BaseVelocity = vel;
-		} 
+		}
 
 
 		//Log.Info( vel );
@@ -305,7 +300,7 @@ public class PlayerController : Component, INetworkSerializable
 		var cc = GameObject.Components.Get<CharacterController>();
 
 		var uncrouchedBbox = new BBox( new Vector3( 0f - cc.Radius, 0f - cc.Radius, 0f ), new Vector3( cc.Radius, cc.Radius, BodyHeight ) );
-		IsDucking = Input.Down( "Duck" ) || IsDucking && Scene.PhysicsWorld.Trace.Box( uncrouchedBbox, GameObject.Transform.Position, GameObject.Transform.Position).WithoutTags(cc.IgnoreLayers).Run().Hit;
+		IsDucking = Input.Down( "Duck" ) || IsDucking && Scene.PhysicsWorld.Trace.Box( uncrouchedBbox, GameObject.Transform.Position, GameObject.Transform.Position ).WithoutTags( cc.IgnoreLayers ).Run().Hit;
 
 		if ( IsDucking )
 		{
@@ -316,11 +311,11 @@ public class PlayerController : Component, INetworkSerializable
 			_duckAmount = _duckAmount.LerpTo( 0, 8 * Time.Delta );
 		}
 		duckDelta -= _duckAmount;
-		
+
 		cc.Height = BodyHeight - _duckAmount;
 		if ( !cc.IsOnGround )
 		{
-			cc.GameObject.Transform.Position += new Vector3( 0, 0, duckDelta * -1);
+			cc.GameObject.Transform.Position += new Vector3( 0, 0, duckDelta * -1 );
 		}
 	}
 	public Vector3 BuildWishVelocity()
@@ -349,12 +344,12 @@ public class PlayerController : Component, INetworkSerializable
 	public void Write( ref ByteStream stream )
 	{
 		stream.Write( IsRunning );
-		stream.Write( IsDucking ); 
+		stream.Write( IsDucking );
 	}
 
 	public void Read( ByteStream stream )
 	{
 		IsRunning = stream.Read<bool>();
-		IsDucking = stream.Read<bool>(); 
+		IsDucking = stream.Read<bool>();
 	}
 }

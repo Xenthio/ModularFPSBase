@@ -1,12 +1,4 @@
-﻿using Sandbox.Citizen;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FPSKit;
+﻿namespace FPSKit;
 
 public class CameraController : Component
 {
@@ -44,7 +36,7 @@ public class CameraController : Component
 				cam.Transform.Rotation = Eye.Transform.Rotation;
 			}
 
-			foreach (var i in GameObject.Components.GetAll<ModelRenderer>())
+			foreach ( var i in GameObject.Components.GetAll<ModelRenderer>() )
 			{
 				i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			}
@@ -57,11 +49,11 @@ public class CameraController : Component
 	}
 	public void Write( ref ByteStream stream )
 	{
-		stream.Write( EyeAngles ); 
+		stream.Write( EyeAngles );
 	}
 
 	public void Read( ByteStream stream )
 	{
-		EyeAngles = stream.Read<Angles>(); 
+		EyeAngles = stream.Read<Angles>();
 	}
 }

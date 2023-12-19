@@ -1,5 +1,3 @@
-using Sandbox; 
-
 public sealed class bridgecreatorlol : Component
 {
 	GameObject PreviouslyCreatedGameObject;
@@ -10,13 +8,13 @@ public sealed class bridgecreatorlol : Component
 	bool updated = false;
 	protected override void OnStart()
 	{
-		if (updated) return;
+		if ( updated ) return;
 		updated = true;
 		base.OnStart();
-		PreviouslyCreatedGameObject = null; 
-		 
+		PreviouslyCreatedGameObject = null;
 
-		for (int i = 1; i <= PlankCount; i++)
+
+		for ( int i = 1; i <= PlankCount; i++ )
 		{
 			PreviouslyCreatedGameObject = CreateCopy( i );
 		}
@@ -38,10 +36,10 @@ public sealed class bridgecreatorlol : Component
 		}
 		copy.Transform.Rotation = Transform.Rotation;
 		copy.Transform.Position = Transform.Position;
-		copy.Transform.Scale = new Vector3(1.4f,1,1);
+		copy.Transform.Scale = new Vector3( 1.4f, 1, 1 );
 		return copy;
 	}
-	GameObject CreateCopy(int i)
+	GameObject CreateCopy( int i )
 	{
 
 		var copy = Duplicate();
@@ -49,7 +47,7 @@ public sealed class bridgecreatorlol : Component
 		copy.Parent = GameObject;
 		copy.Transform.Position = Transform.Position + Transform.Rotation.Right * (Slack * i);
 
-	 
+
 		var joint2 = copy.Components.Create<HingeJoint>();
 		joint2.EnableCollision = false;
 		joint2.MaxAngle = 1;
@@ -58,14 +56,14 @@ public sealed class bridgecreatorlol : Component
 		joint2.BreakForce = 100;
 		joint2.Body = PreviouslyCreatedGameObject;
 
-		if ( i == 1 || i == PlankCount)
+		if ( i == 1 || i == PlankCount )
 		{
 			var joint3 = copy.Components.Create<HingeJoint>();
 			joint3.MaxAngle = 1;
 			joint3.Friction = 100000;
-			joint3.EnableCollision = false; 
+			joint3.EnableCollision = false;
 		}
-		 
+
 		copy.Transform.Position = Transform.Position + Transform.Rotation.Right * (Spacing * i);
 		return copy;
 	}

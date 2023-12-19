@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FPSKit;
+﻿namespace FPSKit;
 
 public class FallDamageComponent : Component
 {
@@ -20,7 +14,7 @@ public class FallDamageComponent : Component
 	float PreviousZVelocity = 0;
 	protected override void OnFixedUpdate()
 	{
-		base.OnFixedUpdate(); 
+		base.OnFixedUpdate();
 		var FallSpeed = -PreviousZVelocity;
 		if ( FallSpeed > (SafeFallSpeed * GameObject.Transform.Scale.z) && CharacterController.IsOnGround )
 		{

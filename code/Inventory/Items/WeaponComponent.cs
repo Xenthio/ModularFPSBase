@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FPSKit;
+﻿namespace FPSKit;
 
 public class WeaponComponent : CarriableComponent
 {
@@ -17,7 +11,7 @@ public class WeaponComponent : CarriableComponent
 		base.CarriableUpdate();
 
 		if ( Input.Pressed( "attack1" ) )
-		{ 
+		{
 			PrimaryAttack();
 		}
 		if ( Input.Pressed( "attack2" ) )
@@ -31,7 +25,7 @@ public class WeaponComponent : CarriableComponent
 
 	}
 
-	public virtual void SecondaryAttack() 
+	public virtual void SecondaryAttack()
 	{
 
 	}

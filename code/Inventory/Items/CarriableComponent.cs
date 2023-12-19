@@ -1,9 +1,4 @@
 ﻿using Sandbox.Citizen;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FPSKit;
 
@@ -15,7 +10,7 @@ public class CarriableComponent : Component
 	{
 
 	}
-	public virtual void CarriableUpdate() 
+	public virtual void CarriableUpdate()
 	{
 
 	}

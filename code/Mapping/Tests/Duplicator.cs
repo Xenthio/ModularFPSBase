@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class Duplicator : Component
 {
 	[Property] public int MaxDuplicates { get; set; } = 20;
@@ -15,8 +13,8 @@ public sealed class Duplicator : Component
 	}
 	protected override void OnFixedUpdate()
 	{
-		if (TimeSinceLastDuplicated >= SecondsPerDuplicate && dupes <= MaxDuplicates)
-		{ 
+		if ( TimeSinceLastDuplicated >= SecondsPerDuplicate && dupes <= MaxDuplicates )
+		{
 			dupes++;
 			TimeSinceLastDuplicated = 0;
 			Duplicate();
@@ -35,7 +33,7 @@ public sealed class Duplicator : Component
 		copy.Transform.Rotation = Transform.Rotation;
 		copy.Transform.Position = Transform.Position;
 		copy.Transform.Scale = new Vector3( 1.0f, 1, 1 );
-		copy.Components.Get<Rigidbody>(true).Enabled = true;
+		copy.Components.Get<Rigidbody>( true ).Enabled = true;
 		copy.Components.Get<ModelCollider>( true ).Enabled = true;
 		return copy;
 	}
