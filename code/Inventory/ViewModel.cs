@@ -12,9 +12,9 @@ namespace FPSKit;
 public partial class ViewModel : Component
 {
 	/// <summary>
-	/// A reference to the <see cref="Equippable"/> we want to listen to.
+	/// A reference to the <see cref="Carriable"/> we want to listen to.
 	/// </summary>
-	public ItemComponent Equippable { get; set; }
+	public CarriableComponent Carriable { get; set; }
 
 	/// <summary>
 	/// Look up the tree to find the camera.

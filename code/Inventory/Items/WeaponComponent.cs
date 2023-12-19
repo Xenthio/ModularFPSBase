@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FPSKit;
 
-public class WeaponComponent : ItemComponent
+public class WeaponComponent : CarriableComponent
 {
 	public override void FixedEquipUpdate()
 	{
