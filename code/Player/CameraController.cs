@@ -1,6 +1,6 @@
 ﻿namespace FPSKit;
 
-public class CameraController : Component
+public class CameraController : Component, INetworkSerializable
 {
 	[Property, Group( "Settings" )] public bool FirstPerson { get; set; } = true;
 
@@ -36,15 +36,21 @@ public class CameraController : Component
 				cam.Transform.Rotation = Eye.Transform.Rotation;
 			}
 
-			foreach ( var i in GameObject.Components.GetAll<ModelRenderer>() )
-			{
-				i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
-			}
+
 			//var mdl = Body.Components.Get<SkinnedModelRenderer>();
 
 			//mdl.RenderType = FirstPerson && !mdl.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			//mdl.SceneModel.Flags.IsOpaque = !(FirstPerson && !mdl.IsProxy);
 			//mdl.Tint = FirstPerson && !mdl.IsProxy ? Color.Transparent : Color.White;
+		}
+		else
+		{
+			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
+		}
+
+		foreach ( var i in GameObject.Components.GetAll<ModelRenderer>() )
+		{
+			i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 		}
 	}
 	public void Write( ref ByteStream stream )

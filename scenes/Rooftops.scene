@@ -436,13 +436,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -473,13 +466,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -510,13 +496,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -547,13 +526,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -584,13 +556,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -621,13 +586,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -658,13 +616,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -695,13 +646,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -732,13 +676,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -768,13 +705,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -804,13 +734,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -840,13 +763,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -876,13 +792,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -912,13 +821,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -949,13 +851,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -986,13 +881,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -1023,13 +911,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -1059,13 +940,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -1096,13 +970,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -1133,13 +1000,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -1170,13 +1030,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": false,
-          "LinearDamping": 0
         }
       ]
     },
@@ -1866,7 +1719,6 @@
       "Id": "15122826-d16b-4c63-9205-86b5cb8a3188",
       "Name": "Ball",
       "Position": "356,-504,196",
-      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1963,18 +1815,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "Rigidbody",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0
-        },
-        {
-          "__type": "ModelCollider",
+          "__type": "BoxCollider",
           "__enabled": true,
+          "Center": "0,0,0",
           "IsTrigger": false,
-          "Model": "models/dev/box.vmdl",
-          "Static": true,
+          "Scale": "50,50,50",
+          "Static": false,
           "Surface": null
         }
       ]
