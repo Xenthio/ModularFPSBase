@@ -55,6 +55,13 @@
         "__enabled": true,
         "AnimationHelper": "674bd95d-6ead-4b59-8f83-abbbc8cd5992",
         "Eye": "8a682514-0045-46b6-a07e-bda091e1857f"
+      },
+      {
+        "__type": "FallDamageComponent",
+        "__enabled": true,
+        "LandingSound": "sounds/falldamage.sound",
+        "LethalFallSpeed": 1024,
+        "SafeFallSpeed": 580
       }
     ],
     "Children": [
