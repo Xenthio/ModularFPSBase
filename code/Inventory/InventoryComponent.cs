@@ -37,6 +37,7 @@ public class InventoryComponent : Component
 			ActiveItem.Transform.LocalPosition = Vector3.Zero;
 			ActiveItem.Transform.LocalRotation = Rotation.Identity;
 			activeequippable.FixedCarriableUpdate();
+			// set the viewmodel to the current items viewmodel
 			if ( activeequippable.Viewmodel != null )
 			{
 				ViewmodelModel.Model = activeequippable.Viewmodel;

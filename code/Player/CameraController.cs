@@ -13,7 +13,7 @@ public class CameraController : Component, INetworkSerializable
 	{
 		base.OnUpdate();
 		Camera.Enabled = !IsProxy;
-		ViewmodelCamera.Enabled = !IsProxy;
+		ViewmodelCamera.Enabled = !IsProxy && FirstPerson;
 		if ( !IsProxy )
 		{
 
@@ -52,12 +52,7 @@ public class CameraController : Component, INetworkSerializable
 
 		foreach ( var i in GameObject.Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants ) )
 		{
-			if ( i.GameObject.Components.TryGet<ViewmodelComponent>( out var viewmodel, FindMode.EverythingInSelfAndDescendants ) )
-			{
-				//i.RenderType = ModelRenderer.ShadowRenderType.Off;
-				i.Enabled = FirstPerson && !GameObject.IsProxy;
-			}
-			else
+			if ( i.GameObject.Tags.Has( "viewmodel" ) == false )
 			{
 				i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			}
