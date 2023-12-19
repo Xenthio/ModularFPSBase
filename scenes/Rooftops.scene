@@ -36,6 +36,7 @@
       "Name": "Sun",
       "Position": "0,2304,64",
       "Rotation": "0.08357476,0.262664,-0.2914574,0.9160106",
+      "Tags": "light",
       "Enabled": true,
       "Components": [
         {
@@ -1860,7 +1861,7 @@
           "CreateBoneObjects": false,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -1875,7 +1876,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "Static": false,
           "Surface": null
         },
@@ -1887,7 +1888,8 @@
           "HoldType": "Pistol",
           "Recoil": 1,
           "ShootSound": "sounds/kenney/ui/ui.downvote.sound",
-          "Spread": 0.024
+          "Spread": 0.024,
+          "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
         }
       ],
       "Children": [
@@ -1913,7 +1915,8 @@
   "Description": "",
   "__references": [
     "facepunch.low_wood_fence_beam_1",
-    "facepunch.w_usp",
-    "polyhaven.rustig_koppie_puresky"
+    "polyhaven.rustig_koppie_puresky",
+    "rust.rust_pistol",
+    "rust.v_rust_pistol"
   ]
 }

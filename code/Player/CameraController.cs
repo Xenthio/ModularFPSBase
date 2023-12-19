@@ -6,12 +6,14 @@ public class CameraController : Component, INetworkSerializable
 
 	[Property] public GameObject Eye { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
+	[Property] public CameraComponent ViewmodelCamera { get; set; }
 
 	public Angles EyeAngles;
 	protected override void OnUpdate()
 	{
-		Camera.Enabled = !IsProxy;
 		base.OnUpdate();
+		Camera.Enabled = !IsProxy;
+		ViewmodelCamera.Enabled = !IsProxy;
 		if ( !IsProxy )
 		{
 
@@ -21,20 +23,20 @@ public class CameraController : Component, INetworkSerializable
 			EyeAngles.roll = 0;
 			EyeAngles.pitch = EyeAngles.pitch.Clamp( -89f, 89f );
 
-			var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
-
 			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 
 			if ( FirstPerson )
 			{
-				cam.Transform.Position = Eye.Transform.Position;
-				cam.Transform.Rotation = Eye.Transform.Rotation;
+				Camera.Transform.Position = Eye.Transform.Position;
+				Camera.Transform.Rotation = Eye.Transform.Rotation;
 			}
 			else
 			{
-				cam.Transform.Position = Eye.Transform.Position + Eye.Transform.Rotation.Backward * 200 + Vector3.Up * 0.0f;
-				cam.Transform.Rotation = Eye.Transform.Rotation;
+				Camera.Transform.Position = Eye.Transform.Position + Eye.Transform.Rotation.Backward * 200 + Vector3.Up * 0.0f;
+				Camera.Transform.Rotation = Eye.Transform.Rotation;
 			}
+			ViewmodelCamera.Transform.Position = Camera.Transform.Position;
+			ViewmodelCamera.Transform.Rotation = Camera.Transform.Rotation;
 
 
 			//var mdl = Body.Components.Get<SkinnedModelRenderer>();
@@ -48,9 +50,17 @@ public class CameraController : Component, INetworkSerializable
 			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 		}
 
-		foreach ( var i in GameObject.Components.GetAll<ModelRenderer>() )
+		foreach ( var i in GameObject.Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants ) )
 		{
-			i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+			if ( i.GameObject.Components.TryGet<ViewmodelComponent>( out var viewmodel, FindMode.EverythingInSelfAndDescendants ) )
+			{
+				//i.RenderType = ModelRenderer.ShadowRenderType.Off;
+				i.Enabled = FirstPerson && !GameObject.IsProxy;
+			}
+			else
+			{
+				i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+			}
 		}
 	}
 	public void Write( ref ByteStream stream )

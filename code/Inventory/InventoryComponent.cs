@@ -6,8 +6,11 @@ public class InventoryComponent : Component
 {
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject Body { get; set; }
+	[Property] public GameObject Viewmodel { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 
+
+	public SkinnedModelRenderer ViewmodelModel => Viewmodel.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf );
 	public GameObject ActiveItem;
 	public List<GameObject> Items = new List<GameObject>();
 	protected override void OnUpdate()
@@ -34,6 +37,14 @@ public class InventoryComponent : Component
 			ActiveItem.Transform.LocalPosition = Vector3.Zero;
 			ActiveItem.Transform.LocalRotation = Rotation.Identity;
 			activeequippable.FixedCarriableUpdate();
+			if ( activeequippable.Viewmodel != null )
+			{
+				ViewmodelModel.Model = activeequippable.Viewmodel;
+			}
+			else
+			{
+				ViewmodelModel.Model = null;
+			}
 		}
 
 		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<CarriableComponent>( out var equippableComponent ) )
@@ -51,6 +62,7 @@ public class InventoryComponent : Component
 		if ( AnimationHelper is not null )
 		{
 			AnimationHelper.Target.Set( "b_attack", true );
+			ViewmodelModel.Set( "fire", true );
 		}
 	}
 	public void Add( GameObject item )

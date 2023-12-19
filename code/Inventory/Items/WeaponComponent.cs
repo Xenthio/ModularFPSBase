@@ -20,11 +20,13 @@ public class WeaponComponent : CarriableComponent
 		}
 	}
 
+	[Broadcast]
 	public virtual void PrimaryAttack()
 	{
 
 	}
 
+	[Broadcast]
 	public virtual void SecondaryAttack()
 	{
 
