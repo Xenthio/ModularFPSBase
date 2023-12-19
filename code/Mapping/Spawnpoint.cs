@@ -2,17 +2,13 @@ namespace FPSKit;
 
 [Title( "Spawnpoint" )]
 [Category( "Game" )]
+
 public sealed class Spawnpoint : Component
 {
-	// Editor model doesnt work yet
-	protected override void OnStart()
+	protected override void DrawGizmos()
 	{
-		base.OnStart();
-		if ( GameObject.Components.TryGet<ModelRenderer>( out var mdl ) )
-		{
-
-			mdl.Destroy();
-		}
+		base.DrawGizmos();
+		Gizmo.Draw.Model( "models/editor/playerstart.vmdl" );
 	}
 	protected override void OnUpdate()
 	{
