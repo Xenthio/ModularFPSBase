@@ -44,7 +44,8 @@
         "ladder": "Ignore",
         "water": "Trigger",
         "player": "Collide",
-        "playershadow": "Collide"
+        "playershadow": "Collide",
+        "nocolthis": "Collide"
       },
       "Pairs": [
         {
@@ -75,6 +76,11 @@
         {
           "a": "player",
           "b": "playershadow",
+          "r": "Ignore"
+        },
+        {
+          "a": "nocolthis",
+          "b": "nocolthis",
           "r": "Ignore"
         }
       ]
