@@ -67,6 +67,7 @@ public class InventoryComponent : Component
 		{
 			skinnedModelRenderer.BoneMergeTarget = Body.Components.Get<SkinnedModelRenderer>();
 		}
+		item.Network.TakeOwnership();
 		Items.Add( item );
 
 		ActiveItem = item;
