@@ -2,25 +2,52 @@
 
 public class GunComponent : WeaponComponent
 {
-	[Property, Group( "Attack" )] public float Damage { get; set; } = 10.0f;
-	[Property, Group( "Attack" )] public float Spread { get; set; } = 0.5f;
-	[Property, Group( "Attack" )] public float Recoil { get; set; } = 1.0f;
-	[Property, Group( "Attack" )] public float Force { get; set; } = 10.0f;
-	[Property, Group( "Attack" )] public SoundEvent ShootSound { get; set; }
+	[Property, Group( "Primary Attack" )] public float PrimaryDamage { get; set; } = 10.0f;
+	[Property, Group( "Primary Attack" )] public float PrimarySpread { get; set; } = 0.024f;
+	[Property, Group( "Primary Attack" )] public float PrimaryRecoil { get; set; } = 1.0f;
+	[Property, Group( "Primary Attack" )] public float PrimaryForce { get; set; } = 10.0f;
+	[Property, Group( "Primary Attack" )] public int PrimaryBulletCount { get; set; } = 1;
+	[Property, Group( "Primary Attack" )] public SoundEvent PrimaryShootSound { get; set; }
+
+
+	[Property, Group( "Secondary Attack" )] public float SecondaryDamage { get; set; } = 10.0f;
+	[Property, Group( "Secondary Attack" )] public float SecondarySpread { get; set; } = 0.024f;
+	[Property, Group( "Secondary Attack" )] public float SecondaryRecoil { get; set; } = 1.0f;
+	[Property, Group( "Secondary Attack" )] public float SecondaryForce { get; set; } = 10.0f;
+	[Property, Group( "Primary Attack" )] public int SecondaryBulletCount { get; set; } = 1;
+	[Property, Group( "Secondary Attack" )] public SoundEvent SecondaryShootSound { get; set; }
 	public override void PrimaryAttack()
 	{
 		Log.Info( "blam!" );
 		var bulletinfo = new BulletInfo()
 		{
-			Damage = Damage,
-			Spread = Spread,
+			Damage = PrimaryDamage,
+			Spread = PrimarySpread,
 			Position = OwnerInventory.Eye.Transform.Position,
 			Direction = OwnerInventory.Eye.Transform.Rotation.Forward,
-			Force = Force,
+			Force = PrimaryForce,
+			Count = PrimaryBulletCount,
 		};
-		Sound.Play( ShootSound, OwnerInventory.Eye.Transform.Position );
+		Sound.Play( PrimaryShootSound, OwnerInventory.Eye.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		TriggerAttack();
 		base.PrimaryAttack();
+	}
+	public override void SecondaryAttack()
+	{
+		Log.Info( "blam!" );
+		var bulletinfo = new BulletInfo()
+		{
+			Damage = SecondaryDamage,
+			Spread = SecondarySpread,
+			Position = OwnerInventory.Eye.Transform.Position,
+			Direction = OwnerInventory.Eye.Transform.Rotation.Forward,
+			Force = SecondaryForce,
+			Count = SecondaryBulletCount,
+		};
+		Sound.Play( SecondaryShootSound, OwnerInventory.Eye.Transform.Position );
+		Bullet.ShootBullet( bulletinfo );
+		TriggerAttack();
+		base.SecondaryAttack();
 	}
 }
