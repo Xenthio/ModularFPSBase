@@ -2030,9 +2030,11 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "SkinnedModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
@@ -2063,6 +2065,14 @@
           "Recoil": 1,
           "ShootSound": "sounds/kenney/ui/ui.downvote.sound",
           "Spread": 0.5
+        }
+      ],
+      "Children": [
+        {
+          "Id": "d1b98f01-43ce-4284-af80-11b52f8f786d",
+          "Name": "hold_R",
+          "Position": "-1.848648,0,3.195877",
+          "Enabled": true
         }
       ]
     }

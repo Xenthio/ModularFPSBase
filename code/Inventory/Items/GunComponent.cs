@@ -2,11 +2,11 @@
 
 public class GunComponent : WeaponComponent
 {
-	[Property] public float Damage { get; set; } = 10.0f;
-	[Property] public float Spread { get; set; } = 0.5f;
-	[Property] public float Recoil { get; set; } = 1.0f;
-	[Property] public float Force { get; set; } = 10.0f;
-	[Property] public SoundEvent ShootSound { get; set; }
+	[Property, Group( "Attack" )] public float Damage { get; set; } = 10.0f;
+	[Property, Group( "Attack" )] public float Spread { get; set; } = 0.5f;
+	[Property, Group( "Attack" )] public float Recoil { get; set; } = 1.0f;
+	[Property, Group( "Attack" )] public float Force { get; set; } = 10.0f;
+	[Property, Group( "Attack" )] public SoundEvent ShootSound { get; set; }
 	public override void PrimaryAttack()
 	{
 		Log.Info( "blam!" );
@@ -20,6 +20,7 @@ public class GunComponent : WeaponComponent
 		};
 		Sound.Play( ShootSound, OwnerInventory.Eye.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
+		TriggerAttack();
 		base.PrimaryAttack();
 	}
 }

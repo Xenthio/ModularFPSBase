@@ -3,44 +3,35 @@ namespace FPSKit;
 
 public class PlayerController : Component, INetworkSerializable
 {
-	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
-	[Property] public float WalkSpeed { get; set; } = 120.0f;
-	[Property] public float NormalSpeed { get; set; } = 190.0f;
-	[Property] public float RunSpeed { get; set; } = 320.0f;
-	[Property] public float CrouchSpeed { get; set; } = 80.0f;
+	[Property, Group( "Movement" )] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
+	[Property, Group( "Movement" )] public float WalkSpeed { get; set; } = 120.0f;
+	[Property, Group( "Movement" )] public float NormalSpeed { get; set; } = 190.0f;
+	[Property, Group( "Movement" )] public float RunSpeed { get; set; } = 320.0f;
+	[Property, Group( "Movement" )] public float CrouchSpeed { get; set; } = 80.0f;
+	[Property, Group( "Movement" )] public float AirControl { get; set; } = 30.0f;
+	[Property, Group( "Movement" )] public bool AlwaysRun { get; set; }
+
+	[Property, Group( "Measurements" )] public float BodyHeight { get; set; } = 72.0f;
+	[Property, Group( "Measurements" )] public float EyeHeight { get; set; } = 64.0f;
+	[Property, Group( "Measurements" )] public float DuckOffset { get; set; } = 40.0f;
 
 
-	[Property] public float BodyHeight { get; set; } = 72.0f;
-	[Property] public float EyeHeight { get; set; } = 64.0f;
-
-	[Property] public float DuckOffset { get; set; } = 40.0f;
-
-	[Property] public float AirControl { get; set; } = 30.0f;
-
-	public Vector3 WishVelocity { get; private set; }
 
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject PhysicsShadow { get; set; }
 	[Property] public GameObject PlayerShadow { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
-	[Property] public bool AlwaysRun { get; set; }
 
-	Vector3 BaseVelocity;
+
+	public Vector3 WishVelocity { get; private set; }
+	public Vector3 BaseVelocity;
 
 	public bool IsRunning;
 	public bool IsDucking;
 	public float _duckAmount = 0;
 	public float _duckAmountPerFrame = 0;
-	protected override void OnEnabled()
-	{
-		base.OnEnabled();
 
-		if ( IsProxy )
-			return;
-
-
-	}
 	protected override void OnUpdate()
 	{
 

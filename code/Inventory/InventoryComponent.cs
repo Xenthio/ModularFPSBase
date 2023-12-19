@@ -5,6 +5,7 @@ namespace FPSKit;
 public class InventoryComponent : Component
 {
 	[Property] public GameObject Eye { get; set; }
+	[Property] public GameObject Body { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 
 	public GameObject ActiveItem;
@@ -30,6 +31,8 @@ public class InventoryComponent : Component
 		}
 		if ( ActiveItem != null && ActiveItem.Components.TryGet<CarriableComponent>( out var activeequippable ) )
 		{
+			ActiveItem.Transform.LocalPosition = Vector3.Zero;
+			ActiveItem.Transform.LocalRotation = Rotation.Identity;
 			activeequippable.FixedCarriableUpdate();
 		}
 
@@ -42,16 +45,28 @@ public class InventoryComponent : Component
 			AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.None;
 		}
 	}
+
+	public void TriggerAttack()
+	{
+		if ( AnimationHelper is not null )
+		{
+			AnimationHelper.Target.Set( "b_attack", true );
+		}
+	}
 	public void Add( GameObject item )
 	{
-		item.Parent = GameObject;
+		item.Parent = Body;
 		if ( item.Components.TryGet<CarriableComponent>( out var equippable ) )
 		{
 			equippable.OwnerInventory = this;
 		}
 		if ( item.Components.TryGet<Collider>( out var collider ) ) collider.Enabled = false;
 		if ( item.Components.TryGet<Rigidbody>( out var rigidbody ) ) rigidbody.PhysicsBody.MotionEnabled = false;
-		item.Transform.LocalPosition = Vector3.Zero;
+
+		if ( item.Components.TryGet<SkinnedModelRenderer>( out var skinnedModelRenderer ) )
+		{
+			skinnedModelRenderer.BoneMergeTarget = Body.Components.Get<SkinnedModelRenderer>();
+		}
 		Items.Add( item );
 
 		ActiveItem = item;

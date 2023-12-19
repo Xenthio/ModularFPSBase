@@ -2,10 +2,10 @@
 
 public class CameraController : Component
 {
+	[Property, Group( "Settings" )] public bool FirstPerson { get; set; } = true;
+
 	[Property] public GameObject Eye { get; set; }
-	[Property] public GameObject Body { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
-	[Property] public bool FirstPerson { get; set; } = true;
 
 	public Angles EyeAngles;
 	protected override void OnUpdate()
