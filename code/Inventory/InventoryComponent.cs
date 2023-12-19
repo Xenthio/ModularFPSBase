@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sandbox.Citizen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace FPSKit;
 public class InventoryComponent : Component
 {
 	[Property] public GameObject Eye { get; set; }
+	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 
 	public GameObject ActiveItem;
 	public List<GameObject> Items = new List<GameObject>();
@@ -35,6 +37,15 @@ public class InventoryComponent : Component
 		{
 			activeequippable.FixedEquipUpdate();
 		}
+
+		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<BaseEquippableComponent>(out var equippableComponent))
+		{
+			AnimationHelper.HoldType = equippableComponent.HoldType;
+		}
+		else if ( AnimationHelper is not null )
+		{
+			AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.None;
+		}
 	}
 	public void Add(GameObject item)
 	{
@@ -43,10 +54,9 @@ public class InventoryComponent : Component
 		{
 			equippable.OwnerInventory = this;
 		}
-		if ( item.Components.TryGet<ModelRenderer>( out var model ) )
-		{
-			model.Enabled = false;
-		}
+		if ( item.Components.TryGet<Collider>( out var collider ) ) collider.Enabled = false;
+		if ( item.Components.TryGet<Rigidbody>( out var rigidbody ) ) rigidbody.PhysicsBody.MotionEnabled = false;
+		item.Transform.LocalPosition = Vector3.Zero;
 		Items.Add(item);
 		
 		ActiveItem = item;

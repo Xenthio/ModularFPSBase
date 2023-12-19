@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sandbox.Citizen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace FPSKit;
 
 public class BaseEquippableComponent : Component
 {
+	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	public InventoryComponent OwnerInventory;
 	public virtual void FixedEquipUpdate()
 	{

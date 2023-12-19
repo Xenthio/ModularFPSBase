@@ -2,6 +2,7 @@
 using Sandbox.Citizen;
 using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.Net.NetworkInformation;
 using System.Runtime;
 namespace FPSKit;
 
@@ -28,12 +29,10 @@ public class PlayerController : Component, INetworkSerializable
 	[Property] public GameObject PhysicsShadow { get; set; }
 	[Property] public GameObject PlayerShadow { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
-	[Property] public bool FirstPerson { get; set; }
 	[Property] public bool AlwaysRun { get; set; }
 
 	Vector3 BaseVelocity;
 
-	public Angles EyeAngles;
 	public bool IsRunning;
 	public bool IsDucking;
 	public float _duckAmount = 0;
@@ -45,47 +44,20 @@ public class PlayerController : Component, INetworkSerializable
 		if ( IsProxy )
 			return;
 
-		var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
-		if ( cam is not null )
-		{
-			EyeAngles = Eye.Transform.LocalRotation.Angles();
-			EyeAngles.roll = 0;
-		}
+ 
 	}
 	protected override void OnUpdate()
 	{
 
 		PhysicsShadowReset();
 
-		if (Input.Pressed("View")) FirstPerson = !FirstPerson;
-
 		// Eye input
 		if ( !IsProxy )
 		{
-			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
-			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
-			EyeAngles.roll = 0;
-			EyeAngles.pitch = EyeAngles.pitch.Clamp( -89f, 89f );
-			var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
 
-			//doing all ducking stuff per frame is broken for some reason, so I had to add our own lerp for a every frame updated value
+			// doing all ducking stuff per frame is broken for some reason, so I had to add our own lerp for a every frame updated value
 			_duckAmountPerFrame = _duckAmountPerFrame.LerpTo( IsDucking ? DuckOffset : 0, 8 * Time.Delta );
 			Eye.Transform.LocalPosition = GameObject.Transform.Rotation.Up * (EyeHeight - _duckAmountPerFrame);
-
-			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
-
-			if ( FirstPerson )
-			{
-				cam.Transform.Position = Eye.Transform.Position;
-				cam.Transform.Rotation = Eye.Transform.Rotation;
-			}
-			else
-			{
-				cam.Transform.Position = Eye.Transform.Position + Eye.Transform.Rotation.Backward * 200 + Vector3.Up * 0.0f;
-				cam.Transform.Rotation = Eye.Transform.Rotation;
-			}
-
-
 
 			IsRunning = Input.Down( "Run" ) || AlwaysRun;
 		}
@@ -100,31 +72,18 @@ public class PlayerController : Component, INetworkSerializable
 		{
 			var targetAngle = Rotation.FromYaw( Eye.Transform.Rotation.Yaw());
 
-			//var v = WishVelocity.WithZ( 0 );
-
-			//if ( v.Length > 10.0f )
-			//{
-			//	targetAngle = Rotation.LookAt( v, Vector3.Up );
-			//}
-
 			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
 
 			if ( rotateDifference > 50.0f || cc.Velocity.Length > 10.0f )
 			{
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 4.0f );
 			}
-			var mdl = Body.Components.Get<SkinnedModelRenderer>();
-
-			mdl.RenderType = FirstPerson && !mdl.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
-			//mdl.SceneModel.Flags.IsOpaque = !(FirstPerson && !mdl.IsProxy);
-			//mdl.Tint = FirstPerson && !mdl.IsProxy ? Color.Transparent : Color.White;
-		}
-
+		} 
 
 		if ( AnimationHelper is not null )
 		{
 			AnimationHelper.WithVelocity( cc.Velocity );
-			AnimationHelper.WithWishVelocity( WishVelocity );
+			AnimationHelper.WithWishVelocity( WishVelocity ); 
 			AnimationHelper.IsGrounded = cc.IsOnGround;
 			AnimationHelper.FootShuffle = rotateDifference;
 			AnimationHelper.WithLook( Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
@@ -390,12 +349,12 @@ public class PlayerController : Component, INetworkSerializable
 	public void Write( ref ByteStream stream )
 	{
 		stream.Write( IsRunning );
-		stream.Write( EyeAngles );
+		stream.Write( IsDucking ); 
 	}
 
 	public void Read( ByteStream stream )
 	{
 		IsRunning = stream.Read<bool>();
-		EyeAngles = stream.Read<Angles>();
+		IsDucking = stream.Read<bool>(); 
 	}
 }

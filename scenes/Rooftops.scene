@@ -14,72 +14,6 @@
       "Children": []
     },
     {
-      "Id": "e8e7f92f-957a-4633-8052-d2d9419065d8",
-      "Name": "Camera",
-      "Position": "0,2240,64",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "CameraComponent",
-          "__enabled": true,
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 90,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
-        },
-        {
-          "__type": "Bloom",
-          "__enabled": true,
-          "BloomColor": {
-            "color": [
-              {
-                "c": "1,1,1,1"
-              },
-              {
-                "t": 1,
-                "c": "1,1,1,1"
-              }
-            ],
-            "alpha": []
-          },
-          "BloomCurve": [
-            {},
-            {
-              "x": 0.5307882,
-              "y": 0.24696001,
-              "in": -0.83028805,
-              "out": 0.83028805
-            },
-            {
-              "x": 1,
-              "y": 1
-            }
-          ],
-          "Mode": "Additive",
-          "Strength": 1,
-          "Threshold": 0.5,
-          "ThresholdWidth": 1
-        },
-        {
-          "__type": "Tonemapping",
-          "__enabled": true,
-          "ExposureCompensation": 0,
-          "MaximumExposure": 6,
-          "MinimumExposure": 0.4,
-          "Rate": 1
-        }
-      ]
-    },
-    {
       "Id": "9be169a6-5cf7-4881-9c9d-1f698c019e2d",
       "Name": "Envmap Probe",
       "Position": "-416,0,128",
@@ -2125,6 +2059,7 @@
           "__enabled": true,
           "Damage": 10,
           "Force": 10,
+          "HoldType": "Pistol",
           "Recoil": 1,
           "ShootSound": "sounds/kenney/ui/ui.downvote.sound",
           "Spread": 0.5
