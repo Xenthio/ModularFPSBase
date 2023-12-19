@@ -415,6 +415,7 @@
       "Name": "Cube",
       "Position": "-257.5267,-64,-141.895",
       "Scale": "0.5999999,3.5,3.099999",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -451,6 +452,7 @@
       "Position": "-137.8896,302.2592,-251.7449",
       "Rotation": "-0.9170617,-0,0,0.3987454",
       "Scale": "0.5999999,7.799998,3.099999",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -487,6 +489,7 @@
       "Position": "-193.1865,277.6253,-239.7278",
       "Rotation": "-0.9408827,-0,0,0.3387324",
       "Scale": "0.5999999,7.799998,3.099999",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -523,6 +526,7 @@
       "Position": "256,252.6729,-239.7278",
       "Rotation": "-0.9408827,-0,0,0.3387324",
       "Scale": "0.5999999,7.799998,3.099999",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -559,6 +563,7 @@
       "Position": "356,24.32405,-172.4165",
       "Rotation": "-0.9988476,0,-0,-0.0479941",
       "Scale": "0.6999999,0.26,0.09999915",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -595,6 +600,7 @@
       "Position": "356,12,-170.1531",
       "Rotation": "0.9915559,0,0,0.1296796",
       "Scale": "0.7,0.26,0.09999915",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -631,6 +637,7 @@
       "Position": "356,37.56311,-172.6501",
       "Rotation": "0.02704935,0,0,0.9996341",
       "Scale": "0.6999999,0.3,0.09999915",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -667,6 +674,7 @@
       "Position": "356,51.65348,-170.1993",
       "Rotation": "0.1443565,0,0,0.9895257",
       "Scale": "0.6999999,0.3,0.09999915",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -703,6 +711,7 @@
       "Position": "356,65.34641,-165.1595",
       "Rotation": "0.2113256,0,0,0.9774157",
       "Scale": "0.6999999,0.3,0.09999915",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -738,6 +747,7 @@
       "Name": "Cube (29)",
       "Position": "365.2079,88,-254.7001",
       "Scale": "10.1,6.400003,2.2",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -773,6 +783,7 @@
       "Name": "Cube (41)",
       "Position": "365.6079,-200,-248",
       "Scale": "10.6,5.200002,0.5999999",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -808,6 +819,7 @@
       "Name": "Cube (31)",
       "Position": "-337.2825,357.2058,-224",
       "Scale": "12,12,1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -843,6 +855,7 @@
       "Name": "Cube (32)",
       "Position": "41.58489,128,-224",
       "Scale": "4.199993,2.099996,1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -878,6 +891,7 @@
       "Name": "Cube (36)",
       "Position": "356,-336,-192",
       "Scale": "10,0.24,2",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -914,6 +928,7 @@
       "Position": "114.5,-128,-192",
       "Rotation": "-0.00000004214378,0.000000000003128164,-0.707107,0.7071065",
       "Scale": "8.399998,0.23,2",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -950,6 +965,7 @@
       "Position": "600,-192,-192",
       "Rotation": "-0.00000004214378,0.000000000003128164,-0.707107,0.7071065",
       "Scale": "5.599999,0.24,2",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -986,6 +1002,7 @@
       "Position": "112,280,-192",
       "Rotation": "-0.00000004214378,0.000000000003128164,-0.707107,0.7071065",
       "Scale": "4,0.24,1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1021,6 +1038,7 @@
       "Name": "Cube (30)",
       "Position": "366.608,520.7932,-80.67646",
       "Scale": "8.299996,6.699998,1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1057,6 +1075,7 @@
       "Position": "-91.63609,-69.68755,84.59634",
       "Rotation": "0.3048648,0,0,0.9523956",
       "Scale": "1.5,5,0.1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1093,6 +1112,7 @@
       "Position": "-91.63609,-69.68755,374.9873",
       "Rotation": "0.3048648,0,0,0.9523956",
       "Scale": "1.5,5,0.1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1129,6 +1149,7 @@
       "Position": "-91.63609,-203.3073,236.5563",
       "Rotation": "-0.3007059,-0,0,0.9537169",
       "Scale": "1.5,5,0.1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1709,6 +1730,7 @@
       "Id": "f13f76a0-8f18-4dad-bad8-ec2cb727c8be",
       "Name": "Cube (8)",
       "Position": "-81.41089,-167.0919,-168.7332",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1742,6 +1764,7 @@
       "Id": "47b0dbf2-a5e9-4ab5-9ebf-b43cdd99c298",
       "Name": "Cube (10)",
       "Position": "-85.14751,-241.5907,320.9742",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1775,6 +1798,7 @@
       "Id": "b4fae094-4beb-4116-867d-b2838303b40c",
       "Name": "Cube (34)",
       "Position": "-85.14751,-23.89809,468.5278",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1808,6 +1832,7 @@
       "Id": "278982e5-b488-4ded-af92-99c3a5748ad8",
       "Name": "Cube (35)",
       "Position": "-85.14751,-23.89809,129.1344",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1841,6 +1866,7 @@
       "Id": "15122826-d16b-4c63-9205-86b5cb8a3188",
       "Name": "Ball",
       "Position": "356,-504,196",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
@@ -1923,6 +1949,7 @@
       "Name": "Cube",
       "Position": "-104,-448,-172.9",
       "Scale": "2.56,2.56,1",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
