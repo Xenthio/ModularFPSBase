@@ -71,15 +71,19 @@ public class InventoryComponent : Component
 	public void CreateParticle( ParticleSystem prt )
 	{
 		Transform transform = new Transform();
+		var mflash = LegacyParticle.Create( prt?.Name, transform.Position, transform.Rotation );
 		if ( !IsProxy && ViewmodelCamera.Enabled )
 		{
 			transform = ViewmodelModel.GetAttachment( "muzzle" ).Value;
+			mflash.GameObject.Tags.Add( "viewmodel" );
+			mflash.LegacyParticleSystem.SceneObject.Tags.Add( "viewmodel" );
 		}
 		else
 		{
 			transform = ActiveItemModel.GetAttachment( "muzzle" ).Value;
 		}
-		var mflash = LegacyParticle.Create( prt?.Name, transform.Position, transform.Rotation );
+		mflash.Position = transform.Position;
+		mflash.Rotation = transform.Rotation;
 		mflash.SetVector( 1, Vector3.Zero );
 	}
 	public void Add( GameObject item )
