@@ -12,8 +12,8 @@ public class CameraController : Component, INetworkSerializable
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-		Camera.Enabled = !IsProxy;
-		ViewmodelCamera.Enabled = !IsProxy && FirstPerson;
+		Camera.Enabled = !IsProxy && GameObject.Network.IsOwner;
+		ViewmodelCamera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner;
 		if ( !IsProxy )
 		{
 
@@ -54,7 +54,7 @@ public class CameraController : Component, INetworkSerializable
 		{
 			if ( i.GameObject.Tags.Has( "viewmodel" ) == false )
 			{
-				i.RenderType = FirstPerson && !GameObject.IsProxy ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+				i.RenderType = FirstPerson && !GameObject.IsProxy && GameObject.Network.IsOwner ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			}
 		}
 	}

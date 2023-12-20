@@ -2043,6 +2043,14 @@
           "Enabled": true
         }
       ]
+    },
+    {
+      "Id": "2a48eb95-0264-4d4b-b005-3443463f7f8a",
+      "Name": "player",
+      "Position": "344.3637,166.8841,-128",
+      "Tags": "player",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
     }
   ],
   "SceneProperties": {
