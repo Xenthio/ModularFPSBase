@@ -279,6 +279,7 @@
       "Name": "Cube (37)",
       "Position": "229.2879,-156,-216",
       "Rotation": "0.0000000285511,-0.000000000000000451428,0.4790079,-0.8778116",
+      "Tags": "solid",
       "Networked": true,
       "Enabled": true,
       "Components": [
@@ -1940,6 +1941,26 @@
       "Name": "Decal",
       "Position": "352,338.4066,-144",
       "Rotation": "0.707107,0,0,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DecalRenderer",
+          "__enabled": true,
+          "CutoffAngle": 60,
+          "CutoffAngleSoftness": 5,
+          "Material": "materials/decals/default.vmat",
+          "Mod2XBlending": false,
+          "Size": "32,32,32",
+          "TintColor": "1,1,1,1",
+          "TriPlanar": false
+        }
+      ]
+    },
+    {
+      "Id": "ceffe191-2f0d-4ac0-bc35-2608aab7c5d8",
+      "Name": "Decal (1)",
+      "Position": "160.3348,338.4066,-144",
+      "Rotation": "0.4783136,-0.5428435,0.4748759,0.5010291",
       "Enabled": true,
       "Components": [
         {

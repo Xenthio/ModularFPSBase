@@ -39,14 +39,15 @@ public partial class Bullet
 				.UseHitboxes()
 				//.Ignore( info.Owner )
 				//.Ignore( info.IgnoreEntity ) 
-				.WithoutTags( "trigger", "skybox", "playerclip" )
+
+				//.WithoutTags( "trigger", "skybox", "playerclip" )
 				.Run();
 
 			Gizmo.Draw.Line( tr.StartPosition, tr.EndPosition );
 			Gizmo.Draw.SolidSphere( tr.EndPosition, 2 );
 			if ( tr.Hit )
 			{
-				//tr.Surface.DoBulletImpact( tr );
+				tr.Surface.DoBulletImpact( tr );
 				var damage = info.Damage;
 
 				if ( tr.Hitbox?.Tags.Has( "head" ) ?? false )
