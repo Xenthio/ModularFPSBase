@@ -79,7 +79,15 @@ public static class SurfaceExtensions
 	{
 		var b = tr.Scene.CreateObject();
 
-		b.Parent = tr.Body.GetGameObject();
+		//if ( tr.Body != null && tr.Body.BodyType == PhysicsBodyType.Dynamic )
+		//{
+		// TODO: parent to bone somehow
+		//b.Parent = tr.Body.GetGameObject(); 
+		//}
+
+		var localpos = Vector3.Zero;
+
+		b.Parent = tr.GameObject;
 		var dc = b.Components.GetOrCreate<DecalRenderer>();
 
 		var decentry = Game.Random.FromList<DecalDefinition.DecalEntry>( decal.Decals );
@@ -94,10 +102,31 @@ public static class SurfaceExtensions
 
 		var rot1 = tr.Normal.EulerAngles.ToRotation();
 		rot1 = rot1.RotateAroundAxis( Vector3.Forward, decentry.Rotation.GetValue() );
-		var rotation = Rotation.LookAt( rot1.Down, rot1.Forward );
 
-		b.Transform.Rotation = rotation;//.RotateAroundAxis( tr.Normal, decentry.Rotation.GetValue() );
-		b.Transform.Position = tr.EndPosition + (tr.Normal * (depth / 2));
+		var finalrotation = Rotation.LookAt( rot1.Down, rot1.Forward );
+		var finalposition = tr.HitPosition + (tr.Normal * (depth / 2));
+
+
+		if ( tr.GameObject == null )
+		{
+			b.Transform.Scale = Vector3.One;
+			b.Transform.Rotation = finalrotation;
+			b.Transform.Position = finalposition;
+		}
+		else
+		{
+			//HACKHACK: Workaround for bullshit of the year: scales and local positions being absolutely fucked
+			localpos = b.Transform.World.PointToLocal( finalposition );
+
+			b.Transform.Rotation = finalrotation;
+
+			var scale = tr.GameObject.Transform.Scale;
+			var locscale = Vector3.One / scale;
+
+			b.Transform.LocalScale = locscale;
+			b.Transform.LocalPosition = (localpos * 1);
+		}
+
 
 	}
 }
