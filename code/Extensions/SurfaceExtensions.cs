@@ -69,30 +69,11 @@ public static class SurfaceExtensions
 
 			if ( !string.IsNullOrWhiteSpace( particleName ) )
 			{
-				var ps = CreateParticle( particleName, tr );
-				var cp1 = new ParticleControlPoint() { Value = ParticleControlPoint.ControlPointValueInput.Vector3, VectorValue = tr.Normal };
-				var cp2 = new ParticleControlPoint() { Value = ParticleControlPoint.ControlPointValueInput.Vector3, VectorValue = tr.Direction };
-				ps.ControlPoints.Add( cp1 );
-				ps.ControlPoints.Add( cp2 );
-
+				var ps = LegacyParticle.Create( particleName, tr.HitPosition, tr.Normal.EulerAngles.ToRotation() );
+				ps.SetVector( 1, tr.Normal );
+				ps.SetVector( 2, tr.Direction );
 			}
 		}
-	}
-	static LegacyParticleSystem CreateParticle( string name, SceneTraceResult tr )
-	{
-		var b = GameManager.ActiveScene.Scene.CreateObject();
-		b.Transform.Position = tr.HitPosition;
-		b.Transform.Rotation = tr.Normal.EulerAngles.ToRotation();
-		var ps = b.Components.GetOrCreate<LegacyParticleSystem>();
-		ps.ControlPoints = new List<ParticleControlPoint>();
-
-		ps.Particles = ParticleSystem.Load( name );
-
-
-		var cp0 = new ParticleControlPoint() { Value = ParticleControlPoint.ControlPointValueInput.Vector3, VectorValue = tr.HitPosition };
-		ps.ControlPoints.Append( cp0 );
-
-		return ps;
 	}
 	static void DropDecal( DecalDefinition decal, SceneTraceResult tr )
 	{

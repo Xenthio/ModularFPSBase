@@ -8,6 +8,8 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Primary Attack" )] public float PrimaryForce { get; set; } = 10.0f;
 	[Property, Group( "Primary Attack" )] public int PrimaryBulletCount { get; set; } = 1;
 	[Property, Group( "Primary Attack" )] public SoundEvent PrimaryShootSound { get; set; }
+	[Property, Group( "Primary Attack" )] public ParticleSystem PrimaryMuzzleflash { get; set; }
+
 
 
 	[Property, Group( "Secondary Attack" )] public float SecondaryDamage { get; set; } = 10.0f;
@@ -16,6 +18,7 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Secondary Attack" )] public float SecondaryForce { get; set; } = 10.0f;
 	[Property, Group( "Primary Attack" )] public int SecondaryBulletCount { get; set; } = 1;
 	[Property, Group( "Secondary Attack" )] public SoundEvent SecondaryShootSound { get; set; }
+	[Property, Group( "Secondary Attack" )] public ParticleSystem SecondaryMuzzleflash { get; set; }
 	public override void PrimaryAttack()
 	{
 		Log.Info( "blam!" );
@@ -30,6 +33,7 @@ public class GunComponent : WeaponComponent
 		};
 		Sound.Play( PrimaryShootSound, OwnerInventory.Eye.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
+		CreateParticle( PrimaryMuzzleflash );
 		TriggerAttack();
 		base.PrimaryAttack();
 	}
@@ -47,6 +51,7 @@ public class GunComponent : WeaponComponent
 		};
 		Sound.Play( SecondaryShootSound, OwnerInventory.Eye.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
+		CreateParticle( SecondaryMuzzleflash );
 		TriggerAttack();
 		base.SecondaryAttack();
 	}

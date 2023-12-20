@@ -11,6 +11,10 @@ public class CarriableComponent : Component
 	{
 		OwnerInventory.TriggerAttack();
 	}
+	public void CreateParticle( ParticleSystem particle )
+	{
+		OwnerInventory.CreateParticle( particle );
+	}
 	public virtual void FixedCarriableUpdate()
 	{
 

@@ -7,10 +7,12 @@ public class InventoryComponent : Component
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Viewmodel { get; set; }
+	[Property] public CameraComponent ViewmodelCamera { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 
 
 	public SkinnedModelRenderer ViewmodelModel => Viewmodel.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf );
+	public SkinnedModelRenderer ActiveItemModel => ActiveItem.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf );
 	public GameObject ActiveItem;
 	public List<GameObject> Items = new List<GameObject>();
 	protected override void OnUpdate()
@@ -65,6 +67,20 @@ public class InventoryComponent : Component
 			AnimationHelper.Target.Set( "b_attack", true );
 			ViewmodelModel.Set( "fire", true );
 		}
+	}
+	public void CreateParticle( ParticleSystem prt )
+	{
+		Transform transform = new Transform();
+		if ( !IsProxy && ViewmodelCamera.Enabled )
+		{
+			transform = ViewmodelModel.GetAttachment( "muzzle" ).Value;
+		}
+		else
+		{
+			transform = ActiveItemModel.GetAttachment( "muzzle" ).Value;
+		}
+		var mflash = LegacyParticle.Create( prt?.Name, transform.Position, transform.Rotation );
+		mflash.SetVector( 1, Vector3.Zero );
 	}
 	public void Add( GameObject item )
 	{
