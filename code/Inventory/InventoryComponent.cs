@@ -18,7 +18,7 @@ public class InventoryComponent : Component
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-		if ( ActiveItem != null && ActiveItem.Components.TryGet<CarriableComponent>( out var activeequippable ) )
+		if ( ActiveItem != null && ActiveItem.Components.TryGet<ItemComponent>( out var activeequippable ) )
 		{
 			activeequippable.CarriableUpdate();
 		}
@@ -27,7 +27,7 @@ public class InventoryComponent : Component
 	{
 		base.OnFixedUpdate();
 		TryPickupThings();
-		if ( ActiveItem != null && ActiveItem.Components.TryGet<CarriableComponent>( out var activeequippable ) )
+		if ( ActiveItem != null && ActiveItem.Components.TryGet<ItemComponent>( out var activeequippable ) )
 		{
 			ActiveItem.Transform.LocalPosition = Vector3.Zero;
 			ActiveItem.Transform.LocalRotation = Rotation.Identity;
@@ -43,7 +43,7 @@ public class InventoryComponent : Component
 			}
 		}
 
-		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<CarriableComponent>( out var equippableComponent ) )
+		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<ItemComponent>( out var equippableComponent ) )
 		{
 			AnimationHelper.HoldType = equippableComponent.HoldType;
 		}
@@ -57,7 +57,7 @@ public class InventoryComponent : Component
 	{
 
 		var tr = Scene.Trace.Ray( GameObject.Transform.Position, GameObject.Transform.Position ).Radius( 64 ).WithTag( "item" ).WithoutTags( "player", "physicsshadow", "playershadow" ).Run();
-		if ( tr.Hit && tr.GameObject != null && tr.GameObject.Components.TryGet<CarriableComponent>( out var equippable ) )
+		if ( tr.Hit && tr.GameObject != null && tr.GameObject.Components.TryGet<ItemComponent>( out var equippable ) )
 		{
 			if ( equippable.OwnerInventory == null )
 			{
@@ -94,7 +94,7 @@ public class InventoryComponent : Component
 	public void Add( GameObject item )
 	{
 		item.Parent = Body;
-		if ( item.Components.TryGet<CarriableComponent>( out var equippable ) )
+		if ( item.Components.TryGet<ItemComponent>( out var equippable ) )
 		{
 			equippable.OwnerInventory = this;
 		}

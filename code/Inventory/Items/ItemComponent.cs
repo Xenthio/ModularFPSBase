@@ -2,7 +2,7 @@
 
 namespace FPSKit;
 
-public class CarriableComponent : Component
+public class ItemComponent : Component
 {
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public Model Viewmodel { get; set; }

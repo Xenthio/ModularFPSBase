@@ -1,6 +1,6 @@
 ﻿namespace FPSKit;
 
-public class WeaponComponent : CarriableComponent
+public class WeaponComponent : ItemComponent
 {
 
 	[Property, Group( "Primary Attack" )] public float TimeBetweenPrimaryAttack { get; set; } = 0.1f;
