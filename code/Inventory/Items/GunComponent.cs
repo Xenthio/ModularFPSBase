@@ -23,7 +23,6 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Secondary Attack" )] public ParticleSystem SecondaryMuzzleflash { get; set; }
 	public override void PrimaryAttack()
 	{
-		Log.Info( "blam!" );
 		var bulletinfo = new BulletInfo()
 		{
 			Damage = PrimaryDamage,
@@ -42,7 +41,6 @@ public class GunComponent : WeaponComponent
 	}
 	public override void SecondaryAttack()
 	{
-		Log.Info( "blam!" );
 		var bulletinfo = new BulletInfo()
 		{
 			Damage = SecondaryDamage,
