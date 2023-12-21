@@ -94,19 +94,19 @@ public class InventoryComponent : Component
 	public void Add( GameObject item )
 	{
 		item.Parent = Body;
-		if ( item.Components.TryGet<ItemComponent>( out var equippable ) )
-		{
-			equippable.OwnerInventory = this;
-		}
+		item.Network.TakeOwnership();
+		Items.Add( item );
 		if ( item.Components.TryGet<Collider>( out var collider ) ) collider.Enabled = false;
 		if ( item.Components.TryGet<Rigidbody>( out var rigidbody ) ) rigidbody.PhysicsBody.MotionEnabled = false;
-
 		if ( item.Components.TryGet<SkinnedModelRenderer>( out var skinnedModelRenderer ) )
 		{
 			skinnedModelRenderer.BoneMergeTarget = Body.Components.Get<SkinnedModelRenderer>();
 		}
-		item.Network.TakeOwnership();
-		Items.Add( item );
+		if ( item.Components.TryGet<ItemComponent>( out var equippable ) )
+		{
+			equippable.OwnerInventory = this;
+			equippable.OnPickup();
+		}
 
 		ActiveItem = item;
 	}

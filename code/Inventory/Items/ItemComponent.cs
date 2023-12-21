@@ -7,6 +7,14 @@ public class ItemComponent : Component
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public Model Viewmodel { get; set; }
 	public InventoryComponent OwnerInventory;
+	public virtual void OnPickup()
+	{
+
+	}
+	public virtual void OnDrop()
+	{
+
+	}
 	protected override void OnStart()
 	{
 		base.OnStart();
