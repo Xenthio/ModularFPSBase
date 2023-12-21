@@ -79,6 +79,7 @@ public static class SurfaceExtensions
 	{
 		var b = tr.Scene.CreateObject();
 
+
 		//if ( tr.Body != null && tr.Body.BodyType == PhysicsBodyType.Dynamic )
 		//{
 		// TODO: parent to bone somehow
@@ -88,10 +89,27 @@ public static class SurfaceExtensions
 		var localpos = Vector3.Zero;
 
 		var dc = b.Components.GetOrCreate<DecalRenderer>();
-
-		if ( tr.GameObject != null && tr.GameObject.Scene == b.Scene )
+		if ( tr.GameObject != null )
 		{
-			b.Parent = tr.GameObject;
+
+			if ( tr.GameObject.Scene != tr.Scene || tr.GameObject.Scene != b.Scene )
+			{
+				var info = "unknown explaination?";
+
+				if ( tr.GameObject.Scene != b.Scene ) info = "tr.GameObject.Scene != b.Scene";
+				if ( tr.Scene != b.Scene ) info = "tr.Scene != b.Scene";
+				if ( tr.GameObject.Scene != tr.Scene ) info = "tr.GameObject.Scene != tr.Scene";
+				// This can and has happened before multiple times I have no clue why
+				Log.Warning( $"GameObject we hit and Decal's GameObject somehow in different scene? ({info})" );
+				//Gizmo.Draw.Color = Color.Green;
+				//Gizmo.Draw.SolidSphere( tr.GameObject.Transform.Position, 16 );
+				//Gizmo.Draw.Color = Color.Red;
+				//Gizmo.Draw.SolidSphere( b.Transform.Position, 16 );
+			}
+			else
+			{
+				b.Parent = tr.GameObject;
+			}
 		}
 
 		var decentry = Game.Random.FromList<DecalDefinition.DecalEntry>( decal.Decals );

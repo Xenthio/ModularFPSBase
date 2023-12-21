@@ -32,7 +32,7 @@ public partial class Bullet
 			var forward = info.Direction;
 
 			// TODO: Ignore player instead of this
-			position += forward * 16;
+			position += forward * 32;
 			forward += Vector3.Random * info.Spread;
 
 			var tr = GameManager.ActiveScene.Trace.Ray( position, position + (forward * 10000) )
@@ -40,7 +40,7 @@ public partial class Bullet
 				//.Ignore( info.Owner )
 				//.Ignore( info.IgnoreEntity ) 
 
-				//.WithoutTags( "trigger", "skybox", "playerclip" )
+				.WithoutTags( "trigger", "skybox", "playerclip", "viewmodel", "physicsshadow", "playershadow" )
 				.Run();
 
 			Gizmo.Draw.Line( tr.StartPosition, tr.EndPosition );
