@@ -87,7 +87,10 @@ public static class SurfaceExtensions
 
 		var localpos = Vector3.Zero;
 
-		b.Parent = tr.GameObject;
+		if ( tr.GameObject != null )
+		{
+			b.Parent = tr.GameObject;
+		}
 		var dc = b.Components.GetOrCreate<DecalRenderer>();
 
 		var decentry = Game.Random.FromList<DecalDefinition.DecalEntry>( decal.Decals );
