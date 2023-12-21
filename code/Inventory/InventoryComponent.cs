@@ -26,14 +26,7 @@ public class InventoryComponent : Component
 	protected override void OnFixedUpdate()
 	{
 		base.OnFixedUpdate();
-		var tr = Scene.Trace.Ray( GameObject.Transform.Position, GameObject.Transform.Position ).Radius( 64 ).WithoutTags( "player" ).Run();
-		if ( tr.Hit && tr.GameObject != null && tr.GameObject.Components.TryGet<CarriableComponent>( out var equippable ) )
-		{
-			if ( equippable.OwnerInventory == null )
-			{
-				Add( tr.GameObject );
-			}
-		}
+		TryPickupThings();
 		if ( ActiveItem != null && ActiveItem.Components.TryGet<CarriableComponent>( out var activeequippable ) )
 		{
 			ActiveItem.Transform.LocalPosition = Vector3.Zero;
@@ -60,6 +53,18 @@ public class InventoryComponent : Component
 		}
 	}
 
+	public void TryPickupThings()
+	{
+
+		var tr = Scene.Trace.Ray( GameObject.Transform.Position, GameObject.Transform.Position ).Radius( 64 ).WithTag( "item" ).WithoutTags( "player", "physicsshadow", "playershadow" ).Run();
+		if ( tr.Hit && tr.GameObject != null && tr.GameObject.Components.TryGet<CarriableComponent>( out var equippable ) )
+		{
+			if ( equippable.OwnerInventory == null )
+			{
+				Add( tr.GameObject );
+			}
+		}
+	}
 	public void TriggerAttack()
 	{
 		if ( AnimationHelper is not null )

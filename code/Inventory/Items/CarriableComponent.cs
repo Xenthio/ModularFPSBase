@@ -7,6 +7,11 @@ public class CarriableComponent : Component
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public Model Viewmodel { get; set; }
 	public InventoryComponent OwnerInventory;
+	protected override void OnStart()
+	{
+		base.OnStart();
+		GameObject.Tags.Set( "item", true );
+	}
 	public void TriggerAttack()
 	{
 		OwnerInventory.TriggerAttack();
