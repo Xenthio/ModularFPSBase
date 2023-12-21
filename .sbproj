@@ -45,7 +45,8 @@
         "water": "Trigger",
         "player": "Collide",
         "playershadow": "Collide",
-        "nocolthis": "Collide"
+        "nocolthis": "Collide",
+        "item": "Collide"
       },
       "Pairs": [
         {
@@ -82,6 +83,11 @@
           "a": "nocolthis",
           "b": "nocolthis",
           "r": "Ignore"
+        },
+        {
+          "a": "player",
+          "b": "item",
+          "r": "Trigger"
         }
       ]
     }
