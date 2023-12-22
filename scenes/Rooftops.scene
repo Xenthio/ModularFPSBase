@@ -1685,7 +1685,6 @@
       "Rotation": "0.00000002270604,-0.04361942,0.9990482,-0.0000005200531",
       "Scale": "0.64,0.64,0.64",
       "Networked": true,
-      "Enabled": true,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -1796,7 +1795,6 @@
       "Rotation": "-0.00000002790582,-0.04361932,-0.9990482,-0.0000006391489",
       "Scale": "0.64,0.64,0.64",
       "Networked": true,
-      "Enabled": true,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -1868,7 +1866,7 @@
     {
       "Id": "4c8ec3e0-9ac4-4329-bcf0-015a0f1db529",
       "Name": "bridgeplank",
-      "Position": "-96,44,-192",
+      "Position": "-93.42015,44,-192",
       "Rotation": "-0.05233598,-0,0,0.9986295",
       "Networked": true,
       "Enabled": true,
