@@ -1868,6 +1868,7 @@
       "Name": "bridgeplank",
       "Position": "-93.42015,44,-192",
       "Rotation": "-0.05233598,-0,0,0.9986295",
+      "Tags": "nocolthis",
       "Networked": true,
       "Enabled": true,
       "Components": [
@@ -2051,7 +2052,6 @@
       "Name": "player",
       "Position": "344.3637,166.8841,-128",
       "Tags": "player",
-      "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
     }
   ],

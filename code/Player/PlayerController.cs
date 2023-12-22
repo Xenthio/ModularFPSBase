@@ -25,6 +25,7 @@ public class PlayerController : Component, INetworkSerializable
 
 	public Vector3 WishVelocity { get; private set; }
 	public Vector3 BaseVelocity;
+	public Vector3 ShadowVelocity;
 
 	public bool IsRunning;
 	public bool IsDucking;
@@ -35,6 +36,7 @@ public class PlayerController : Component, INetworkSerializable
 	{
 
 		PhysicsShadowReset();
+		//PlayerShadowUpdate();
 
 		// Eye input
 		if ( !IsProxy )
@@ -115,7 +117,6 @@ public class PlayerController : Component, INetworkSerializable
 		WishVelocity = BuildWishVelocity();
 
 
-
 		if ( cc.IsOnGround && Input.Down( "Jump" ) )
 		{
 			float flGroundFactor = 1.0f;
@@ -127,14 +128,12 @@ public class PlayerController : Component, INetworkSerializable
 			//	cc.IsOnGround = false;
 
 			OnJump( fJumps, "Hello", new object[] { Time.Now.ToString(), 43.0f }, Vector3.Random );
-
 			fJumps += 1.0f;
 
 		}
 		PhysicsShadowUpdate();
 
 		PhysicsShadowReset();
-		PlayerShadowUpdate();
 		if ( cc.IsOnGround )
 		{
 			var wishspeed = WishVelocity;
@@ -157,6 +156,8 @@ public class PlayerController : Component, INetworkSerializable
 			//cc.ApplyFriction( 0.1f );
 		}
 
+		PlayerShadowUpdate();
+
 		var doBaseVelocity = cc.IsOnGround;
 		if ( doBaseVelocity ) cc.Velocity += BaseVelocity;
 		cc.Move();
@@ -174,27 +175,71 @@ public class PlayerController : Component, INetworkSerializable
 	void PlayerShadowUpdate()
 	{
 
+
 		var ps = PlayerShadow.Components.Get<Rigidbody>();
 		var cc = GameObject.Components.Get<CharacterController>();
+		var bc = PlayerShadow.Components.Get<BoxCollider>();
+
+
+
+		var sc = bc.Scale;
+		sc.z = BodyHeight - _duckAmountPerFrame;
+		bc.Scale = sc;
+
 		ps.PhysicsBody.Mass = 70;
 		ps.PhysicsBody.UseController = false;
-		ps.PhysicsBody.AngularVelocity = Vector3.Zero;
+		ps.PhysicsBody.SpeculativeContactEnabled = false;
 
-		var shvel = cc.Velocity;
-		shvel.x = MathF.MaxMagnitude( shvel.x, WishVelocity.x );
-		shvel.y = MathF.MaxMagnitude( shvel.y, WishVelocity.y );
-		shvel.z = MathF.MaxMagnitude( shvel.z, WishVelocity.z );
+		// This is the velocity we would have if we could move freely without bumping into anything
+		ShadowVelocity = ShadowVelocity.WithAcceleration( WishVelocity, cc.Acceleration * Time.Delta );
+		ShadowVelocity = AddFriction( ShadowVelocity, 4 );
+
+		var shvel = cc.Velocity * 1f;
+		var whvel = ShadowVelocity * 1f;
+
+		shvel.x = MathF.MaxMagnitude( shvel.x, whvel.x );
+		shvel.y = MathF.MaxMagnitude( shvel.y, whvel.y );
+		shvel.z = MathF.MaxMagnitude( shvel.z, whvel.z );
 
 		ps.PhysicsBody.Velocity = shvel;
+		ps.PhysicsBody.AngularVelocity = Vector3.Zero;
+
 		ps.Transform.LocalPosition = Vector3.Zero.WithZ( (((BodyHeight - _duckAmountPerFrame)) / 2) );
 		ps.Transform.LocalRotation = GameObject.Transform.World.RotationToLocal( Rotation.Identity );
 	}
+	Vector3 AddFriction( Vector3 vel, float frictionAmount, float stopSpeed = 140f )
+	{
+		float length = vel.Length;
+		if ( !(length < 0.01f) )
+		{
+			float num = ((length < stopSpeed) ? stopSpeed : length);
+			float num2 = num * Time.Delta * frictionAmount;
+			float num3 = length - num2;
+			if ( num3 < 0f )
+			{
+				num3 = 0f;
+			}
+
+			if ( num3 != length )
+			{
+				num3 /= length;
+				vel *= num3;
+			}
+		}
+		return vel;
+	}
+
 	void PhysicsShadowReset()
 	{
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		var cc = GameObject.Components.Get<CharacterController>();
+		var bc = PhysicsShadow.Components.Get<BoxCollider>();
+		var sc = bc.Scale;
+		sc.z = BodyHeight - _duckAmountPerFrame;
+		bc.Scale = sc;
 		//ps.PhysicsBody.AngularVelocity = Vector3.Zero;
 		//ps.PhysicsBody.Velocity = Vector3.Zero;
+		ps.PhysicsBody.LocalMassCenter = ps.Transform.World.ToLocal( GameObject.Transform.World ).Position;
 		ps.Transform.LocalPosition = Vector3.Zero.WithZ( (((BodyHeight - _duckAmountPerFrame)) / 2) );
 		ps.Transform.LocalRotation = GameObject.Transform.World.RotationToLocal( Rotation.Identity );
 	}
@@ -207,13 +252,13 @@ public class PlayerController : Component, INetworkSerializable
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		ps.PhysicsBody.SpeculativeContactEnabled = false;
 		ps.PhysicsBody.Mass = 70;
-		ps.PhysicsBody.LinearDamping = 0;
 		if ( ps.PhysicsBody.Surface == null )
 		{
 			var newsurf = new Surface()
 			{
-				Friction = 2000000,
+				Friction = 10000,
 				Elasticity = 0,
+
 			};
 			ps.PhysicsBody.Surface = newsurf;
 		}
@@ -228,6 +273,8 @@ public class PlayerController : Component, INetworkSerializable
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		var cc = GameObject.Components.Get<CharacterController>();
 
+		//Gizmo.Draw.SolidSphere( ps.PhysicsBody.MassCenter, 2 );
+		//Gizmo.Draw.LineBBox( ps.PhysicsBody.GetBounds() );
 		var trdown = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Down ).WithoutTags( cc.IgnoreLayers ).Run();
 
 		var tr = Scene.PhysicsWorld.Trace.Box( cc.BoundingBox, GameObject.Transform.Position, GameObject.Transform.Position ).WithoutTags( cc.IgnoreLayers ).Run();
