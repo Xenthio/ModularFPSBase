@@ -54,11 +54,10 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "GameNetworkManager",
+          "__type": "NetworkManager",
           "__enabled": true,
-          "IsMultiplayer": true,
-          "PlayerPrefab": "assets/prefabs/player/player.prefab",
-          "SpawnPoint": "d469b2e8-c245-4543-9df9-a9a95876eae6"
+          "PlayerPrefab": "prefabs/player.prefab",
+          "StartServer": true
         }
       ]
     },
@@ -81,7 +80,12 @@
       "Name": "Spawn",
       "Position": "-307.1853,400,-192",
       "Enabled": true,
-      "Components": []
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        }
+      ]
     },
     {
       "Id": "d469b2e8-c245-4543-9df9-a9a95876eae6",
@@ -90,14 +94,24 @@
       "Rotation": "-0.00000005960318,0.0000000003027926,-1,-0.0000006397578",
       "Networked": true,
       "Enabled": true,
-      "Components": []
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": true
+        }
+      ]
     },
     {
       "Id": "1ed81b85-0048-4e81-b529-39dac2c30fd9",
       "Name": "Spawn (2)",
       "Position": "177.04,2205.785,0",
       "Enabled": true,
-      "Components": []
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        }
+      ]
     },
     {
       "Id": "b5f302d4-9368-44bc-89fc-165e8c011a9a",
@@ -105,14 +119,24 @@
       "Position": "-392.7991,2328.697,0",
       "Rotation": "0,0,0.707107,0.7071065",
       "Enabled": true,
-      "Components": []
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        }
+      ]
     },
     {
       "Id": "a5890dda-ddff-463a-abe2-41e73fb318dc",
       "Name": "Spawn (3)",
       "Position": "177.04,1187.739,0",
       "Enabled": true,
-      "Components": []
+      "Components": [
+        {
+          "__type": "Spawnpoint",
+          "__enabled": false
+        }
+      ]
     },
     {
       "Id": "129708f5-8c76-44b1-bd42-f82b067b4467",
@@ -255,6 +279,7 @@
       "Name": "Cube (37)",
       "Position": "229.2879,-156,-216",
       "Rotation": "0.0000000285511,-0.000000000000000451428,0.4790079,-0.8778116",
+      "Tags": "solid",
       "Networked": true,
       "Enabled": true,
       "Components": [
@@ -1144,6 +1169,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "SineUpandDown",
+          "__enabled": true,
+          "Strength": 128
         }
       ]
     },
@@ -1180,6 +1210,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "SineUpandDown",
+          "__enabled": true,
+          "Strength": 256
         }
       ]
     },
@@ -1216,6 +1251,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "SineUpandDown",
+          "__enabled": true,
+          "Strength": 64
         }
       ]
     },
@@ -1252,6 +1292,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "SineUpandDown",
+          "__enabled": true,
+          "Strength": 512
         }
       ]
     },
@@ -1288,6 +1333,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "SineUpandDown",
+          "__enabled": true,
+          "Strength": 1024
         }
       ]
     },
@@ -1324,6 +1374,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "SineUpandDown",
+          "__enabled": true,
+          "Strength": 2048
         }
       ]
     },
@@ -1360,6 +1415,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "RotatePhysics",
+          "__enabled": true,
+          "RotateAmount": -0.2
         }
       ]
     },
@@ -1396,6 +1456,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "RotatePhysics",
+          "__enabled": true,
+          "RotateAmount": 2
         }
       ]
     },
@@ -1432,6 +1497,11 @@
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0
+        },
+        {
+          "__type": "RotatePhysics",
+          "__enabled": true,
+          "RotateAmount": -1
         }
       ]
     },
@@ -1784,6 +1854,12 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0
+        },
+        {
+          "__type": "Duplicator",
+          "__enabled": true,
+          "MaxDuplicates": 32,
+          "SecondsPerDuplicate": 3
         }
       ]
     },
@@ -1825,7 +1901,7 @@
           "__type": "bridgecreatorlol",
           "__enabled": true,
           "PlankCount": 52,
-          "Slack": 8,
+          "Slack": 1,
           "Spacing": 8
         }
       ]
@@ -1933,6 +2009,32 @@
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "Static": false,
           "Surface": null
+        },
+        {
+          "__type": "GunComponent",
+          "__enabled": true,
+          "AutomaticPrimary": false,
+          "AutomaticSecondary": true,
+          "HoldType": "Pistol",
+          "PrimaryBulletCount": 1,
+          "PrimaryDamage": 10,
+          "PrimaryForce": 10,
+          "PrimaryHeadshotMultiplier": 2,
+          "PrimaryMuzzleflash": "particles/pistol_muzzleflash.vpcf",
+          "PrimaryRecoil": 1,
+          "PrimaryShootSound": "sounds/kenney/ui/ui.downvote.sound",
+          "PrimarySpread": 0.024,
+          "SecondaryBulletCount": 1,
+          "SecondaryDamage": 10,
+          "SecondaryForce": 10,
+          "SecondaryHeadshotMultiplier": 2,
+          "SecondaryMuzzleflash": "particles/pistol_muzzleflash.vpcf",
+          "SecondaryRecoil": 1,
+          "SecondaryShootSound": "sounds/kenney/ui/ui.navigate.deny.sound",
+          "SecondarySpread": 0.024,
+          "TimeBetweenPrimaryAttack": 0.1,
+          "TimeBetweenSecondaryAttack": 0.1,
+          "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
         }
       ],
       "Children": [
@@ -1967,6 +2069,7 @@
   "__references": [
     "facepunch.low_wood_fence_beam_1",
     "polyhaven.rustig_koppie_puresky",
-    "rust.rust_pistol"
+    "rust.rust_pistol",
+    "rust.v_rust_pistol"
   ]
 }
