@@ -25,7 +25,7 @@ public class PlayerController : Component, INetworkSerializable
 
 	public Vector3 WishVelocity { get; private set; }
 	public Vector3 BaseVelocity;
-	public Vector3 ShadowVelocity;
+	public Vector3 PotentialVelocity;
 
 	public bool IsRunning;
 	public bool IsDucking;
@@ -191,11 +191,11 @@ public class PlayerController : Component, INetworkSerializable
 		ps.PhysicsBody.SpeculativeContactEnabled = false;
 
 		// This is the velocity we would have if we could move freely without bumping into anything
-		ShadowVelocity = ShadowVelocity.WithAcceleration( WishVelocity, cc.Acceleration * Time.Delta );
-		ShadowVelocity = AddFriction( ShadowVelocity, 4 );
+		PotentialVelocity = PotentialVelocity.WithAcceleration( WishVelocity, cc.Acceleration * Time.Delta );
+		PotentialVelocity = AddFriction( PotentialVelocity, 4 );
 
 		var shvel = cc.Velocity * 1f;
-		var whvel = ShadowVelocity * 1f;
+		var whvel = PotentialVelocity * 1f;
 
 		shvel.x = MathF.MaxMagnitude( shvel.x, whvel.x );
 		shvel.y = MathF.MaxMagnitude( shvel.y, whvel.y );
