@@ -12,7 +12,6 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Primary Attack" )] public ParticleSystem PrimaryMuzzleflash { get; set; }
 
 
-
 	[Property, Group( "Secondary Attack" )] public float SecondaryDamage { get; set; } = 10.0f;
 	[Property, Group( "Secondary Attack" )] public float SecondarySpread { get; set; } = 0.024f;
 	[Property, Group( "Secondary Attack" )] public float SecondaryRecoil { get; set; } = 1.0f;
@@ -21,6 +20,7 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Secondary Attack" )] public int SecondaryBulletCount { get; set; } = 1;
 	[Property, Group( "Secondary Attack" )] public SoundEvent SecondaryShootSound { get; set; }
 	[Property, Group( "Secondary Attack" )] public ParticleSystem SecondaryMuzzleflash { get; set; }
+
 	public override void PrimaryAttack()
 	{
 		var bulletinfo = new BulletInfo()

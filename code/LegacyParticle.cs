@@ -39,4 +39,12 @@ public class LegacyParticle
 		else
 			LegacyParticleSystem.ControlPoints[index] = cpv;
 	}
+	public void SetFloat( int index, float vec )
+	{
+		var cpv = new ParticleControlPoint() { Value = ParticleControlPoint.ControlPointValueInput.Float, FloatValue = vec };
+		if ( LegacyParticleSystem.ControlPoints.Count < index )
+			LegacyParticleSystem.ControlPoints.Add( cpv );
+		else
+			LegacyParticleSystem.ControlPoints[index] = cpv;
+	}
 }
