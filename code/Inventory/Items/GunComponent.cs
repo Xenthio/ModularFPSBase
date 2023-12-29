@@ -57,4 +57,9 @@ public class GunComponent : WeaponComponent
 		TriggerAttack();
 		base.SecondaryAttack();
 	}
+	// how do we want this
+	public virtual void Recoil()
+	{
+
+	}
 }
