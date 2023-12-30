@@ -2035,7 +2035,7 @@
                   "_name": "OwnerInventory"
                 },
                 "UserData": {
-                  "Position": "-480,-480"
+                  "Position": "-480,-544"
                 }
               },
               {
@@ -2102,7 +2102,7 @@
                   "_isStatic": true
                 },
                 "UserData": {
-                  "Position": "128,-480"
+                  "Position": "144,-544"
                 }
               },
               {
@@ -2141,7 +2141,7 @@
                   }
                 },
                 "UserData": {
-                  "Position": "-96,-480"
+                  "Position": "-80,-544"
                 }
               },
               {
@@ -2153,7 +2153,7 @@
                   "_isStatic": false
                 },
                 "UserData": {
-                  "Position": "-96,-224"
+                  "Position": "-80,-288"
                 }
               },
               {
@@ -2165,7 +2165,7 @@
                   "_isStatic": false
                 },
                 "UserData": {
-                  "Position": "-96,-160"
+                  "Position": "-80,-224"
                 }
               },
               {
@@ -2199,7 +2199,18 @@
                   }
                 },
                 "UserData": {
-                  "Position": "-96,16"
+                  "Position": "-80,0"
+                }
+              },
+              {
+                "Id": 23,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
+                },
+                "UserData": {
+                  "Position": "-480,-480"
                 }
               }
             ],
@@ -2221,6 +2232,12 @@
                 "_signal",
                 19,
                 "_signal"
+              ],
+              [
+                0,
+                "arg1",
+                17,
+                "Weapon"
               ],
               [
                 0,
@@ -2250,6 +2267,12 @@
                 3,
                 "_result",
                 4,
+                "target"
+              ],
+              [
+                3,
+                "_result",
+                23,
                 "target"
               ],
               [
@@ -2305,6 +2328,12 @@
                 "_result",
                 19,
                 "sound"
+              ],
+              [
+                23,
+                "_result",
+                17,
+                "Attacker"
               ]
             ],
             "UserData": {
