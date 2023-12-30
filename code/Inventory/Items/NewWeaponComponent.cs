@@ -3,14 +3,15 @@
 
 internal class NewWeaponComponent : WeaponComponent
 {
-	[Property, Group( "Primary Attack" )] public Action<NewWeaponComponent> PrimaryAttackAction { get; set; }
+	[Property, Group( "Primary Attack" )] public Action<GameObject> PrimaryAttackAction { get; set; }
 
 	/// <param name="Position"></param>
-	[Property, Group( "Secondary Attack" )] public Action<NewWeaponComponent> SecondaryAttackAction { get; set; }
+	[Property, Group( "Secondary Attack" )] public Action<GameObject> SecondaryAttackAction { get; set; }
 
 
 
-	[Title( "Shoot Bullet" )]
+
+	[Title( "Shoot Bullet" ), Category( "Weapons" )]
 	public void ShootBulletAction( Vector3 Position, Vector3 Direction, float Damage, float Force, float Count )
 	{
 	}

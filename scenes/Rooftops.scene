@@ -2011,6 +2011,64 @@
           "Surface": null
         },
         {
+          "__type": "NewWeaponComponent",
+          "__enabled": true,
+          "AutomaticPrimary": false,
+          "AutomaticSecondary": false,
+          "HoldType": "Pistol",
+          "PrimaryAttackAction": null,
+          "SecondaryAttackAction": null,
+          "TimeBetweenPrimaryAttack": 0.1,
+          "TimeBetweenSecondaryAttack": 0.1,
+          "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "d1b98f01-43ce-4284-af80-11b52f8f786d",
+          "Name": "hold_R",
+          "Position": "-1.848648,0,3.195877",
+          "Tags": "item",
+          "Enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "450369ed-766d-47c0-9b18-a6364421d08d",
+      "Name": "Weapon (1)",
+      "Position": "240.1327,591.6743,-24.7263",
+      "Tags": "item",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
           "__type": "GunComponent",
           "__enabled": true,
           "AutomaticPrimary": false,
@@ -2039,7 +2097,7 @@
       ],
       "Children": [
         {
-          "Id": "d1b98f01-43ce-4284-af80-11b52f8f786d",
+          "Id": "38019e2c-b572-449b-8c0d-caee7ad1bb8e",
           "Name": "hold_R",
           "Position": "-1.848648,0,3.195877",
           "Tags": "item",
