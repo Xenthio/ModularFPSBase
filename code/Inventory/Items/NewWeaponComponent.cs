@@ -3,12 +3,16 @@
 
 internal class NewWeaponComponent : WeaponComponent
 {
-	[Property, Group( "Primary Attack" )] public Action<GameObject> PrimaryAttackAction { get; set; }
-
-	/// <param name="Position"></param>
-	[Property, Group( "Secondary Attack" )] public Action<GameObject> SecondaryAttackAction { get; set; }
+	[Property, Group( "Primary Attack" )] public Action<GameObject, NewWeaponComponent> PrimaryAttackAction { get; set; }
 
 
+	[Property, Group( "Secondary Attack" )] public Action<GameObject, NewWeaponComponent> SecondaryAttackAction { get; set; }
+
+	public override void PrimaryAttack()
+	{
+		base.PrimaryAttack();
+		if ( PrimaryAttackAction != null ) PrimaryAttackAction.Invoke( GameObject, this );
+	}
 
 
 	[Title( "Shoot Bullet" ), Category( "Weapons" )]

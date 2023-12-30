@@ -28,6 +28,10 @@ public class ItemComponent : Component
 	{
 		OwnerInventory.CreateParticle( particle );
 	}
+	public void PlaySound( SoundEvent sound )
+	{
+		Sound.Play( sound, OwnerInventory.Eye.Transform.Position );
+	}
 	public virtual void FixedCarriableUpdate()
 	{
 

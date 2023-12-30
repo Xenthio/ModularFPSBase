@@ -2016,7 +2016,302 @@
           "AutomaticPrimary": false,
           "AutomaticSecondary": false,
           "HoldType": "Pistol",
-          "PrimaryAttackAction": null,
+          "PrimaryAttackAction": {
+            "Kind": "Action",
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-480,-96"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "field.get",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
+                  "_name": "OwnerInventory"
+                },
+                "UserData": {
+                  "Position": "-480,-480"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.InventoryComponent",
+                  "_name": "Eye"
+                },
+                "UserData": {
+                  "Position": "-480,-416"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
+                },
+                "UserData": {
+                  "Position": "-480,-352"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
+                },
+                "UserData": {
+                  "Position": "-480,-224"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Rotation"
+                },
+                "UserData": {
+                  "Position": "-480,-288"
+                }
+              },
+              {
+                "Id": 14,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.System/Rotation",
+                  "_name": "Forward"
+                },
+                "UserData": {
+                  "Position": "-480,-160"
+                }
+              },
+              {
+                "Id": 16,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.Bullet",
+                  "_name": "ShootBullet",
+                  "_isStatic": true
+                },
+                "UserData": {
+                  "Position": "128,-480"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.Bullet",
+                  "_name": "CreateBulletInfo",
+                  "_isStatic": true
+                },
+                "Inputs": {
+                  "damage": {
+                    "$type": "Simple",
+                    "Type": "System.Private.CoreLib/System.Single",
+                    "Value": 10
+                  },
+                  "force": {
+                    "$type": "Simple",
+                    "Type": "System.Private.CoreLib/System.Single",
+                    "Value": 10
+                  },
+                  "count": {
+                    "$type": "Simple",
+                    "Type": "System.Private.CoreLib/System.Single",
+                    "Value": 1
+                  },
+                  "spread": {
+                    "$type": "Simple",
+                    "Type": "System.Private.CoreLib/System.Single",
+                    "Value": 0.024
+                  },
+                  "headshotMultiplier": {
+                    "$type": "Simple",
+                    "Type": "System.Private.CoreLib/System.Single",
+                    "Value": 2
+                  }
+                },
+                "UserData": {
+                  "Position": "-96,-480"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
+                  "_name": "TriggerAttack",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "-96,-224"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
+                  "_name": "PlaySound",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "-96,-160"
+                }
+              },
+              {
+                "Id": 20,
+                "Type": "const.resource",
+                "Properties": {
+                  "value": {
+                    "$type": "Simple",
+                    "Type": "Sandbox.Engine/Sandbox.SoundEvent",
+                    "Value": "sounds/kenney/ui/ui.downvote.sound"
+                  },
+                  "T": "Sandbox.Engine/Sandbox.SoundEvent"
+                },
+                "UserData": {
+                  "Position": "-480,-0"
+                }
+              },
+              {
+                "Id": 21,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
+                  "_name": "CreateParticle",
+                  "_isStatic": false
+                },
+                "Inputs": {
+                  "particle": {
+                    "$type": "Simple",
+                    "Type": "Sandbox.Engine/Sandbox.ParticleSystem",
+                    "Value": "particles/pistol_muzzleflash.vpcf"
+                  }
+                },
+                "UserData": {
+                  "Position": "-96,16"
+                }
+              }
+            ],
+            "Links": [
+              [
+                0,
+                "_signal",
+                17,
+                "_signal"
+              ],
+              [
+                0,
+                "_signal",
+                18,
+                "_signal"
+              ],
+              [
+                0,
+                "_signal",
+                19,
+                "_signal"
+              ],
+              [
+                0,
+                "arg2",
+                3,
+                "target"
+              ],
+              [
+                0,
+                "arg2",
+                18,
+                "_target"
+              ],
+              [
+                0,
+                "arg2",
+                19,
+                "_target"
+              ],
+              [
+                0,
+                "arg2",
+                21,
+                "_target"
+              ],
+              [
+                3,
+                "_result",
+                4,
+                "target"
+              ],
+              [
+                4,
+                "_result",
+                5,
+                "target"
+              ],
+              [
+                5,
+                "_result",
+                12,
+                "target"
+              ],
+              [
+                5,
+                "_result",
+                13,
+                "target"
+              ],
+              [
+                12,
+                "_result",
+                17,
+                "position"
+              ],
+              [
+                13,
+                "_result",
+                14,
+                "target"
+              ],
+              [
+                14,
+                "_result",
+                17,
+                "direction"
+              ],
+              [
+                17,
+                "_signal",
+                16,
+                "_signal"
+              ],
+              [
+                17,
+                "_result",
+                16,
+                "info"
+              ],
+              [
+                20,
+                "_result",
+                19,
+                "sound"
+              ]
+            ],
+            "UserData": {
+              "Title": "Primary Attack Action",
+              "id": "863bf708-34c2-4d6c-a2de-4de658f1fd14"
+            }
+          },
           "SecondaryAttackAction": null,
           "TimeBetweenPrimaryAttack": 0.1,
           "TimeBetweenSecondaryAttack": 0.1,

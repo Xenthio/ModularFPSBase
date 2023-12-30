@@ -23,7 +23,23 @@ public struct BulletInfo
 }
 public partial class Bullet
 {
-	public static void ShootBullet( BulletInfo info, int level = 0 )
+	[ActionGraphInclude]
+	public static BulletInfo CreateBulletInfo( Vector3 position, Vector3 direction, float damage, float force = 10, float count = 1, float spread = 0, float headshotMultiplier = 2, GameObject Attacker = null, GameObject Weapon = null )
+	{
+		return new BulletInfo()
+		{
+			Position = position,
+			Direction = direction,
+			Damage = damage,
+			Force = force,
+			Count = count,
+			Spread = spread,
+			HeadshotMultiplier = headshotMultiplier,
+			Owner = Attacker,
+			Weapon = Weapon,
+		};
+	}
+	public static void ShootBullet( BulletInfo info = default, [ActionGraphProperty] int level = 0 )
 	{
 		for ( int i = 0; i < info.Count; i++ )
 		{
