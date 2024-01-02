@@ -174,7 +174,7 @@ public class PlayerController : Component, INetworkSerializable
 
 	void PlayerShadowUpdate()
 	{
-
+		PlayerShadowFirstTimeSetup();
 
 		var ps = PlayerShadow.Components.Get<Rigidbody>();
 		var cc = GameObject.Components.Get<CharacterController>();
@@ -186,9 +186,6 @@ public class PlayerController : Component, INetworkSerializable
 		sc.z = BodyHeight - _duckAmountPerFrame;
 		bc.Scale = sc;
 
-		ps.PhysicsBody.Mass = 70;
-		ps.PhysicsBody.UseController = false;
-		ps.PhysicsBody.SpeculativeContactEnabled = false;
 
 		// This is the velocity we would have if we could move freely without bumping into anything
 		PotentialVelocity = PotentialVelocity.WithAcceleration( WishVelocity, cc.Acceleration * Time.Delta );
@@ -207,6 +204,20 @@ public class PlayerController : Component, INetworkSerializable
 		ps.Transform.LocalPosition = Vector3.Zero.WithZ( (((BodyHeight - _duckAmountPerFrame)) / 2) );
 		ps.Transform.LocalRotation = GameObject.Transform.World.RotationToLocal( Rotation.Identity );
 	}
+
+	bool _plyshsetup = false;
+	void PlayerShadowFirstTimeSetup()
+	{
+
+		if ( _plyshsetup ) return;
+		_plyshsetup = true;
+
+		var ps = PlayerShadow.Components.Get<Rigidbody>();
+		ps.PhysicsBody.Mass = 70;
+		ps.PhysicsBody.UseController = false;
+		ps.PhysicsBody.SpeculativeContactEnabled = false;
+	}
+
 	Vector3 AddFriction( Vector3 vel, float frictionAmount, float stopSpeed = 140f )
 	{
 		float length = vel.Length;
