@@ -168,7 +168,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -202,7 +203,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -236,7 +238,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -270,7 +273,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -306,7 +310,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -340,7 +345,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -374,7 +380,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -408,7 +415,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -1127,7 +1135,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "RotatePhysics",
@@ -1168,7 +1177,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "SineUpandDown",
@@ -1209,7 +1219,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "SineUpandDown",
@@ -1250,7 +1261,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "SineUpandDown",
@@ -1291,7 +1303,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "SineUpandDown",
@@ -1332,7 +1345,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "SineUpandDown",
@@ -1373,7 +1387,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "SineUpandDown",
@@ -1414,7 +1429,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "RotatePhysics",
@@ -1455,7 +1471,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "RotatePhysics",
@@ -1496,7 +1513,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "RotatePhysics",
@@ -1535,7 +1553,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -1569,7 +1588,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -1603,7 +1623,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -1637,7 +1658,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         }
       ]
     },
@@ -1665,7 +1687,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "BoxCollider",
@@ -1701,7 +1724,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "BoxCollider",
@@ -1738,7 +1762,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "BoxCollider",
@@ -1775,7 +1800,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "BoxCollider",
@@ -1811,7 +1837,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "BoxCollider",
@@ -1853,7 +1880,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "Duplicator",
@@ -1895,7 +1923,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "bridgecreatorlol",
@@ -2000,7 +2029,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "ModelCollider",
@@ -2382,7 +2412,8 @@
           "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
-          "LinearDamping": 0
+          "LinearDamping": 0,
+          "Locking": {}
         },
         {
           "__type": "ModelCollider",
