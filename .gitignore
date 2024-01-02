@@ -16,3 +16,11 @@ code/Properties/*
 *.*_c
 *.los
 *.vpk
+code/Editor/obj/Debug/modular_fps_base.editor.assets.cache
+code/Editor/obj/Debug/modular_fps_base.editor.csproj.AssemblyReference.cache
+code/Editor/obj/modular_fps_base.editor.csproj.nuget.dgspec.json
+code/Editor/obj/modular_fps_base.editor.csproj.nuget.g.props
+code/Editor/obj/modular_fps_base.editor.csproj.nuget.g.targets
+code/Editor/obj/project.assets.json
+code/Editor/obj/project.nuget.cache
+code/Editor/obj/Debug/modular_fps_base.editor.csproj.AssemblyReference.cache
