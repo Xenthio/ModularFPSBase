@@ -93,6 +93,8 @@ public class InventoryComponent : Component
 	}
 	public void Add( GameObject item )
 	{
+		// game crashes on pickup disable this for now
+		return;
 		item.Parent = Body;
 		item.Network.TakeOwnership();
 		Items.Add( item );
