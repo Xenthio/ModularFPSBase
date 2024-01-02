@@ -1,0 +1,29 @@
+{
+  "GameObjects": [
+    {
+      "Id": "059d010d-6cd5-4a12-ab36-211cfc241798",
+      "Name": "Object",
+      "Position": "149.9949,149.995,-212.125",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "facepunch.square"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "square",
+  "Description": "",
+  "__references": []
+}

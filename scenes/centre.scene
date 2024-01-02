@@ -1,0 +1,50 @@
+{
+  "GameObjects": [
+    {
+      "Id": "69ed951c-c419-4419-a329-295dc7a61863",
+      "Name": "Object",
+      "Position": "-145.8411,202.2903,-57.38705",
+      "Enabled": true
+    },
+    {
+      "Id": "57ce69fc-271b-4428-b5b9-5f25cd0bd72c",
+      "Name": "Sun",
+      "Position": "-109.3049,322.1983,-22.6111",
+      "Rotation": "-0.431457,0.4244749,0.3686329,0.7055323",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "0c1db97b-e087-45d2-8075-f460fd5e7a8d",
+      "Name": "Object",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "xenthio.centre"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "centre",
+  "Description": "",
+  "__references": []
+}
