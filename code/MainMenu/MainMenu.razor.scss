@@ -1,0 +1,44 @@
+MainMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #444;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-weight: bold;
+	border-radius: 20px;
+	margin: 64px;
+	padding: 64px;
+	pointer-events: all;
+
+	.title {
+		font-size: 64px;
+		font-family: Poppins;
+		color: #fff;
+		margin-top: 24px;
+		margin-bottom: 24px;
+	}
+
+	.button {
+		cursor: pointer;
+		font-size: 24px;
+		font-family: Poppins;
+		color: #fff;
+
+		&:hover {
+			color: #ff8;
+		}
+	}
+
+	.textentry {
+		width: 256px;
+		font-size: 16px;
+		border-radius: 11px;
+		border: 1px solid grey;
+		color: #bbb;
+		font-family: Poppins;
+	}
+}

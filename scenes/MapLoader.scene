@@ -1,0 +1,44 @@
+{
+  "GameObjects": [
+    {
+      "Id": "fd172aae-8831-4c4f-9257-0a2012b4e1ed",
+      "Name": "Map",
+      "Position": "193.901,125.3425,-225.0983",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "thieves.rooftops",
+          "UseMapFromLaunch": true
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "8f8d247d-aaa4-4fce-a242-459a0ba75dfb",
+      "Name": "NetworkManager",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "__enabled": true,
+          "PlayerPrefab": "prefabs/player.prefab",
+          "StartServer": true
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "maploader",
+  "Description": "",
+  "__references": []
+}

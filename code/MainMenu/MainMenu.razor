@@ -1,0 +1,59 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">FPS Game</div>
+
+	<textentry @ref=MapEntry Text="facepunch.square">
+
+	</textentry>
+	<button @onclick=@StartGame>
+		Start Map
+	</button>
+
+	<button @onclick=@StartDemo>
+		Start Techdemo Scene
+	</button>
+
+	<button @onclick=@Exit>
+		Exit
+	</button>
+</root>
+
+@code
+{
+
+	public TextEntry MapEntry { get; set; }
+	public async Task StartGame()
+	{
+		LoadingScreen.IsVisible = true;
+		var package = await Package.Fetch(MapEntry.Text, false);
+		var b = package.MountAsync(true);
+		LoadingScreen.IsVisible = true; 
+		while (!b.IsCompleted)
+		{ 
+			// idk lol
+			LoadingScreen.IsVisible = true; 
+			await Task.DelayRealtime(1);
+			LoadingScreen.IsVisible = true;
+		}
+		LaunchArguments.Map = MapEntry.Text;
+		Scene.LoadFromFile("scenes/maploader.scene"); 
+
+	}
+	public void StartDemo() {
+
+		Scene.LoadFromFile("scenes/rooftops.scene");
+	}
+	public void Exit()
+	{
+
+		Game.Disconnect();
+		GameManager.ActiveScene.Destroy();
+	}
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( 1 );
+}
