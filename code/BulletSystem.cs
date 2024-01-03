@@ -55,7 +55,8 @@ public partial class Bullet
 				.UseHitboxes()
 				//.Ignore( info.Owner )
 				//.Ignore( info.IgnoreEntity ) 
-
+				.IgnoreGameObjectHierarchy( info.IgnoreObject )
+				.IgnoreGameObjectHierarchy( info.Owner )
 				.WithoutTags( "trigger", "skybox", "playerclip", "viewmodel", "physicsshadow", "playershadow" )
 				.Run();
 
