@@ -51,6 +51,10 @@
         "PhysicsImpact": true
       },
       {
+        "__type": "AmmoComponent",
+        "__enabled": true
+      },
+      {
         "__type": "InventoryComponent",
         "__enabled": true,
         "AnimationHelper": "d1e6d235-afb6-460c-8623-2a1dc94a0db4",
