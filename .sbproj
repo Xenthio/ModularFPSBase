@@ -90,6 +90,8 @@
           "r": "Trigger"
         }
       ]
-    }
+    },
+    "MapStartupScene": "scenes/maploader.scene",
+    "LaunchMode": "Launcher"
   }
 }
