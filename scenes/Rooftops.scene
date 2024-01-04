@@ -8,7 +8,10 @@
         {
           "__type": "MapInstance",
           "__enabled": true,
-          "MapName": "thieves.rooftops"
+          "MapName": "thieves.rooftops",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
         }
       ],
       "Children": []
@@ -2429,6 +2432,7 @@
           "AutomaticPrimary": false,
           "AutomaticSecondary": true,
           "HoldType": "Pistol",
+          "PrimaryAmmoType": "Pistol",
           "PrimaryBulletCount": 1,
           "PrimaryDamage": 10,
           "PrimaryForce": 10,
@@ -2437,6 +2441,7 @@
           "PrimaryRecoil": 1,
           "PrimaryShootSound": "sounds/kenney/ui/ui.downvote.sound",
           "PrimarySpread": 0.024,
+          "SecondaryAmmoType": "Pistol",
           "SecondaryBulletCount": 1,
           "SecondaryDamage": 10,
           "SecondaryForce": 10,
