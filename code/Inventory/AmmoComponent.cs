@@ -1,5 +1,5 @@
 ﻿namespace FPSKit;
-
+// ammo types maybe defined as resources possibly?
 public class AmmoComponent : Component
 {
 
