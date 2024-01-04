@@ -67,7 +67,6 @@
       "Id": "16e9110c-fe74-4782-8b7d-1fe671859eb1",
       "Name": "2D Skybox",
       "Position": "0,2176,64",
-      "Enabled": true,
       "Components": [
         {
           "__type": "SkyBox2D",

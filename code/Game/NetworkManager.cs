@@ -52,6 +52,11 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		{
 			startLocation = Random.Shared.FromList( SpawnPoints, default ).GameObject.Transform.World;
 		}
+		else
+		{
+			var otherSpawns = Scene.GetAllObjects( true ).Where( x => x.Name == "info_player_start" ).ToList();
+			startLocation = Random.Shared.FromList( otherSpawns, default ).Transform.World;
+		}
 
 		startLocation.Scale = 1;
 
