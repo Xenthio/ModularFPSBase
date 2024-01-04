@@ -40,7 +40,6 @@
       "Position": "0,2304,64",
       "Rotation": "0.08357476,0.262664,-0.2914574,0.9160106",
       "Tags": "light",
-      "Enabled": true,
       "Components": [
         {
           "__type": "DirectionalLight",
@@ -179,7 +178,7 @@
     {
       "Id": "0055332a-32ef-4799-a349-168b8ee13816",
       "Name": "Cube (4)",
-      "Position": "562.0869,294.3578,-185.7309",
+      "Position": "562.0869,203.0085,-185.7309",
       "Networked": true,
       "Enabled": true,
       "Components": [
@@ -1971,7 +1970,7 @@
       "Id": "9c3e8bc6-34cc-4f27-a1bc-9e1f794e739b",
       "Name": "Decal",
       "Position": "352,338.4066,-144",
-      "Rotation": "0.707107,0,0,0.7071065",
+      "Rotation": "0,0,0.707107,0.7071065",
       "Enabled": true,
       "Components": [
         {
@@ -1991,7 +1990,7 @@
       "Id": "ceffe191-2f0d-4ac0-bc35-2608aab7c5d8",
       "Name": "Decal (1)",
       "Position": "160.3348,338.4066,-144",
-      "Rotation": "0.4783136,-0.5428435,0.4748759,0.5010291",
+      "Rotation": "0,0,0.707107,0.7071065",
       "Enabled": true,
       "Components": [
         {

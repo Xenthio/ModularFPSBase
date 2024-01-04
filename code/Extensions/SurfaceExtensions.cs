@@ -125,7 +125,7 @@ public static class SurfaceExtensions
 		var rot1 = tr.Normal.EulerAngles.ToRotation();
 		rot1 = rot1.RotateAroundAxis( Vector3.Forward, decentry.Rotation.GetValue() );
 
-		var finalrotation = Rotation.LookAt( rot1.Down, rot1.Forward );
+		var finalrotation = rot1;//Rotation.LookAt( rot1.Down, rot1.Forward );
 		var finalposition = tr.HitPosition + (tr.Normal * (depth / 2));
 
 
