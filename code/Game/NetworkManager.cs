@@ -36,7 +36,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	/// </summary>
 	public void OnActive( Connection channel )
 	{
-		GameManager.ActiveScene.PhysicsWorld.SubSteps = 4;
+		GameManager.ActiveScene.PhysicsWorld.SubSteps = 2;
 		Log.Info( $"Player '{channel.DisplayName}' has joined the game" );
 
 		if ( PlayerPrefab is null )
