@@ -13,7 +13,7 @@ public class CameraController : Component, INetworkSerializable
 	{
 		base.OnUpdate();
 		Camera.Enabled = !IsProxy && GameObject.Network.IsOwner;
-		ViewmodelCamera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner;
+		ViewmodelCamera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner && ViewmodelCamera.Components.GetAll<ModelRenderer>().Where( x => x.Model != null && x.Model.ResourcePath != "models/dev/new_model/new_model.vmdl" ).Any();
 		if ( !IsProxy )
 		{
 
