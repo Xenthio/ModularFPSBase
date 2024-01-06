@@ -47,16 +47,17 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		//
 		var startLocation = Transform.World;
 
-		var SpawnPoints = Scene.GetAllComponents<Spawnpoint>().ToList();
+		var SpawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
+		//SpawnPoint
 		if ( SpawnPoints is not null && SpawnPoints.Count > 0 )
 		{
 			startLocation = Random.Shared.FromList( SpawnPoints, default ).GameObject.Transform.World;
 		}
-		else
-		{
-			var otherSpawns = Scene.GetAllObjects( true ).Where( x => x.Name == "info_player_start" ).ToList();
-			startLocation = Random.Shared.FromList( otherSpawns, default ).Transform.World;
-		}
+		//else
+		//{
+		//	var otherSpawns = Scene.GetAllObjects( true ).Where( x => x.Name == "info_player_start" ).ToList();
+		//	startLocation = Random.Shared.FromList( otherSpawns, default ).Transform.World;
+		//}
 
 		startLocation.Scale = 1;
 

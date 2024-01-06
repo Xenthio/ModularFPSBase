@@ -9,7 +9,9 @@
         {
           "__type": "MapInstance",
           "__enabled": true,
-          "MapName": "thieves.rooftops",
+          "MapName": "facepunch.square",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
           "UseMapFromLaunch": true
         }
       ],

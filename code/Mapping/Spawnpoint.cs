@@ -1,4 +1,4 @@
-namespace FPSKit;
+/*namespace FPSKit;
 
 [Title( "Spawnpoint" )]
 [Category( "Game" )]
@@ -15,3 +15,4 @@ public sealed class Spawnpoint : Component
 
 	}
 }
+*/
