@@ -209,7 +209,7 @@ public class PlayerController : Component, INetworkSerializable
 	void PlayerShadowFirstTimeSetup()
 	{
 
-		if ( _plyshsetup ) return;
+		if ( _plyshsetup && _physetup ) return;
 		_plyshsetup = true;
 
 		var ps = PlayerShadow.Components.Get<Rigidbody>();
@@ -258,7 +258,7 @@ public class PlayerController : Component, INetworkSerializable
 	bool _physetup = false;
 	void PhysicsBodyFirstTimeSetup()
 	{
-		if ( _physetup ) return;
+		if ( _plyshsetup && _physetup ) return;
 		_physetup = true;
 		var ps = PhysicsShadow.Components.Get<Rigidbody>();
 		ps.PhysicsBody.SpeculativeContactEnabled = false;
