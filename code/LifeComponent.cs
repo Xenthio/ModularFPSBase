@@ -19,25 +19,36 @@ public class LifeComponent : Component
 
 
 	[Property] public bool PhysicsImpact { get; set; } = true;
-
+	public DamageInfo LastDamage;
 	public Action<DamageInfo> OnTakeDamage;
 	public Action OnKilled;
+	public Action OnRespawn;
 
 	public void TakeDamage( DamageInfo info )
 	{
 		Health = MathF.Max( Health - info.Damage, 0 );
-		if ( LifeState == LifeState.Alive && Health <= 0 ) Kill();
 		if ( GameObject.Components.TryGet<Rigidbody>( out var rigidbody ) )
 		{
 			rigidbody.ApplyImpulseAt( info.Position, info.Force * 4096 );
 		}
 		if ( OnTakeDamage != null ) OnTakeDamage( info );
+		LastDamage = info;
+		if ( LifeState == LifeState.Alive && Health <= 0 ) Kill();
 	}
 
 	public void Kill()
 	{
 		LifeState = LifeState.Dead;
 		if ( OnKilled != null ) OnKilled();
+	}
+
+	public void Respawn()
+	{
+
+		LifeState = LifeState.Respawning;
+		Health = 100.0f;
+		if ( OnRespawn != null ) OnRespawn();
+		LifeState = LifeState.Alive;
 	}
 }
 

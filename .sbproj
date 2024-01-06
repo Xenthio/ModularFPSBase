@@ -46,7 +46,10 @@
         "player": "Collide",
         "playershadow": "Collide",
         "nocolthis": "Collide",
-        "item": "Collide"
+        "item": "Collide",
+        "nopush": "Collide",
+        "physicsshadow": "Collide",
+        "debris": "Collide"
       },
       "Pairs": [
         {
@@ -88,6 +91,81 @@
           "a": "player",
           "b": "item",
           "r": "Trigger"
+        },
+        {
+          "a": "playershadow",
+          "b": "nopush",
+          "r": "Ignore"
+        },
+        {
+          "a": "playershadow",
+          "b": "physicsshadow",
+          "r": "Ignore"
+        },
+        {
+          "a": "nopush",
+          "b": "physicsshadow",
+          "r": "Ignore"
+        },
+        {
+          "a": "player",
+          "b": "nopush",
+          "r": "Ignore"
+        },
+        {
+          "a": "physicsshadow",
+          "b": "physicsshadow",
+          "r": "Ignore"
+        },
+        {
+          "a": "playershadow",
+          "b": "playershadow",
+          "r": "Ignore"
+        },
+        {
+          "a": "player",
+          "b": "physicsshadow",
+          "r": "Ignore"
+        },
+        {
+          "a": "nopush",
+          "b": "nopush",
+          "r": "Ignore"
+        },
+        {
+          "a": "debris",
+          "b": "debris",
+          "r": "Ignore"
+        },
+        {
+          "a": "player",
+          "b": "debris",
+          "r": "Ignore"
+        },
+        {
+          "a": "playershadow",
+          "b": "debris",
+          "r": "Ignore"
+        },
+        {
+          "a": "physicsshadow",
+          "b": "debris",
+          "r": "Ignore"
+        },
+        {
+          "a": "nopush",
+          "b": "debris",
+          "r": "Ignore"
+        },
+        {
+          "a": "playershadow",
+          "b": "item",
+          "r": "Ignore"
+        },
+        {
+          "a": "item",
+          "b": "physicsshadow",
+          "r": "Ignore"
         }
       ]
     },

@@ -21,6 +21,7 @@ public class PlayerController : Component, INetworkSerializable
 	[Property] public GameObject PhysicsShadow { get; set; }
 	[Property] public GameObject PlayerShadow { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property] public LifeComponent Life { get; set; }
 
 
 	public Vector3 WishVelocity { get; private set; }
@@ -90,6 +91,8 @@ public class PlayerController : Component, INetworkSerializable
 	protected override void OnFixedUpdate()
 	{
 		if ( IsProxy )
+			return;
+		if ( Life.LifeState != LifeState.Alive )
 			return;
 
 		var cc = GameObject.Components.Get<CharacterController>();
