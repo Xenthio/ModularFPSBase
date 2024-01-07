@@ -1,5 +1,5 @@
-﻿namespace FPSKit;
-
+namespace FPSKit;
+// split this up into othrr parts maybe??
 public class PlayerComponent : Component
 {
 	[Property] public LifeComponent Life { get; set; }
