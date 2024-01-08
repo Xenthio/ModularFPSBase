@@ -122,7 +122,7 @@ public static class SurfaceExtensions
 		if ( decentry.KeepAspect ) height = width;
 		dc.Size = new Vector3( width, height, depth );
 
-		var rot1 = tr.Normal.EulerAngles.ToRotation();
+		var rot1 = (tr.Normal * -1).EulerAngles.ToRotation();
 		rot1 = rot1.RotateAroundAxis( Vector3.Forward, decentry.Rotation.GetValue() );
 
 		var finalrotation = rot1;//Rotation.LookAt( rot1.Down, rot1.Forward );
