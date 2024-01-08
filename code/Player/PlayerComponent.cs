@@ -36,6 +36,7 @@ public class PlayerComponent : Component
 		Log.Info( "U R DEAD!" );
 		//GameObject.Components.Get<CameraComponent>( FindMode.EnabledInSelfAndChildren ).GameObject.SetParent( null );
 		Body.Components.Get<ModelPhysics>( true ).Enabled = true;
+		Body.Components.Get<ModelPhysics>( true ).Enabled = true;
 		//Body.Components.Get<ModelPhysics>( true ).GameObject.Tags
 		Body.Components.Get<SkinnedModelRenderer>( true ).SceneModel.UseAnimGraph = false;
 		//Body.SetParent( null );

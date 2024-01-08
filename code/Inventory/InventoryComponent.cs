@@ -98,7 +98,7 @@ public class InventoryComponent : Component
 		item.Parent = Body;
 		item.Network.TakeOwnership();
 		Items.Add( item );
-		if ( item.Components.TryGet<Collider>( out var collider ) ) collider.Enabled = false;
+		//if ( item.Components.TryGet<Collider>( out var collider ) ) collider.Enabled = false;
 		if ( item.Components.TryGet<Rigidbody>( out var rigidbody ) ) rigidbody.PhysicsBody.MotionEnabled = false;
 		if ( item.Components.TryGet<SkinnedModelRenderer>( out var skinnedModelRenderer ) )
 		{
