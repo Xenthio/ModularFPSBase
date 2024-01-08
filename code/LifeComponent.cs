@@ -60,6 +60,7 @@ public enum LifeState
 	Limbo
 }
 
+// Todo use the builtin one when it has more functionality
 public struct DamageInfo
 {
 	public DamageInfo()
