@@ -129,7 +129,10 @@ public static class SurfaceExtensions
 		var finalposition = tr.HitPosition + (tr.Normal * (depth / 2));
 
 
-		if ( tr.GameObject == null )
+		b.Transform.Scale = Vector3.One;
+		b.Transform.Rotation = finalrotation;
+		b.Transform.Position = finalposition;
+		/*if ( tr.GameObject == null )
 		{
 			b.Transform.Scale = Vector3.One;
 			b.Transform.Rotation = finalrotation;
@@ -137,7 +140,10 @@ public static class SurfaceExtensions
 		}
 		else
 		{
-			//HACKHACK: Workaround for bullshit of the year: scales and local positions being absolutely fucked
+			Log.Info( "gi" );
+			// HACKHACK: Workaround for bullshit of the year: scales and local positions being absolutely fucked
+			// No longer needed
+
 			localpos = b.Transform.World.PointToLocal( finalposition );
 
 			b.Transform.Rotation = finalrotation;
@@ -147,7 +153,7 @@ public static class SurfaceExtensions
 
 			b.Transform.LocalScale = locscale;
 			b.Transform.LocalPosition = (localpos * 1);
-		}
+		}*/
 
 
 	}
