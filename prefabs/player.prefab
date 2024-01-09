@@ -17,8 +17,8 @@
         "__type": "PlayerComponent",
         "__enabled": true,
         "Aim": "bce79471-a91d-4d01-91a6-fcd34db569c5",
-        "Animation": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
         "Body": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
+        "Camera": "1ca98958-a78d-45c3-8894-d910fd22f6de",
         "Eye": "bce79471-a91d-4d01-91a6-fcd34db569c5",
         "Life": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda",
         "Viewmodel": "d10f4288-a6f8-488d-a1e9-7c0e0b85cd04"
@@ -26,27 +26,22 @@
       {
         "__type": "CameraController",
         "__enabled": true,
-        "Camera": "1ca98958-a78d-45c3-8894-d910fd22f6de",
-        "Eye": "bce79471-a91d-4d01-91a6-fcd34db569c5",
         "FirstPerson": true,
-        "ViewmodelCamera": "26de23db-f125-4fc4-945a-e351bda08e34"
+        "Player": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda"
       },
       {
         "__type": "PlayerController",
         "__enabled": true,
         "AirControl": 30,
         "AlwaysRun": false,
-        "AnimationHelper": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
-        "Body": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
         "BodyHeight": 72,
         "CrouchSpeed": 80,
         "DuckOffset": 40,
-        "Eye": "bce79471-a91d-4d01-91a6-fcd34db569c5",
         "EyeHeight": 64,
         "Gravity": "0,0,800",
-        "Life": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda",
         "NormalSpeed": 190,
         "PhysicsShadow": "a43b0e6a-dd9d-49be-8eba-1786f146111d",
+        "Player": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda",
         "PlayerShadow": "ad62eab1-7843-4ff2-8578-1f5e21cbb5d3",
         "RunSpeed": 320,
         "WalkSpeed": 120
@@ -130,6 +125,12 @@
             "Locking": {},
             "Model": "models/citizen/citizen.vmdl",
             "Renderer": "d52dd58b-f708-43cb-ae5e-e60d424f1a33"
+          },
+          {
+            "__type": "PlayerBodyComponent",
+            "__enabled": true,
+            "Animation": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
+            "Model": "d52dd58b-f708-43cb-ae5e-e60d424f1a33"
           }
         ],
         "Children": [

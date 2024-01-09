@@ -4,39 +4,36 @@ public class CameraController : Component, INetworkSerializable
 {
 	[Property, Group( "Settings" )] public bool FirstPerson { get; set; } = true;
 
-	[Property] public GameObject Eye { get; set; }
-	[Property] public CameraComponent Camera { get; set; }
-	[Property] public CameraComponent ViewmodelCamera { get; set; }
+	[Property] public PlayerComponent Player { get; set; }
 
 	public Angles EyeAngles;
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-		Camera.Enabled = !IsProxy && GameObject.Network.IsOwner;
-		ViewmodelCamera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner && ViewmodelCamera.Components.GetAll<ModelRenderer>().Where( x => x.Model != null && x.Model.ResourcePath != "models/dev/new_model/new_model.vmdl" ).Any();
+		Player.Camera.Enabled = !IsProxy && GameObject.Network.IsOwner;
+		Player.Viewmodel.Camera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner && Player.Viewmodel.Camera.Components.GetAll<ModelRenderer>().Where( x => x.Model != null && x.Model.ResourcePath != "models/dev/new_model/new_model.vmdl" ).Any();
 		if ( !IsProxy )
 		{
-
 			if ( Input.Pressed( "View" ) ) FirstPerson = !FirstPerson;
 			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 			EyeAngles.roll = 0;
 			EyeAngles.pitch = EyeAngles.pitch.Clamp( -89f, 89f );
 
-			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
+			Player.Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 
 			if ( FirstPerson )
 			{
-				Camera.Transform.Position = Eye.Transform.Position;
-				Camera.Transform.Rotation = Eye.Transform.Rotation;
+				Player.Camera.Transform.Position = Player.Eye.Transform.Position;
+				Player.Camera.Transform.Rotation = Player.Eye.Transform.Rotation;
 			}
 			else
 			{
-				Camera.Transform.Position = Eye.Transform.Position + Eye.Transform.Rotation.Backward * 200 + Vector3.Up * 0.0f;
-				Camera.Transform.Rotation = Eye.Transform.Rotation;
+				Player.Camera.Transform.Position = Player.Eye.Transform.Position + Player.Eye.Transform.Rotation.Backward * 200 + Vector3.Up * 0.0f;
+				Player.Camera.Transform.Rotation = Player.Eye.Transform.Rotation;
 			}
-			ViewmodelCamera.Transform.Position = Camera.Transform.Position;
-			ViewmodelCamera.Transform.Rotation = Camera.Transform.Rotation;
+			Player.Viewmodel.Camera.Transform.Position = Player.Camera.Transform.Position;
+			Player.Viewmodel.Camera.Transform.Rotation = Player.Camera.Transform.Rotation;
 
 
 			//var mdl = Body.Components.Get<SkinnedModelRenderer>();
@@ -47,7 +44,7 @@ public class CameraController : Component, INetworkSerializable
 		}
 		else
 		{
-			Eye.Transform.LocalRotation = EyeAngles.ToRotation();
+			Player.Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 		}
 
 		foreach ( var i in GameObject.Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants ) )

@@ -27,13 +27,13 @@ public class InventoryComponent : Component
 			activeequippable.FixedCarriableUpdate();
 		}
 
-		if ( Player.Animation is not null && ActiveItem is not null && ActiveItem.Components.TryGet<ItemComponent>( out var equippableComponent ) )
+		if ( Player.Body.Animation is not null && ActiveItem is not null && ActiveItem.Components.TryGet<ItemComponent>( out var equippableComponent ) )
 		{
-			Player.Animation.HoldType = equippableComponent.HoldType;
+			Player.Body.Animation.HoldType = equippableComponent.HoldType;
 		}
-		else if ( Player.Animation is not null )
+		else if ( Player.Body.Animation is not null )
 		{
-			Player.Animation.HoldType = CitizenAnimationHelper.HoldTypes.None;
+			Player.Body.Animation.HoldType = CitizenAnimationHelper.HoldTypes.None;
 		}
 	}
 
@@ -51,9 +51,9 @@ public class InventoryComponent : Component
 	}
 	public void TriggerAttack()
 	{
-		if ( Player.Animation is not null )
+		if ( Player.Body.Animation is not null )
 		{
-			Player.Animation.Target.Set( "b_attack", true );
+			Player.Body.Animation.Target.Set( "b_attack", true );
 			Player.Viewmodel.Model.Set( "fire", true );
 		}
 	}
@@ -79,7 +79,7 @@ public class InventoryComponent : Component
 	{
 		// game crashes on pickup disable this for now
 		//return;
-		item.Parent = Player.Body;
+		item.Parent = Player.Body.GameObject;
 		item.Network.TakeOwnership();
 		Items.Add( item );
 		//if ( item.Components.TryGet<Rigidbody>( out var rigidbody ) ) rigidbody.PhysicsBody.MotionEnabled = false;

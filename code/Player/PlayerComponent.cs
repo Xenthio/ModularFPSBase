@@ -1,15 +1,13 @@
-using Sandbox.Citizen;
-
 namespace FPSKit;
 // split this up into othrr parts maybe??
 public class PlayerComponent : Component
 {
 	[Property] public LifeComponent Life { get; set; }
 	[Property] public AimComponent Aim { get; set; }
-	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Eye { get; set; }
-	[Property] public CitizenAnimationHelper Animation { get; set; }
+	[Property] public PlayerBodyComponent Body { get; set; }
 	[Property] public ViewmodelComponent Viewmodel { get; set; }
+	[Property] public CameraComponent Camera { get; set; }
 	protected override void OnAwake()
 	{
 		base.OnAwake();

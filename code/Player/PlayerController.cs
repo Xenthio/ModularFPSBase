@@ -16,12 +16,9 @@ public class PlayerController : Component, INetworkSerializable
 	[Property, Group( "Measurements" )] public float DuckOffset { get; set; } = 40.0f;
 
 
-	[Property] public GameObject Body { get; set; }
-	[Property] public GameObject Eye { get; set; }
+	[Property] public PlayerComponent Player { get; set; }
 	[Property] public GameObject PhysicsShadow { get; set; }
 	[Property] public GameObject PlayerShadow { get; set; }
-	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
-	[Property] public LifeComponent Life { get; set; }
 
 
 	public Vector3 WishVelocity { get; private set; }
@@ -45,7 +42,7 @@ public class PlayerController : Component, INetworkSerializable
 
 			// doing all ducking stuff per frame is broken for some reason, so I had to add our own lerp for a every frame updated value
 			_duckAmountPerFrame = _duckAmountPerFrame.LerpTo( IsDucking ? DuckOffset : 0, 8 * Time.Delta );
-			Eye.Transform.LocalPosition = GameObject.Transform.Rotation.Up * (EyeHeight - _duckAmountPerFrame);
+			Player.Eye.Transform.LocalPosition = GameObject.Transform.Rotation.Up * (EyeHeight - _duckAmountPerFrame);
 
 			IsRunning = Input.Down( "Run" ) || AlwaysRun;
 		}
@@ -56,34 +53,34 @@ public class PlayerController : Component, INetworkSerializable
 		float rotateDifference = 0;
 
 		// rotate body to look angles
-		if ( Body is not null )
+		if ( Player.Body is not null )
 		{
-			var targetAngle = Rotation.FromYaw( Eye.Transform.Rotation.Yaw() );
+			var targetAngle = Rotation.FromYaw( Player.Eye.Transform.Rotation.Yaw() );
 
-			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
+			rotateDifference = Player.Body.Transform.Rotation.Distance( targetAngle );
 
 			if ( rotateDifference > 50.0f || cc.Velocity.Length > 10.0f )
 			{
-				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 4.0f );
+				Player.Body.Transform.Rotation = Rotation.Lerp( Player.Body.Transform.Rotation, targetAngle, Time.Delta * 4.0f );
 			}
 		}
 
-		if ( AnimationHelper is not null )
+		if ( Player.Body.Animation is not null )
 		{
-			AnimationHelper.WithVelocity( cc.Velocity );
-			AnimationHelper.WithWishVelocity( WishVelocity );
-			AnimationHelper.IsGrounded = cc.IsOnGround;
-			AnimationHelper.FootShuffle = rotateDifference;
-			AnimationHelper.WithLook( Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
-			AnimationHelper.MoveStyle = IsRunning ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Auto;
-			AnimationHelper.DuckLevel = _duckAmount / DuckOffset;
+			Player.Body.Animation.WithVelocity( cc.Velocity );
+			Player.Body.Animation.WithWishVelocity( WishVelocity );
+			Player.Body.Animation.IsGrounded = cc.IsOnGround;
+			Player.Body.Animation.FootShuffle = rotateDifference;
+			Player.Body.Animation.WithLook( Player.Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
+			Player.Body.Animation.MoveStyle = IsRunning ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Auto;
+			Player.Body.Animation.DuckLevel = _duckAmount / DuckOffset;
 		}
 	}
 
 	[Broadcast]
 	public void OnJump( float floatValue, string dataString, object[] objects, Vector3 position )
 	{
-		AnimationHelper?.TriggerJump();
+		Player.Body.Animation?.TriggerJump();
 	}
 
 	float fJumps;
@@ -92,7 +89,7 @@ public class PlayerController : Component, INetworkSerializable
 	{
 		if ( IsProxy )
 			return;
-		if ( Life.LifeState != LifeState.Alive )
+		if ( Player.Life.LifeState != LifeState.Alive )
 			return;
 
 		var cc = GameObject.Components.Get<CharacterController>();
@@ -372,7 +369,7 @@ public class PlayerController : Component, INetworkSerializable
 	public Vector3 BuildWishVelocity()
 	{
 		Vector3 wishVelocity;
-		var rot = Eye.Transform.Rotation;
+		var rot = Player.Eye.Transform.Rotation;
 
 		wishVelocity = 0;
 
