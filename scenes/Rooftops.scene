@@ -2124,7 +2124,7 @@
                 "Id": 0,
                 "Type": "input",
                 "UserData": {
-                  "Position": "-480,-96"
+                  "Position": "-1008,-608"
                 }
               },
               {
@@ -2135,7 +2135,7 @@
                   "_name": "OwnerInventory"
                 },
                 "UserData": {
-                  "Position": "-480,-608"
+                  "Position": "-784,-704"
                 }
               },
               {
@@ -2146,7 +2146,7 @@
                   "_name": "Position"
                 },
                 "UserData": {
-                  "Position": "-480,-224"
+                  "Position": "-176,-704"
                 }
               },
               {
@@ -2157,7 +2157,7 @@
                   "_name": "Rotation"
                 },
                 "UserData": {
-                  "Position": "-480,-288"
+                  "Position": "-176,-768"
                 }
               },
               {
@@ -2168,7 +2168,7 @@
                   "_name": "Forward"
                 },
                 "UserData": {
-                  "Position": "-480,-160"
+                  "Position": "-144,-768"
                 }
               },
               {
@@ -2180,7 +2180,7 @@
                   "_isStatic": true
                 },
                 "UserData": {
-                  "Position": "144,-544"
+                  "Position": "320,-608"
                 }
               },
               {
@@ -2219,7 +2219,7 @@
                   }
                 },
                 "UserData": {
-                  "Position": "-80,-544"
+                  "Position": "96,-608"
                 }
               },
               {
@@ -2231,7 +2231,7 @@
                   "_isStatic": false
                 },
                 "UserData": {
-                  "Position": "-80,-288"
+                  "Position": "-704,-416"
                 }
               },
               {
@@ -2243,7 +2243,7 @@
                   "_isStatic": false
                 },
                 "UserData": {
-                  "Position": "-80,-224"
+                  "Position": "-704,-336"
                 }
               },
               {
@@ -2258,7 +2258,7 @@
                   "T": "Sandbox.Engine/Sandbox.SoundEvent"
                 },
                 "UserData": {
-                  "Position": "-480,64"
+                  "Position": "-1024,-400"
                 }
               },
               {
@@ -2268,7 +2268,7 @@
                   "T": "package.xenthio.modular_fps_base/FPSKit.NewWeaponComponent"
                 },
                 "UserData": {
-                  "Position": "-480,-0"
+                  "Position": "-1072,-336"
                 }
               },
               {
@@ -2287,7 +2287,7 @@
                   }
                 },
                 "UserData": {
-                  "Position": "-80,-16"
+                  "Position": "-704,-240"
                 }
               },
               {
@@ -2298,7 +2298,7 @@
                   "_name": "GameObject"
                 },
                 "UserData": {
-                  "Position": "-480,-544"
+                  "Position": "-560,-672"
                 }
               },
               {
@@ -2309,7 +2309,7 @@
                   "_name": "Player"
                 },
                 "UserData": {
-                  "Position": "-480,-480"
+                  "Position": "-560,-736"
                 }
               },
               {
@@ -2320,7 +2320,7 @@
                   "_name": "Aim"
                 },
                 "UserData": {
-                  "Position": "-480,-416"
+                  "Position": "-400,-736"
                 }
               },
               {
@@ -2331,7 +2331,7 @@
                   "_name": "Transform"
                 },
                 "UserData": {
-                  "Position": "-480,-352"
+                  "Position": "-384,-736"
                 }
               }
             ],
@@ -2352,12 +2352,6 @@
                 0,
                 "_signal",
                 19,
-                "_signal"
-              ],
-              [
-                0,
-                "_signal",
-                26,
                 "_signal"
               ],
               [
