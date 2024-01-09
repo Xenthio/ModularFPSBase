@@ -62,6 +62,7 @@ public class PlayerComponent : Component
 
 	public void Respawn()
 	{
+		Movement.Velocity = Vector3.Zero;
 		Body.Transform.LocalPosition = Vector3.Zero;
 		Body.Transform.LocalRotation = Rotation.Identity;
 		Body.Physics.Enabled = false;
