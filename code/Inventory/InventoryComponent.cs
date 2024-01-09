@@ -49,32 +49,6 @@ public class InventoryComponent : Component
 			}
 		}
 	}
-	public void TriggerAttack()
-	{
-		if ( Player.Body.Animation is not null )
-		{
-			Player.Body.Animation.Target.Set( "b_attack", true );
-			Player.Viewmodel.Model.Set( "fire", true );
-		}
-	}
-	public void CreateParticle( ParticleSystem prt )
-	{
-		Transform transform = new Transform();
-		var mflash = LegacyParticle.Create( prt?.Name, transform.Position, transform.Rotation );
-		if ( !IsProxy && Player.Viewmodel.Camera.Enabled )
-		{
-			transform = Player.Viewmodel.Model.GetAttachment( "muzzle" ).Value;
-			mflash.GameObject.Tags.Add( "viewmodel" );
-			mflash.LegacyParticleSystem.SceneObject.Tags.Add( "viewmodel" );
-		}
-		else
-		{
-			transform = ActiveItem.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf ).GetAttachment( "muzzle" ).Value;
-		}
-		mflash.Position = transform.Position;
-		mflash.Rotation = transform.Rotation;
-		mflash.SetVector( 1, Vector3.Zero );
-	}
 	public void Add( GameObject item )
 	{
 		// game crashes on pickup disable this for now

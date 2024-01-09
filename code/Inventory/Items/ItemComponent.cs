@@ -22,11 +22,29 @@ public class ItemComponent : Component
 	}
 	public void TriggerAttack()
 	{
-		OwnerInventory.TriggerAttack();
+		if ( OwnerInventory.Player.Body.Animation is not null )
+		{
+			OwnerInventory.Player.Body.Animation.Target.Set( "b_attack", true );
+			OwnerInventory.Player.Viewmodel.Model.Set( "fire", true );
+		}
 	}
 	public void CreateParticle( ParticleSystem particle )
 	{
-		OwnerInventory.CreateParticle( particle );
+		Transform transform = new Transform();
+		var mflash = LegacyParticle.Create( particle?.Name, transform.Position, transform.Rotation );
+		if ( !IsProxy && OwnerInventory.Player.Viewmodel.Camera.Enabled )
+		{
+			transform = OwnerInventory.Player.Viewmodel.Model.GetAttachment( "muzzle" ).Value;
+			mflash.GameObject.Tags.Add( "viewmodel" );
+			mflash.LegacyParticleSystem.SceneObject.Tags.Add( "viewmodel" );
+		}
+		else
+		{
+			transform = Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf ).GetAttachment( "muzzle" ).Value;
+		}
+		mflash.Position = transform.Position;
+		mflash.Rotation = transform.Rotation;
+		mflash.SetVector( 1, Vector3.Zero );
 	}
 	public void PlaySound( SoundEvent sound )
 	{
