@@ -173,6 +173,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -209,6 +210,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -245,6 +247,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -281,6 +284,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -319,6 +323,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -355,6 +360,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -391,6 +397,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -427,6 +434,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -1148,6 +1156,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1191,6 +1200,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1234,6 +1244,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1277,6 +1288,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1320,6 +1332,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1363,6 +1376,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1406,6 +1420,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1449,6 +1464,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1492,6 +1508,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1535,6 +1552,7 @@
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1576,6 +1594,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -1612,6 +1631,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -1648,6 +1668,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -1684,6 +1705,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
@@ -1714,6 +1736,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1752,6 +1775,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1791,6 +1815,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1830,6 +1855,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1868,6 +1894,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1912,6 +1939,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -1956,6 +1984,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -2063,6 +2092,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
@@ -2487,6 +2517,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
