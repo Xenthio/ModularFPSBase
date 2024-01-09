@@ -43,7 +43,8 @@ public partial class Bullet
 	{
 		for ( int i = 0; i < info.Count; i++ )
 		{
-			Game.SetRandomSeed( Time.Tick + i );
+			//Log.Info( Time.Tick );
+			//Game.SetRandomSeed( Time.Tick + i );
 			var position = info.Position;
 			var forward = info.Direction;
 
