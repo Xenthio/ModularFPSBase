@@ -8,13 +8,15 @@ public class PlayerComponent : Component
 	[Property] public PlayerBodyComponent Body { get; set; }
 	[Property] public ViewmodelComponent Viewmodel { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
+	[Property] public PlayerController Controller { get; set; }
 	protected override void OnAwake()
 	{
 		base.OnAwake();
-		Life.OnTakeDamage += OnTakeDamage;
+		Life.OnTakeDamage += TakeDamage;
 		Life.OnKilled += Kill;
+		Life.OnRespawn += Respawn;
 	}
-	public void OnTakeDamage( DamageInfo info )
+	public void TakeDamage( DamageInfo info )
 	{
 
 	}
@@ -39,18 +41,30 @@ public class PlayerComponent : Component
 	{
 		Log.Info( "U R DEAD!" );
 		//GameObject.Components.Get<CameraComponent>( FindMode.EnabledInSelfAndChildren ).GameObject.SetParent( null );
-		Body.Components.Get<ModelPhysics>( true ).Enabled = true;
-		Body.Components.Get<ModelPhysics>( true ).Enabled = true;
+
+		Body.Physics.Enabled = true;
+		Body.Tags.RemoveAll();
+		Body.Tags.Add( "nopush" );
+		Body.Tags.Remove( "player" );
+		Body.Model.SceneModel.UseAnimGraph = false;
+		Controller.PhysicsShadow.Enabled = false;
+		Controller.PlayerShadow.Enabled = false;
+
 		//Body.Components.Get<ModelPhysics>( true ).GameObject.Tags
-		Body.Components.Get<SkinnedModelRenderer>( true ).SceneModel.UseAnimGraph = false;
 		//Body.SetParent( null );
 		//Body.Components.Get<CitizenAnimationHelper>( true ).Enabled = false;
 		//Body.Components.Get<SkinnedModelRenderer>( true ).Reset();
 		//GameObject.Destroy();
 	}
 
-	public void OnDamage( in global::DamageInfo damage )
+
+	public void Respawn()
 	{
-		throw new NotImplementedException();
+		Body.Transform.LocalPosition = Vector3.Zero;
+		Body.Transform.LocalRotation = Rotation.Identity;
+		Body.Physics.Enabled = false;
+		Body.Model.SceneModel.UseAnimGraph = true;
+		Controller.PhysicsShadow.Enabled = true;
+		Controller.PlayerShadow.Enabled = true;
 	}
 }
