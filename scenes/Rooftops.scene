@@ -2081,7 +2081,14 @@
           "HoldType": "Pistol",
           "PrimaryAttackAction": {
             "Kind": "Action",
-            "Variables": [],
+            "Variables": [
+              {
+                "Id": 24,
+                "Name": "_this",
+                "Type": "package.xenthio.modular_fps_base/FPSKit.NewWeaponComponent",
+                "Default": "d555ac63-050d-4775-8603-d06fd889ea24"
+              }
+            ],
             "Nodes": [
               {
                 "Id": 0,
@@ -2098,29 +2105,7 @@
                   "_name": "OwnerInventory"
                 },
                 "UserData": {
-                  "Position": "-480,-544"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.InventoryComponent",
-                  "_name": "Eye"
-                },
-                "UserData": {
-                  "Position": "-480,-416"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-480,-352"
+                  "Position": "-480,-608"
                 }
               },
               {
@@ -2243,11 +2228,21 @@
                   "T": "Sandbox.Engine/Sandbox.SoundEvent"
                 },
                 "UserData": {
+                  "Position": "-480,64"
+                }
+              },
+              {
+                "Id": 25,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.xenthio.modular_fps_base/FPSKit.NewWeaponComponent"
+                },
+                "UserData": {
                   "Position": "-480,-0"
                 }
               },
               {
-                "Id": 21,
+                "Id": 26,
                 "Type": "call",
                 "Properties": {
                   "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
@@ -2262,18 +2257,51 @@
                   }
                 },
                 "UserData": {
-                  "Position": "-80,0"
+                  "Position": "-80,-16"
                 }
               },
               {
-                "Id": 23,
+                "Id": 28,
                 "Type": "property.get",
                 "Properties": {
                   "_type": "Sandbox.Game/Sandbox.Component",
                   "_name": "GameObject"
                 },
                 "UserData": {
+                  "Position": "-480,-544"
+                }
+              },
+              {
+                "Id": 29,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.InventoryComponent",
+                  "_name": "Player"
+                },
+                "UserData": {
                   "Position": "-480,-480"
+                }
+              },
+              {
+                "Id": 31,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.xenthio.modular_fps_base/FPSKit.PlayerComponent",
+                  "_name": "Aim"
+                },
+                "UserData": {
+                  "Position": "-480,-416"
+                }
+              },
+              {
+                "Id": 32,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "Transform"
+                },
+                "UserData": {
+                  "Position": "-480,-352"
                 }
               }
             ],
@@ -2294,6 +2322,12 @@
                 0,
                 "_signal",
                 19,
+                "_signal"
+              ],
+              [
+                0,
+                "_signal",
+                26,
                 "_signal"
               ],
               [
@@ -2321,39 +2355,15 @@
                 "_target"
               ],
               [
-                0,
-                "arg2",
-                21,
-                "_target"
-              ],
-              [
                 3,
                 "_result",
-                4,
+                28,
                 "target"
               ],
               [
                 3,
                 "_result",
-                23,
-                "target"
-              ],
-              [
-                4,
-                "_result",
-                5,
-                "target"
-              ],
-              [
-                5,
-                "_result",
-                12,
-                "target"
-              ],
-              [
-                5,
-                "_result",
-                13,
+                29,
                 "target"
               ],
               [
@@ -2393,10 +2403,40 @@
                 "sound"
               ],
               [
-                23,
+                25,
+                "_result",
+                26,
+                "_target"
+              ],
+              [
+                28,
                 "_result",
                 17,
                 "Attacker"
+              ],
+              [
+                29,
+                "_result",
+                31,
+                "target"
+              ],
+              [
+                31,
+                "_result",
+                32,
+                "target"
+              ],
+              [
+                32,
+                "_result",
+                12,
+                "target"
+              ],
+              [
+                32,
+                "_result",
+                13,
+                "target"
               ]
             ],
             "UserData": {
