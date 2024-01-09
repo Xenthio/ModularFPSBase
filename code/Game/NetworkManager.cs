@@ -47,7 +47,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		//
 		var startLocation = Transform.World;
 
-		var SpawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
+		/*var SpawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
 		//SpawnPoint
 		if ( SpawnPoints is not null && SpawnPoints.Count > 0 )
 		{
@@ -61,7 +61,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 		startLocation.Scale = 1;
 
-		// Spawn this object and make the client the owner
+		// Spawn this object and make the client the owner*/
 		var player = SceneUtility.Instantiate( PlayerPrefab, startLocation );
 		player.Name = $"Player - {channel.DisplayName}";
 		player.BreakFromPrefab();

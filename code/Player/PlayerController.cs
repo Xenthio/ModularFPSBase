@@ -32,6 +32,9 @@ public class PlayerController : Component, INetworkSerializable
 
 	protected override void OnUpdate()
 	{
+		if ( Player.Life.LifeState != LifeState.Alive )
+			return;
+
 
 		PhysicsShadowReset();
 		//PlayerShadowUpdate();

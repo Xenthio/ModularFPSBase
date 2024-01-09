@@ -10,6 +10,20 @@ public class PlayerComponent : Component
 	[Property] public CameraComponent Camera { get; set; }
 	[Property] public PlayerController Controller { get; set; }
 	[Property] public CharacterController Movement { get; set; }
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+		MoveToSpawnpoint();
+	}
+	public void MoveToSpawnpoint()
+	{
+		var Spawnpoints = Scene.GetAllComponents<SpawnPoint>().ToList();
+		if ( Spawnpoints is not null && Spawnpoints.Count > 0 )
+		{
+			GameObject.Transform.World = Random.Shared.FromList( Spawnpoints, default ).GameObject.Transform.World;
+		}
+	}
 	protected override void OnAwake()
 	{
 		base.OnAwake();
@@ -69,5 +83,6 @@ public class PlayerComponent : Component
 		Body.Model.SceneModel.UseAnimGraph = true;
 		Controller.PhysicsShadow.Enabled = true;
 		Controller.PlayerShadow.Enabled = true;
+		MoveToSpawnpoint();
 	}
 }
