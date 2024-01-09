@@ -13,7 +13,7 @@ public class TorchController : Component
 		}
 		if ( TorchLight.Enabled )
 		{
-			var tr = Scene.Trace.Ray( TorchLight.GameObject.Parent.Transform.Position, TorchLight.GameObject.Parent.Transform.Position + (TorchLight.GameObject.Transform.Rotation.Forward * 24) ).WithoutTags( "player" ).Run();
+			var tr = Scene.Trace.Ray( TorchLight.GameObject.Parent.Transform.Ray(), 24 ).WithoutTags( "player" ).Run();
 
 			distance = distance.LerpTo( tr.Distance, Time.Delta * 16f );
 			TorchLight.Transform.LocalPosition = -Vector3.Forward * (4 - distance);
