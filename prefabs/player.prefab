@@ -14,6 +14,16 @@
         "PhysicsImpact": true
       },
       {
+        "__type": "PlayerComponent",
+        "__enabled": true,
+        "Aim": "bce79471-a91d-4d01-91a6-fcd34db569c5",
+        "Animation": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
+        "Body": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
+        "Eye": "bce79471-a91d-4d01-91a6-fcd34db569c5",
+        "Life": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda",
+        "Viewmodel": "d10f4288-a6f8-488d-a1e9-7c0e0b85cd04"
+      },
+      {
         "__type": "CameraController",
         "__enabled": true,
         "Camera": "1ca98958-a78d-45c3-8894-d910fd22f6de",
@@ -58,11 +68,7 @@
       {
         "__type": "InventoryComponent",
         "__enabled": true,
-        "AnimationHelper": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
-        "Body": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
-        "Eye": "bce79471-a91d-4d01-91a6-fcd34db569c5",
-        "Viewmodel": "d10f4288-a6f8-488d-a1e9-7c0e0b85cd04",
-        "ViewmodelCamera": "26de23db-f125-4fc4-945a-e351bda08e34"
+        "Player": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda"
       },
       {
         "__type": "FallDamageComponent",
@@ -75,12 +81,6 @@
         "__type": "TorchController",
         "__enabled": true,
         "TorchLight": "ebc5e649-57df-4b4a-8d69-84c8e37239c4"
-      },
-      {
-        "__type": "PlayerComponent",
-        "__enabled": true,
-        "Body": "d52dd58b-f708-43cb-ae5e-e60d424f1a33",
-        "Life": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda"
       }
     ],
     "Children": [
@@ -971,6 +971,12 @@
         "Name": "Eye",
         "Position": "0,0,64",
         "Enabled": true,
+        "Components": [
+          {
+            "__type": "AimComponent",
+            "__enabled": true
+          }
+        ],
         "Children": [
           {
             "Id": "ebc5e649-57df-4b4a-8d69-84c8e37239c4",
@@ -1085,7 +1091,10 @@
               },
               {
                 "__type": "ViewmodelComponent",
-                "__enabled": true
+                "__enabled": true,
+                "Camera": "26de23db-f125-4fc4-945a-e351bda08e34",
+                "Inventory": "be8f4f89-2ba1-4b0a-87c7-b407a090ccda",
+                "Model": "d10f4288-a6f8-488d-a1e9-7c0e0b85cd04"
               }
             ]
           }

@@ -1,9 +1,15 @@
+using Sandbox.Citizen;
+
 namespace FPSKit;
 // split this up into othrr parts maybe??
 public class PlayerComponent : Component
 {
 	[Property] public LifeComponent Life { get; set; }
+	[Property] public AimComponent Aim { get; set; }
 	[Property] public GameObject Body { get; set; }
+	[Property] public GameObject Eye { get; set; }
+	[Property] public CitizenAnimationHelper Animation { get; set; }
+	[Property] public ViewmodelComponent Viewmodel { get; set; }
 	protected override void OnAwake()
 	{
 		base.OnAwake();
@@ -43,5 +49,10 @@ public class PlayerComponent : Component
 		//Body.Components.Get<CitizenAnimationHelper>( true ).Enabled = false;
 		//Body.Components.Get<SkinnedModelRenderer>( true ).Reset();
 		//GameObject.Destroy();
+	}
+
+	public void OnDamage( in global::DamageInfo damage )
+	{
+		throw new NotImplementedException();
 	}
 }

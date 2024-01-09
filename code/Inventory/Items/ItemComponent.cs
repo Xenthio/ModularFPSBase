@@ -30,7 +30,7 @@ public class ItemComponent : Component
 	}
 	public void PlaySound( SoundEvent sound )
 	{
-		Sound.Play( sound, OwnerInventory.Eye.Transform.Position );
+		Sound.Play( sound, OwnerInventory.Player.Eye.Transform.Position );
 	}
 	public virtual void FixedCarriableUpdate()
 	{

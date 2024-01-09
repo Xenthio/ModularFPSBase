@@ -4,15 +4,8 @@ namespace FPSKit;
 
 public class InventoryComponent : Component
 {
-	[Property] public GameObject Eye { get; set; }
-	[Property] public GameObject Body { get; set; }
-	[Property] public GameObject Viewmodel { get; set; }
-	[Property] public CameraComponent ViewmodelCamera { get; set; }
-	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property] public PlayerComponent Player { get; set; }
 
-
-	public SkinnedModelRenderer ViewmodelModel => Viewmodel.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf );
-	public SkinnedModelRenderer ActiveItemModel => ActiveItem.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf );
 	public GameObject ActiveItem;
 	public List<GameObject> Items = new List<GameObject>();
 	protected override void OnUpdate()
@@ -32,24 +25,15 @@ public class InventoryComponent : Component
 			ActiveItem.Transform.LocalPosition = Vector3.Zero;
 			ActiveItem.Transform.LocalRotation = Rotation.Identity;
 			activeequippable.FixedCarriableUpdate();
-			// set the viewmodel to the current items viewmodel
-			if ( activeequippable.Viewmodel != null )
-			{
-				ViewmodelModel.Model = activeequippable.Viewmodel;
-			}
-			else
-			{
-				ViewmodelModel.Model = null;
-			}
 		}
 
-		if ( AnimationHelper is not null && ActiveItem is not null && ActiveItem.Components.TryGet<ItemComponent>( out var equippableComponent ) )
+		if ( Player.Animation is not null && ActiveItem is not null && ActiveItem.Components.TryGet<ItemComponent>( out var equippableComponent ) )
 		{
-			AnimationHelper.HoldType = equippableComponent.HoldType;
+			Player.Animation.HoldType = equippableComponent.HoldType;
 		}
-		else if ( AnimationHelper is not null )
+		else if ( Player.Animation is not null )
 		{
-			AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.None;
+			Player.Animation.HoldType = CitizenAnimationHelper.HoldTypes.None;
 		}
 	}
 
@@ -67,25 +51,25 @@ public class InventoryComponent : Component
 	}
 	public void TriggerAttack()
 	{
-		if ( AnimationHelper is not null )
+		if ( Player.Animation is not null )
 		{
-			AnimationHelper.Target.Set( "b_attack", true );
-			ViewmodelModel.Set( "fire", true );
+			Player.Animation.Target.Set( "b_attack", true );
+			Player.Viewmodel.Model.Set( "fire", true );
 		}
 	}
 	public void CreateParticle( ParticleSystem prt )
 	{
 		Transform transform = new Transform();
 		var mflash = LegacyParticle.Create( prt?.Name, transform.Position, transform.Rotation );
-		if ( !IsProxy && ViewmodelCamera.Enabled )
+		if ( !IsProxy && Player.Viewmodel.Camera.Enabled )
 		{
-			transform = ViewmodelModel.GetAttachment( "muzzle" ).Value;
+			transform = Player.Viewmodel.Model.GetAttachment( "muzzle" ).Value;
 			mflash.GameObject.Tags.Add( "viewmodel" );
 			mflash.LegacyParticleSystem.SceneObject.Tags.Add( "viewmodel" );
 		}
 		else
 		{
-			transform = ActiveItemModel.GetAttachment( "muzzle" ).Value;
+			transform = ActiveItem.Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf ).GetAttachment( "muzzle" ).Value;
 		}
 		mflash.Position = transform.Position;
 		mflash.Rotation = transform.Rotation;
@@ -95,7 +79,7 @@ public class InventoryComponent : Component
 	{
 		// game crashes on pickup disable this for now
 		//return;
-		item.Parent = Body;
+		item.Parent = Player.Body;
 		item.Network.TakeOwnership();
 		Items.Add( item );
 		//if ( item.Components.TryGet<Rigidbody>( out var rigidbody ) ) rigidbody.PhysicsBody.MotionEnabled = false;
@@ -103,7 +87,7 @@ public class InventoryComponent : Component
 		if ( item.Components.TryGet<Collider>( out var collider ) ) collider.Enabled = false;
 		if ( item.Components.TryGet<SkinnedModelRenderer>( out var skinnedModelRenderer ) )
 		{
-			skinnedModelRenderer.BoneMergeTarget = Body.Components.Get<SkinnedModelRenderer>();
+			skinnedModelRenderer.BoneMergeTarget = Player.Body.Components.Get<SkinnedModelRenderer>();
 		}
 		if ( item.Components.TryGet<ItemComponent>( out var equippable ) )
 		{

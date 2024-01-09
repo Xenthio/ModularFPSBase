@@ -27,15 +27,16 @@ public class GunComponent : WeaponComponent
 	{
 		var bulletinfo = new BulletInfo()
 		{
+			Owner = OwnerInventory.Player.GameObject,
 			Damage = PrimaryDamage,
 			Spread = PrimarySpread,
-			Position = OwnerInventory.Eye.Transform.Position,
-			Direction = OwnerInventory.Eye.Transform.Rotation.Forward,
+			Position = OwnerInventory.Player.Aim.Transform.Position,
+			Direction = OwnerInventory.Player.Aim.Transform.Rotation.Forward,
 			Force = PrimaryForce,
 			HeadshotMultiplier = PrimaryHeadshotMultiplier,
 			Count = PrimaryBulletCount,
 		};
-		Sound.Play( PrimaryShootSound, OwnerInventory.Eye.Transform.Position );
+		Sound.Play( PrimaryShootSound, OwnerInventory.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		CreateParticle( PrimaryMuzzleflash );
 		TriggerAttack();
@@ -45,15 +46,16 @@ public class GunComponent : WeaponComponent
 	{
 		var bulletinfo = new BulletInfo()
 		{
+			Owner = OwnerInventory.Player.GameObject,
 			Damage = SecondaryDamage,
 			Spread = SecondarySpread,
-			Position = OwnerInventory.Eye.Transform.Position,
-			Direction = OwnerInventory.Eye.Transform.Rotation.Forward,
+			Position = OwnerInventory.Player.Aim.Transform.Position,
+			Direction = OwnerInventory.Player.Aim.Transform.Rotation.Forward,
 			Force = SecondaryForce,
 			HeadshotMultiplier = SecondaryHeadshotMultiplier,
 			Count = SecondaryBulletCount,
 		};
-		Sound.Play( SecondaryShootSound, OwnerInventory.Eye.Transform.Position );
+		Sound.Play( SecondaryShootSound, OwnerInventory.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		CreateParticle( SecondaryMuzzleflash );
 		TriggerAttack();

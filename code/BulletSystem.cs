@@ -47,8 +47,6 @@ public partial class Bullet
 			var position = info.Position;
 			var forward = info.Direction;
 
-			// TODO: Ignore player instead of this
-			position += forward * 32;
 			forward += Vector3.Random * info.Spread;
 
 			var tr = GameManager.ActiveScene.Trace.Ray( position, position + (forward * 10000) )
