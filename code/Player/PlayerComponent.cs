@@ -9,6 +9,7 @@ public class PlayerComponent : Component
 	[Property] public ViewmodelComponent Viewmodel { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
 	[Property] public PlayerController Controller { get; set; }
+	[Property] public CharacterController Movement { get; set; }
 	protected override void OnAwake()
 	{
 		base.OnAwake();
@@ -43,6 +44,7 @@ public class PlayerComponent : Component
 		//GameObject.Components.Get<CameraComponent>( FindMode.EnabledInSelfAndChildren ).GameObject.SetParent( null );
 
 		Body.Physics.Enabled = true;
+		Body.Physics.PhysicsGroup.AddVelocity( Movement.Velocity );
 		Body.Tags.RemoveAll();
 		Body.Tags.Add( "nopush" );
 		Body.Tags.Remove( "player" );
