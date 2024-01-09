@@ -11,6 +11,8 @@ public class InventoryComponent : Component
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
+		if ( Player.Life.LifeState != LifeState.Alive )
+			return;
 		if ( ActiveItem != null && ActiveItem.Components.TryGet<ItemComponent>( out var activeequippable ) )
 		{
 			activeequippable.CarriableUpdate();
@@ -19,6 +21,8 @@ public class InventoryComponent : Component
 	protected override void OnFixedUpdate()
 	{
 		base.OnFixedUpdate();
+		if ( Player.Life.LifeState != LifeState.Alive )
+			return;
 		TryPickupThings();
 		if ( ActiveItem != null && ActiveItem.Components.TryGet<ItemComponent>( out var activeequippable ) )
 		{
