@@ -6,7 +6,7 @@ public class InventoryComponent : Component
 {
 	[Property] public PlayerComponent Player { get; set; }
 
-	public GameObject ActiveItem;
+	[Sync] public GameObject ActiveItem { get; set; }
 	public List<GameObject> Items = new List<GameObject>();
 	protected override void OnUpdate()
 	{
