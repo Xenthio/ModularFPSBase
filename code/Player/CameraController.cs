@@ -6,7 +6,7 @@ public class CameraController : Component, INetworkSerializable
 
 	[Property] public PlayerComponent Player { get; set; }
 
-	public Angles EyeAngles;
+	[Sync] public Angles EyeAngles { get; set; }
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
@@ -15,10 +15,13 @@ public class CameraController : Component, INetworkSerializable
 		if ( !IsProxy )
 		{
 			if ( Input.Pressed( "View" ) ) FirstPerson = !FirstPerson;
-			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
-			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
-			EyeAngles.roll = 0;
-			EyeAngles.pitch = EyeAngles.pitch.Clamp( -89f, 89f );
+
+			var eyeAngles = EyeAngles;
+			eyeAngles.pitch += Input.MouseDelta.y * 0.1f;
+			eyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+			eyeAngles.roll = 0;
+			eyeAngles.pitch = eyeAngles.pitch.Clamp( -89f, 89f );
+			EyeAngles = eyeAngles;
 
 			Player.Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 
