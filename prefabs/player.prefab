@@ -6,6 +6,7 @@
     "Enabled": true,
     "Components": [
       {
+        "__version": 0,
         "__type": "LifeComponent",
         "__enabled": true,
         "Armour": 35,
@@ -14,6 +15,7 @@
         "PhysicsImpact": true
       },
       {
+        "__version": 0,
         "__type": "PlayerComponent",
         "__enabled": true,
         "Aim": "c42bd897-5ca9-4a9b-91f3-21091450fa21",
@@ -26,12 +28,14 @@
         "Viewmodel": "55c47e2b-2b4d-44fb-965c-edd83e81bc26"
       },
       {
+        "__version": 0,
         "__type": "CameraController",
         "__enabled": true,
         "FirstPerson": true,
         "Player": "2863edaa-72cc-4735-b518-51f40dd0bffe"
       },
       {
+        "__version": 0,
         "__type": "PlayerController",
         "__enabled": true,
         "AirControl": 30,
@@ -49,6 +53,7 @@
         "WalkSpeed": 120
       },
       {
+        "__version": 0,
         "__type": "CharacterController",
         "__enabled": true,
         "Acceleration": 10,
@@ -59,15 +64,18 @@
         "StepHeight": 18
       },
       {
+        "__version": 0,
         "__type": "AmmoComponent",
         "__enabled": true
       },
       {
+        "__version": 0,
         "__type": "InventoryComponent",
         "__enabled": true,
         "Player": "2863edaa-72cc-4735-b518-51f40dd0bffe"
       },
       {
+        "__version": 0,
         "__type": "FallDamageComponent",
         "__enabled": true,
         "LandingSound": "sounds/falldamage.sound",
@@ -75,9 +83,23 @@
         "SafeFallSpeed": 580
       },
       {
+        "__version": 0,
         "__type": "TorchController",
         "__enabled": true,
         "TorchLight": "b9b5d7a3-68b4-4a39-973b-97b997d007b0"
+      },
+      {
+        "__version": 0,
+        "__type": "Voice",
+        "__enabled": true,
+        "Loopback": false,
+        "Mode": "PushToTalk",
+        "MorphFadeSpeed": 50,
+        "MorphScale": 2,
+        "PushToTalkInput": "voice",
+        "Renderer": "ae9a0e8d-9b1e-480b-ac74-1581b2ba2118",
+        "Volume": 1,
+        "WorldspacePlayback": true
       }
     ],
     "Children": [
@@ -88,6 +110,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "SkinnedModelRenderer",
             "__enabled": true,
             "BodyGroups": 18446744073709551615,
@@ -100,12 +123,14 @@
             "Tint": "1,1,1,1"
           },
           {
+            "__version": 0,
             "__type": "ModelHitboxes",
             "__enabled": true,
             "Renderer": "ae9a0e8d-9b1e-480b-ac74-1581b2ba2118",
             "Target": "prefabs/player.prefab"
           },
           {
+            "__version": 0,
             "__type": "CitizenAnimationHelper",
             "__enabled": true,
             "BodyWeight": 1,
@@ -122,6 +147,7 @@
             "Target": "ae9a0e8d-9b1e-480b-ac74-1581b2ba2118"
           },
           {
+            "__version": 0,
             "__type": "ModelPhysics",
             "__enabled": false,
             "Locking": {},
@@ -129,6 +155,7 @@
             "Renderer": "ae9a0e8d-9b1e-480b-ac74-1581b2ba2118"
           },
           {
+            "__version": 0,
             "__type": "PlayerBodyComponent",
             "__enabled": true,
             "Animation": "ae9a0e8d-9b1e-480b-ac74-1581b2ba2118",
@@ -977,6 +1004,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "AimComponent",
             "__enabled": true
           }
@@ -989,6 +1017,7 @@
             "Enabled": true,
             "Components": [
               {
+                "__version": 0,
                 "__type": "SpotLight",
                 "__enabled": false,
                 "Attenuation": 1,
@@ -1010,6 +1039,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "ScreenPanel",
             "__enabled": true,
             "AutoScreenScale": true,
@@ -1018,6 +1048,7 @@
             "ZIndex": 100
           },
           {
+            "__version": 0,
             "__type": "PlayerHUD",
             "__enabled": true
           }
@@ -1031,6 +1062,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "CameraComponent",
             "__enabled": true,
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
@@ -1056,6 +1088,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "CameraComponent",
             "__enabled": true,
             "BackgroundColor": "1,0,0,1",
@@ -1082,6 +1115,7 @@
             "Enabled": true,
             "Components": [
               {
+                "__version": 0,
                 "__type": "SkinnedModelRenderer",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
@@ -1094,6 +1128,7 @@
                 "Tint": "1,1,1,1"
               },
               {
+                "__version": 0,
                 "__type": "ViewmodelComponent",
                 "__enabled": true,
                 "Camera": "b90d56f1-efe9-4869-a2f0-9149ad58ceb2",
@@ -1112,6 +1147,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "Rigidbody",
             "__enabled": true,
             "AngularDamping": 0,
@@ -1121,9 +1157,11 @@
               "Pitch": true,
               "Roll": true
             },
+            "RigidbodyFlags": 0,
             "StartAsleep": false
           },
           {
+            "__version": 0,
             "__type": "BoxCollider",
             "__enabled": true,
             "Center": "0,0,0",
@@ -1133,6 +1171,7 @@
             "Surface": null
           },
           {
+            "__version": 0,
             "__type": "CapsuleCollider",
             "__enabled": false,
             "End": "0,0,20",
@@ -1152,6 +1191,7 @@
         "Enabled": true,
         "Components": [
           {
+            "__version": 0,
             "__type": "Rigidbody",
             "__enabled": true,
             "AngularDamping": 0,
@@ -1161,9 +1201,11 @@
               "Pitch": true,
               "Roll": true
             },
+            "RigidbodyFlags": 0,
             "StartAsleep": false
           },
           {
+            "__version": 0,
             "__type": "BoxCollider",
             "__enabled": true,
             "Center": "0,0,0",
