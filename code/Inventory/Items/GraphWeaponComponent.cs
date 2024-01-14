@@ -1,12 +1,12 @@
 ﻿namespace FPSKit;
 
 
-internal class NewWeaponComponent : WeaponComponent
+internal class GraphWeaponComponent : WeaponComponent
 {
-	[Property, Group( "Primary Attack" )] public Action<GameObject, NewWeaponComponent> PrimaryAttackAction { get; set; }
+	[Property, Group( "Primary Attack" )] public Action<GameObject, GraphWeaponComponent> PrimaryAttackAction { get; set; }
 
 
-	[Property, Group( "Secondary Attack" )] public Action<GameObject, NewWeaponComponent> SecondaryAttackAction { get; set; }
+	[Property, Group( "Secondary Attack" )] public Action<GameObject, GraphWeaponComponent> SecondaryAttackAction { get; set; }
 
 	public override void PrimaryAttack()
 	{
