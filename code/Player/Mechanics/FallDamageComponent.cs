@@ -2,8 +2,7 @@
 
 public class FallDamageComponent : Component
 {
-	CharacterController CharacterController => Components.Get<CharacterController>( FindMode.InSelf );
-	LifeComponent LifeComponent => Components.Get<LifeComponent>( FindMode.InSelf );
+	[Property] public PlayerComponent Player { get; set; }
 
 	[Property] public float LethalFallSpeed { get; set; } = 1024;
 	[Property] public float SafeFallSpeed { get; set; } = 580;
@@ -16,13 +15,13 @@ public class FallDamageComponent : Component
 	{
 		base.OnFixedUpdate();
 		var FallSpeed = -PreviousZVelocity;
-		if ( FallSpeed > (SafeFallSpeed * GameObject.Transform.Scale.z) && CharacterController.IsOnGround )
+		if ( FallSpeed > (SafeFallSpeed * GameObject.Transform.Scale.z) && Player.Movement.IsOnGround )
 		{
 			var FallDamage = (FallSpeed - (SafeFallSpeed * GameObject.Transform.Scale.z)) * (DamageForSpeed * GameObject.Transform.Scale.z);
 			var info = DamageInfo.Generic( FallDamage ).WithTag( "fall" );
-			LifeComponent.TakeDamage( info );
+			Player.Life.TakeDamage( info );
 			Sound.Play( LandingSound );
 		}
-		PreviousZVelocity = CharacterController.Velocity.z;
+		PreviousZVelocity = Player.Movement.Velocity.z;
 	}
 }
