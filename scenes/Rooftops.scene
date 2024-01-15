@@ -7,6 +7,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "MapInstance",
           "__enabled": true,
           "MapName": "thieves.rooftops",
@@ -23,6 +24,7 @@
       "Position": "-416,0,128",
       "Components": [
         {
+          "__version": 0,
           "__type": "EnvmapProbe",
           "__enabled": true,
           "Bounds": {
@@ -44,6 +46,7 @@
       "Tags": "light",
       "Components": [
         {
+          "__version": 0,
           "__type": "DirectionalLight",
           "__enabled": true,
           "LightColor": "1.82746,1.96078,2,1",
@@ -58,6 +61,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "NetworkManager",
           "__enabled": true,
           "PlayerPrefab": "prefabs/player.prefab",
@@ -71,6 +75,7 @@
       "Position": "0,2176,64",
       "Components": [
         {
+          "__version": 0,
           "__type": "SkyBox2D",
           "__enabled": true,
           "SkyMaterial": "materials/skybox/rustig_koppie_puresky.vmat",
@@ -85,6 +90,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false
         }
@@ -99,6 +105,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": true
         }
@@ -111,6 +118,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false
         }
@@ -124,6 +132,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false
         }
@@ -136,6 +145,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false
         }
@@ -149,6 +159,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -159,6 +170,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -167,6 +179,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -186,6 +199,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -196,6 +210,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -204,6 +219,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -223,6 +239,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -233,6 +250,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -241,6 +259,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -260,6 +279,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -270,6 +290,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -278,6 +299,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -299,6 +321,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -309,6 +332,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -317,6 +341,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -336,6 +361,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -346,6 +372,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -354,6 +381,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -373,6 +401,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -383,6 +412,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -391,6 +421,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -410,6 +441,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -420,6 +452,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -428,6 +461,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -448,6 +482,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -458,6 +493,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -478,6 +514,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -488,6 +525,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -508,6 +546,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -518,6 +557,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -538,6 +578,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -548,6 +589,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -568,6 +610,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -578,6 +621,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -598,6 +642,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -608,6 +653,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -628,6 +674,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -638,6 +685,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -658,6 +706,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -668,6 +717,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -688,6 +738,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -698,6 +749,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -717,6 +769,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -727,6 +780,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -746,6 +800,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -756,6 +811,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -775,6 +831,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -785,6 +842,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -804,6 +862,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -814,6 +873,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -833,6 +893,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -843,6 +904,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -863,6 +925,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -873,6 +936,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -893,6 +957,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -903,6 +968,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -923,6 +989,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -933,6 +1000,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -952,6 +1020,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -962,6 +1031,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -982,6 +1052,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -992,6 +1063,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1012,6 +1084,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1022,6 +1095,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1042,6 +1116,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1052,6 +1127,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1072,6 +1148,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1082,6 +1159,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1102,6 +1180,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1112,6 +1191,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1131,6 +1211,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1141,6 +1222,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1150,6 +1232,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1160,6 +1243,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "RotatePhysics",
           "__enabled": true,
           "RotateAmount": 0.2
@@ -1175,6 +1259,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1185,6 +1270,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1194,6 +1280,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1204,6 +1291,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "SineUpandDown",
           "__enabled": true,
           "Strength": 128
@@ -1219,6 +1307,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1229,6 +1318,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1238,6 +1328,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1248,6 +1339,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "SineUpandDown",
           "__enabled": true,
           "Strength": 256
@@ -1263,6 +1355,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1273,6 +1366,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1282,6 +1376,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1292,6 +1387,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "SineUpandDown",
           "__enabled": true,
           "Strength": 64
@@ -1307,6 +1403,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1317,6 +1414,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1326,6 +1424,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1336,6 +1435,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "SineUpandDown",
           "__enabled": true,
           "Strength": 512
@@ -1351,6 +1451,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1361,6 +1462,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1370,6 +1472,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1380,6 +1483,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "SineUpandDown",
           "__enabled": true,
           "Strength": 1024
@@ -1395,6 +1499,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1405,6 +1510,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1414,6 +1520,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1424,6 +1531,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "SineUpandDown",
           "__enabled": true,
           "Strength": 2048
@@ -1439,6 +1547,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1449,6 +1558,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1458,6 +1568,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1468,6 +1579,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "RotatePhysics",
           "__enabled": true,
           "RotateAmount": -0.2
@@ -1483,6 +1595,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1493,6 +1606,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1502,6 +1616,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1512,6 +1627,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "RotatePhysics",
           "__enabled": true,
           "RotateAmount": 2
@@ -1527,6 +1643,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1537,6 +1654,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1546,6 +1664,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1556,6 +1675,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "RotatePhysics",
           "__enabled": true,
           "RotateAmount": -1
@@ -1570,6 +1690,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1580,6 +1701,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -1588,6 +1710,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1607,6 +1730,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1617,6 +1741,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -1625,6 +1750,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1644,6 +1770,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1654,6 +1781,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -1662,6 +1790,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1681,6 +1810,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1691,6 +1821,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -1699,6 +1830,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1720,6 +1852,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1730,6 +1863,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1740,6 +1874,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1759,6 +1894,7 @@
       "Networked": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1769,6 +1905,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1779,6 +1916,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1799,6 +1937,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1809,6 +1948,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1819,6 +1959,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1839,6 +1980,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1849,6 +1991,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1859,6 +2002,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1878,6 +2022,7 @@
       "Networked": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1888,6 +2033,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1898,6 +2044,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -1915,6 +2062,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1925,6 +2073,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -1933,6 +2082,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1943,6 +2093,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "Duplicator",
           "__enabled": true,
           "MaxDuplicates": 32,
@@ -1960,6 +2111,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -1970,6 +2122,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -1978,6 +2131,7 @@
           "Surface": "surfaces/wood.surface"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -1988,6 +2142,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "bridgecreatorlol",
           "__enabled": true,
           "PlankCount": 52,
@@ -2005,6 +2160,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2015,6 +2171,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -2033,6 +2190,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "DecalRenderer",
           "__enabled": true,
           "CutoffAngle": 60,
@@ -2053,6 +2211,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "DecalRenderer",
           "__enabled": true,
           "CutoffAngle": 60,
@@ -2074,6 +2233,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SkinnedModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2086,6 +2246,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -2096,382 +2257,13 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "Static": false,
           "Surface": null
-        },
-        {
-          "__type": "NewWeaponComponent",
-          "__enabled": true,
-          "AutomaticPrimary": false,
-          "AutomaticSecondary": false,
-          "HoldType": "Pistol",
-          "PrimaryAttackAction": {
-            "Kind": "Action",
-            "Variables": [
-              {
-                "Id": 24,
-                "Name": "_this",
-                "Type": "package.xenthio.modular_fps_base/FPSKit.NewWeaponComponent",
-                "Default": "d555ac63-050d-4775-8603-d06fd889ea24"
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input",
-                "UserData": {
-                  "Position": "-1008,-608"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "field.get",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
-                  "_name": "OwnerInventory"
-                },
-                "UserData": {
-                  "Position": "-784,-704"
-                }
-              },
-              {
-                "Id": 12,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
-                },
-                "UserData": {
-                  "Position": "-176,-704"
-                }
-              },
-              {
-                "Id": 13,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Rotation"
-                },
-                "UserData": {
-                  "Position": "-176,-768"
-                }
-              },
-              {
-                "Id": 14,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.System/Rotation",
-                  "_name": "Forward"
-                },
-                "UserData": {
-                  "Position": "-144,-768"
-                }
-              },
-              {
-                "Id": 16,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.Bullet",
-                  "_name": "ShootBullet",
-                  "_isStatic": true
-                },
-                "UserData": {
-                  "Position": "320,-608"
-                }
-              },
-              {
-                "Id": 17,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.Bullet",
-                  "_name": "CreateBulletInfo",
-                  "_isStatic": true
-                },
-                "Inputs": {
-                  "damage": {
-                    "$type": "Simple",
-                    "Type": "System.Private.CoreLib/System.Single",
-                    "Value": 10
-                  },
-                  "force": {
-                    "$type": "Simple",
-                    "Type": "System.Private.CoreLib/System.Single",
-                    "Value": 10
-                  },
-                  "count": {
-                    "$type": "Simple",
-                    "Type": "System.Private.CoreLib/System.Single",
-                    "Value": 1
-                  },
-                  "spread": {
-                    "$type": "Simple",
-                    "Type": "System.Private.CoreLib/System.Single",
-                    "Value": 0.024
-                  },
-                  "headshotMultiplier": {
-                    "$type": "Simple",
-                    "Type": "System.Private.CoreLib/System.Single",
-                    "Value": 2
-                  }
-                },
-                "UserData": {
-                  "Position": "96,-608"
-                }
-              },
-              {
-                "Id": 18,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
-                  "_name": "TriggerAttack",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "-704,-416"
-                }
-              },
-              {
-                "Id": 19,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
-                  "_name": "PlaySound",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "-704,-336"
-                }
-              },
-              {
-                "Id": 20,
-                "Type": "const.resource",
-                "Properties": {
-                  "value": {
-                    "$type": "Simple",
-                    "Type": "Sandbox.Engine/Sandbox.SoundEvent",
-                    "Value": "sounds/kenney/ui/ui.downvote.sound"
-                  },
-                  "T": "Sandbox.Engine/Sandbox.SoundEvent"
-                },
-                "UserData": {
-                  "Position": "-1024,-400"
-                }
-              },
-              {
-                "Id": 25,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "package.xenthio.modular_fps_base/FPSKit.NewWeaponComponent"
-                },
-                "UserData": {
-                  "Position": "-1072,-336"
-                }
-              },
-              {
-                "Id": 26,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.ItemComponent",
-                  "_name": "CreateParticle",
-                  "_isStatic": false
-                },
-                "Inputs": {
-                  "particle": {
-                    "$type": "Simple",
-                    "Type": "Sandbox.Engine/Sandbox.ParticleSystem",
-                    "Value": "particles/pistol_muzzleflash.vpcf"
-                  }
-                },
-                "UserData": {
-                  "Position": "-704,-240"
-                }
-              },
-              {
-                "Id": 28,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.Component",
-                  "_name": "GameObject"
-                },
-                "UserData": {
-                  "Position": "-560,-672"
-                }
-              },
-              {
-                "Id": 29,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.InventoryComponent",
-                  "_name": "Player"
-                },
-                "UserData": {
-                  "Position": "-560,-736"
-                }
-              },
-              {
-                "Id": 31,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "package.xenthio.modular_fps_base/FPSKit.PlayerComponent",
-                  "_name": "Aim"
-                },
-                "UserData": {
-                  "Position": "-400,-736"
-                }
-              },
-              {
-                "Id": 32,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.Component",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-384,-736"
-                }
-              }
-            ],
-            "Links": [
-              [
-                0,
-                "_signal",
-                17,
-                "_signal"
-              ],
-              [
-                0,
-                "_signal",
-                18,
-                "_signal"
-              ],
-              [
-                0,
-                "_signal",
-                19,
-                "_signal"
-              ],
-              [
-                0,
-                "arg1",
-                17,
-                "Weapon"
-              ],
-              [
-                0,
-                "arg2",
-                3,
-                "target"
-              ],
-              [
-                0,
-                "arg2",
-                18,
-                "_target"
-              ],
-              [
-                0,
-                "arg2",
-                19,
-                "_target"
-              ],
-              [
-                3,
-                "_result",
-                28,
-                "target"
-              ],
-              [
-                3,
-                "_result",
-                29,
-                "target"
-              ],
-              [
-                12,
-                "_result",
-                17,
-                "position"
-              ],
-              [
-                13,
-                "_result",
-                14,
-                "target"
-              ],
-              [
-                14,
-                "_result",
-                17,
-                "direction"
-              ],
-              [
-                17,
-                "_signal",
-                16,
-                "_signal"
-              ],
-              [
-                17,
-                "_result",
-                16,
-                "info"
-              ],
-              [
-                20,
-                "_result",
-                19,
-                "sound"
-              ],
-              [
-                25,
-                "_result",
-                26,
-                "_target"
-              ],
-              [
-                28,
-                "_result",
-                17,
-                "Attacker"
-              ],
-              [
-                29,
-                "_result",
-                31,
-                "target"
-              ],
-              [
-                31,
-                "_result",
-                32,
-                "target"
-              ],
-              [
-                32,
-                "_result",
-                12,
-                "target"
-              ],
-              [
-                32,
-                "_result",
-                13,
-                "target"
-              ]
-            ],
-            "UserData": {
-              "Title": "Primary Attack Action",
-              "id": "863bf708-34c2-4d6c-a2de-4de658f1fd14"
-            }
-          },
-          "SecondaryAttackAction": null,
-          "TimeBetweenPrimaryAttack": 0.1,
-          "TimeBetweenSecondaryAttack": 0.1,
-          "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
         }
       ],
       "Children": [
@@ -2493,6 +2285,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SkinnedModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2505,6 +2298,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "Rigidbody",
           "__enabled": true,
           "AngularDamping": 0,
@@ -2515,6 +2309,7 @@
           "StartAsleep": false
         },
         {
+          "__version": 0,
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -2523,6 +2318,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "GunComponent",
           "__enabled": true,
           "AutomaticPrimary": false,
@@ -2530,6 +2326,7 @@
           "HoldType": "Pistol",
           "PrimaryAmmoType": "Pistol",
           "PrimaryBulletCount": 1,
+          "PrimaryClipMax": 17,
           "PrimaryDamage": 10,
           "PrimaryForce": 10,
           "PrimaryHeadshotMultiplier": 2,
@@ -2539,6 +2336,7 @@
           "PrimarySpread": 0.024,
           "SecondaryAmmoType": "Pistol",
           "SecondaryBulletCount": 1,
+          "SecondaryClipMax": 17,
           "SecondaryDamage": 10,
           "SecondaryForce": 10,
           "SecondaryHeadshotMultiplier": 2,

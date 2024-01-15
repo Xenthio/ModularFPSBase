@@ -6,6 +6,8 @@ public class PlayerComponent : Component
 	[Property] public AimComponent Aim { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Property] public PlayerBodyComponent Body { get; set; }
+	[Property] public AmmoComponent Ammo { get; set; }
+	[Property] public InventoryComponent Inventory { get; set; }
 	[Property] public ViewmodelComponent Viewmodel { get; set; }
 	[Property] public CameraComponent Camera { get; set; }
 	[Property] public PlayerController Controller { get; set; }

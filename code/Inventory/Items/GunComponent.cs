@@ -9,6 +9,7 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Primary Attack" )] public float PrimaryHeadshotMultiplier { get; set; } = 2.0f;
 	[Property, Group( "Primary Attack" )] public int PrimaryBulletCount { get; set; } = 1;
 	[Property, Group( "Primary Attack" )] public AmmoType PrimaryAmmoType { get; set; }
+	[Property, Group( "Primary Attack" )] public int PrimaryClipMax { get; set; } = 17;
 	[Property, Group( "Primary Attack" )] public SoundEvent PrimaryShootSound { get; set; }
 	[Property, Group( "Primary Attack" )] public ParticleSystem PrimaryMuzzleflash { get; set; }
 
@@ -20,9 +21,24 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Secondary Attack" )] public float SecondaryHeadshotMultiplier { get; set; } = 2.0f;
 	[Property, Group( "Secondary Attack" )] public int SecondaryBulletCount { get; set; } = 1;
 	[Property, Group( "Secondary Attack" )] public AmmoType SecondaryAmmoType { get; set; }
+	[Property, Group( "Secondary Attack" )] public int SecondaryClipMax { get; set; } = 17;
 	[Property, Group( "Secondary Attack" )] public SoundEvent SecondaryShootSound { get; set; }
 	[Property, Group( "Secondary Attack" )] public ParticleSystem SecondaryMuzzleflash { get; set; }
 
+	public int PrimaryClip = 0;
+
+	public int SecondaryClip = 0;
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+		PrimaryClip = PrimaryClipMax;
+		SecondaryClip = SecondaryClipMax;
+	}
+	public override bool CanPrimaryAttack()
+	{
+		return base.CanPrimaryAttack() && PrimaryClip > 0;
+	}
 	public override void PrimaryAttack()
 	{
 		var bulletinfo = new BulletInfo()
@@ -36,11 +52,17 @@ public class GunComponent : WeaponComponent
 			HeadshotMultiplier = PrimaryHeadshotMultiplier,
 			Count = PrimaryBulletCount,
 		};
+		PrimaryClip -= 1;
 		Sound.Play( PrimaryShootSound, OwnerInventory.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		CreateParticle( PrimaryMuzzleflash );
 		TriggerAttack();
 		base.PrimaryAttack();
+	}
+	//OwnerInventory.Player.Ammo.AmmoCount( PrimaryAmmoType )
+	public override bool CanSecondaryAttack()
+	{
+		return base.CanSecondaryAttack() && SecondaryClip > 0;
 	}
 	public override void SecondaryAttack()
 	{
@@ -55,11 +77,21 @@ public class GunComponent : WeaponComponent
 			HeadshotMultiplier = SecondaryHeadshotMultiplier,
 			Count = SecondaryBulletCount,
 		};
+		SecondaryClip -= 1;
 		Sound.Play( SecondaryShootSound, OwnerInventory.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		CreateParticle( SecondaryMuzzleflash );
 		TriggerAttack();
 		base.SecondaryAttack();
+	}
+
+	public void ReloadPrimary()
+	{
+		PrimaryClip += OwnerInventory.Player.Ammo.TakeAmmo( PrimaryAmmoType, PrimaryClipMax - PrimaryClip );
+	}
+	public void ReloadSecondary()
+	{
+		SecondaryClip += OwnerInventory.Player.Ammo.TakeAmmo( SecondaryAmmoType, SecondaryClipMax - SecondaryClip );
 	}
 	// how do we want this
 	public virtual void Recoil()
