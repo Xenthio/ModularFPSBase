@@ -47,10 +47,15 @@ public class InventoryComponent : Component
 		var tr = Scene.Trace.Ray( GameObject.Transform.Position, GameObject.Transform.Position ).Radius( 64 ).WithTag( "item" ).WithoutTags( "player", "physicsshadow", "playershadow" ).Run();
 		if ( tr.Hit && tr.GameObject != null && tr.GameObject.Components.TryGet<ItemComponent>( out var equippable ) )
 		{
-			if ( equippable.OwnerInventory == null )
+			if ( equippable.Owner == null )
 			{
 				Add( tr.GameObject );
 			}
+		}
+		if ( tr.Hit && tr.GameObject != null && tr.GameObject.Components.TryGet<CollectableComponent>( out var collectable ) )
+		{
+			collectable.OnPickup( Player );
+			collectable.GameObject.Destroy();
 		}
 	}
 	public void Add( GameObject item )
@@ -69,8 +74,8 @@ public class InventoryComponent : Component
 		}
 		if ( item.Components.TryGet<ItemComponent>( out var equippable ) )
 		{
-			equippable.OwnerInventory = this;
-			equippable.OnPickup();
+			equippable.Owner = this;
+			equippable.OnPickup( Player );
 		}
 
 		ActiveItem = item;

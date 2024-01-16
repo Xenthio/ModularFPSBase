@@ -92,7 +92,8 @@
         {
           "__version": 0,
           "__type": "SpawnPoint",
-          "__enabled": false
+          "__enabled": false,
+          "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
@@ -107,7 +108,8 @@
         {
           "__version": 0,
           "__type": "SpawnPoint",
-          "__enabled": true
+          "__enabled": true,
+          "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
@@ -120,7 +122,8 @@
         {
           "__version": 0,
           "__type": "SpawnPoint",
-          "__enabled": false
+          "__enabled": false,
+          "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
@@ -134,7 +137,8 @@
         {
           "__version": 0,
           "__type": "SpawnPoint",
-          "__enabled": false
+          "__enabled": false,
+          "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
@@ -147,7 +151,8 @@
         {
           "__version": 0,
           "__type": "SpawnPoint",
-          "__enabled": false
+          "__enabled": false,
+          "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
@@ -2227,7 +2232,7 @@
     {
       "Id": "d555ac63-050d-4775-8603-d06fd889ea24",
       "Name": "Weapon",
-      "Position": "240.1327,4.184235,-168.0001",
+      "Position": "182.3845,4.184235,-168.0001",
       "Tags": "item",
       "Networked": true,
       "Enabled": true,
@@ -2273,6 +2278,156 @@
           "Position": "-1.848648,0,3.195877",
           "Tags": "item",
           "Enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "e274f0fd-7f43-4843-acf9-82087ceba86f",
+      "Name": "Ammo (1)",
+      "Position": "308.2773,54.12901,-168.0001",
+      "Tags": "item",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__version": 0,
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__version": 0,
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__version": 0,
+          "__type": "AmmoPickupComponent",
+          "__enabled": true,
+          "AmmoCount": 17,
+          "AmmoType": "Pistol"
+        }
+      ]
+    },
+    {
+      "Id": "1f9c9462-dcda-479c-ab2c-f56d9e257224",
+      "Name": "Ammo (2)",
+      "Position": "308.2773,26.24578,-168.0001",
+      "Tags": "item",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__version": 0,
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__version": 0,
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__version": 0,
+          "__type": "AmmoPickupComponent",
+          "__enabled": true,
+          "AmmoCount": 17,
+          "AmmoType": "Pistol"
+        }
+      ]
+    },
+    {
+      "Id": "5a51f7e3-c2f9-47a7-83fe-9289d72a5e4f",
+      "Name": "Ammo (3)",
+      "Position": "308.2773,-0.2030659,-168.0001",
+      "Tags": "item",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__version": 0,
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__version": 0,
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__version": 0,
+          "__type": "AmmoPickupComponent",
+          "__enabled": true,
+          "AmmoCount": 17,
+          "AmmoType": "Pistol"
         }
       ]
     },

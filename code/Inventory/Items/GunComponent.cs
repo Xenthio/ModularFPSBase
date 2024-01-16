@@ -43,23 +43,23 @@ public class GunComponent : WeaponComponent
 	{
 		var bulletinfo = new BulletInfo()
 		{
-			Owner = OwnerInventory.Player.GameObject,
+			Owner = Owner.Player.GameObject,
 			Damage = PrimaryDamage,
 			Spread = PrimarySpread,
-			Position = OwnerInventory.Player.Aim.Transform.Position,
-			Direction = OwnerInventory.Player.Aim.Transform.Rotation.Forward,
+			Position = Owner.Player.Aim.Transform.Position,
+			Direction = Owner.Player.Aim.Transform.Rotation.Forward,
 			Force = PrimaryForce,
 			HeadshotMultiplier = PrimaryHeadshotMultiplier,
 			Count = PrimaryBulletCount,
 		};
 		PrimaryClip -= 1;
-		Sound.Play( PrimaryShootSound, OwnerInventory.Player.Aim.Transform.Position );
+		Sound.Play( PrimaryShootSound, Owner.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		CreateParticle( PrimaryMuzzleflash );
 		TriggerAttack();
 		base.PrimaryAttack();
 	}
-	//OwnerInventory.Player.Ammo.AmmoCount( PrimaryAmmoType )
+	//Owner.Player.Ammo.AmmoCount( PrimaryAmmoType )
 	public override bool CanSecondaryAttack()
 	{
 		return base.CanSecondaryAttack() && SecondaryClip > 0;
@@ -68,17 +68,17 @@ public class GunComponent : WeaponComponent
 	{
 		var bulletinfo = new BulletInfo()
 		{
-			Owner = OwnerInventory.Player.GameObject,
+			Owner = Owner.Player.GameObject,
 			Damage = SecondaryDamage,
 			Spread = SecondarySpread,
-			Position = OwnerInventory.Player.Aim.Transform.Position,
-			Direction = OwnerInventory.Player.Aim.Transform.Rotation.Forward,
+			Position = Owner.Player.Aim.Transform.Position,
+			Direction = Owner.Player.Aim.Transform.Rotation.Forward,
 			Force = SecondaryForce,
 			HeadshotMultiplier = SecondaryHeadshotMultiplier,
 			Count = SecondaryBulletCount,
 		};
 		SecondaryClip -= 1;
-		Sound.Play( SecondaryShootSound, OwnerInventory.Player.Aim.Transform.Position );
+		Sound.Play( SecondaryShootSound, Owner.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
 		CreateParticle( SecondaryMuzzleflash );
 		TriggerAttack();
@@ -87,11 +87,11 @@ public class GunComponent : WeaponComponent
 
 	public void ReloadPrimary()
 	{
-		PrimaryClip += OwnerInventory.Player.Ammo.TakeAmmo( PrimaryAmmoType, PrimaryClipMax - PrimaryClip );
+		PrimaryClip += Owner.Player.Ammo.TakeAmmo( PrimaryAmmoType, PrimaryClipMax - PrimaryClip );
 	}
 	public void ReloadSecondary()
 	{
-		SecondaryClip += OwnerInventory.Player.Ammo.TakeAmmo( SecondaryAmmoType, SecondaryClipMax - SecondaryClip );
+		SecondaryClip += Owner.Player.Ammo.TakeAmmo( SecondaryAmmoType, SecondaryClipMax - SecondaryClip );
 	}
 	// how do we want this
 	public virtual void Recoil()
