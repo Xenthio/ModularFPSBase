@@ -8,13 +8,13 @@
     <div class="vitals">
         <div class="health">
             <div class="icon">heart_broken</div>
-            <div class="value">@(MathF.Round(GameObject.Parent.Components.Get<LifeComponent>().Health))</div>
+			<div class="value">@(Player.Life.Health))</div>
            
         </div>
 
         <div class="armor">
             <div class="icon">shield</div>
-			<div class="value">@(MathF.Round(GameObject.Parent.Components.Get<LifeComponent>().Armour))</div>
+			<div class="value">@(Player.Life.Armour))</div>
         </div>
 
     </div>
@@ -33,6 +33,7 @@
 
 @code
 {
+	[Property] public PlayerComponent Player { get; set; }
     // Update every frame. This is just done as a test, and definitely should not be done.
     protected override int BuildHash() 
 	{
