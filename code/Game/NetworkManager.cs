@@ -36,7 +36,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	/// </summary>
 	public void OnActive( Connection channel )
 	{
-		GameManager.ActiveScene.PhysicsWorld.SubSteps = 2;
+		GameManager.ActiveScene.PhysicsWorld.SubSteps = 4;
 		Log.Info( $"Player '{channel.DisplayName}' has joined the game" );
 
 		if ( PlayerPrefab is null )
@@ -62,7 +62,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		startLocation.Scale = 1;
 
 		// Spawn this object and make the client the owner*/
-		var player = SceneUtility.Instantiate( PlayerPrefab, startLocation );
+		var player = PlayerPrefab.Clone( startLocation );
 		player.Name = $"Player - {channel.DisplayName}";
 		player.BreakFromPrefab();
 		player.Network.Spawn( channel );
