@@ -8,13 +8,13 @@
     <div class="vitals">
         <div class="health">
             <div class="icon">heart_broken</div>
-			<div class="value">@(Player.Life.Health))</div>
+			<div class="value">@(MathF.Round(Player.Life.Health))</div>
            
         </div>
 
         <div class="armor">
             <div class="icon">shield</div>
-			<div class="value">@(Player.Life.Armour))</div>
+			<div class="value">@(MathF.Round(Player.Life.Armour))</div>
         </div>
 
     </div>
