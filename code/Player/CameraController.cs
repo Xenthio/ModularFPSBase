@@ -1,6 +1,6 @@
 ﻿namespace FPSKit;
 
-public class CameraController : Component, INetworkSerializable
+public class CameraController : Component
 {
 	[Property, Group( "Settings" )] public bool FirstPerson { get; set; } = true;
 
@@ -57,14 +57,5 @@ public class CameraController : Component, INetworkSerializable
 				i.RenderType = FirstPerson && !GameObject.IsProxy && GameObject.Network.IsOwner ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			}
 		}
-	}
-	public void Write( ref ByteStream stream )
-	{
-		stream.Write( EyeAngles );
-	}
-
-	public void Read( ByteStream stream )
-	{
-		EyeAngles = stream.Read<Angles>();
 	}
 }
