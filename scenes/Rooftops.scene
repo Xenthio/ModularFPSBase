@@ -2269,6 +2269,19 @@
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "Static": false,
           "Surface": null
+        },
+        {
+          "__version": 0,
+          "__type": "GraphWeaponComponent",
+          "__enabled": true,
+          "AutomaticPrimary": false,
+          "AutomaticSecondary": false,
+          "HoldType": "None",
+          "PrimaryAttackAction": null,
+          "SecondaryAttackAction": null,
+          "TimeBetweenPrimaryAttack": 0.1,
+          "TimeBetweenSecondaryAttack": 0.1,
+          "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
         }
       ],
       "Children": [
