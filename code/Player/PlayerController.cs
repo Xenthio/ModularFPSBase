@@ -1,7 +1,7 @@
 ﻿using Sandbox.Citizen;
 namespace FPSKit;
 
-public class PlayerController : Component, INetworkSerializable
+public class PlayerController : Component
 {
 	[Property, Group( "Movement" )] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 	[Property, Group( "Movement" )] public float WalkSpeed { get; set; } = 120.0f;
@@ -25,8 +25,8 @@ public class PlayerController : Component, INetworkSerializable
 	public Vector3 BaseVelocity;
 	public Vector3 PotentialVelocity;
 
-	public bool IsRunning;
-	public bool IsDucking;
+	[Sync] public bool IsRunning { get; set; }
+	[Sync] public bool IsDucking { get; set; }
 	public float _duckAmount = 0;
 	public float _duckAmountPerFrame = 0;
 
@@ -392,15 +392,4 @@ public class PlayerController : Component, INetworkSerializable
 		return wishVelocity;
 	}
 
-	public void Write( ref ByteStream stream )
-	{
-		stream.Write( IsRunning );
-		stream.Write( IsDucking );
-	}
-
-	public void Read( ByteStream stream )
-	{
-		IsRunning = stream.Read<bool>();
-		IsDucking = stream.Read<bool>();
-	}
 }
