@@ -15,6 +15,9 @@ public class PlayerController : Component
 	[Property, Group( "Measurements" )] public float EyeHeight { get; set; } = 64.0f;
 	[Property, Group( "Measurements" )] public float DuckOffset { get; set; } = 40.0f;
 
+	[Property, Group( "Cheats" )] public bool Noclip { get; set; } = false;
+	[Property, Group( "Cheats" )] public float NoclipSpeed { get; set; } = 1000.0f;
+
 
 	[Property] public PlayerComponent Player { get; set; }
 	[Property] public GameObject PhysicsShadow { get; set; }
@@ -77,6 +80,7 @@ public class PlayerController : Component
 			Player.Body.Animation.WithLook( Player.Eye.Transform.Rotation.Forward, 1, 1, 1.0f );
 			Player.Body.Animation.MoveStyle = IsRunning ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Auto;
 			Player.Body.Animation.DuckLevel = _duckAmount / DuckOffset;
+			Player.Body.Animation.IsNoclipping = Noclip;
 		}
 	}
 
@@ -96,6 +100,20 @@ public class PlayerController : Component
 			return;
 
 		var cc = GameObject.Components.Get<CharacterController>();
+		var camera = GameObject.Components.Get<CameraController>();
+
+		// We can split this back up into componenets, but since all the standard movement stuff is here i dont wanna do it yet
+		if ( Noclip )
+		{
+			var movement = Input.AnalogMove * camera.EyeAngles * Time.Delta * NoclipSpeed;
+			if ( Input.Down( "run" ) ) movement *= 3;
+			if ( Input.Down( "jump" ) ) movement.z += 20.0f;
+			if ( Input.Down( "duck" ) ) movement.z -= 20.0f;
+			Transform.Position += movement;
+			WishVelocity = Input.AnalogMove * 200.0f;
+
+			return;
+		}
 
 		//Log.Info( BaseVelocity.z );
 		if ( BaseVelocity.z > 100 )

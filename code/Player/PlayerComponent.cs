@@ -32,6 +32,7 @@ public class PlayerComponent : Component
 		Life.OnTakeDamage += TakeDamage;
 		Life.OnKilled += Kill;
 		Life.OnRespawn += Respawn;
+		Life.OnNoclip += Noclip;
 	}
 	public void TakeDamage( DamageInfo info )
 	{
@@ -44,6 +45,14 @@ public class PlayerComponent : Component
 		foreach ( var i in GameManager.ActiveScene.Components.GetAll<PlayerComponent>() )
 		{
 			i.Life.TakeDamage( DamageInfo.Generic( 100000 ) );
+		}
+	}
+	[ConCmd( "noclip" )]
+	public static void NoclipCmd()
+	{
+		foreach ( var i in GameManager.ActiveScene.Components.GetAll<PlayerComponent>() )
+		{
+			i.Life.OnNoclip();
 		}
 	}
 	[ConCmd( "respawn" )]
@@ -75,6 +84,10 @@ public class PlayerComponent : Component
 		//GameObject.Destroy();
 	}
 
+	public void Noclip()
+	{
+		Controller.Noclip = !Controller.Noclip;
+	}
 
 	public void Respawn()
 	{

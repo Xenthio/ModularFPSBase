@@ -23,6 +23,7 @@ public class LifeComponent : Component
 	public Action<DamageInfo> OnTakeDamage;
 	public Action OnKilled;
 	public Action OnRespawn;
+	public Action OnNoclip;
 
 	public void TakeDamage( DamageInfo info )
 	{
