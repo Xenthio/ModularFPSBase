@@ -1,5 +1,8 @@
 ﻿namespace FPSKit;
 
+/// <summary>
+///  This is for adding a state of health to ANY object
+/// </summary>
 public class LifeComponent : Component
 {
 	/// <summary>
