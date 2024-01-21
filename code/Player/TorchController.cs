@@ -1,4 +1,4 @@
-﻿namespace FPSKit;
+namespace FPSKit;
 
 public class TorchController : Component
 {
@@ -9,6 +9,7 @@ public class TorchController : Component
 		base.OnFixedUpdate();
 		if ( Input.Pressed( "Flashlight" ) )
 		{
+			// use an in component variable to store on off state?
 			TorchLight.Enabled = !TorchLight.Enabled;
 		}
 		if ( TorchLight.Enabled )
