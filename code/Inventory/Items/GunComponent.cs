@@ -39,7 +39,7 @@ public class GunComponent : WeaponComponent
 	}
 	public override bool CanPrimaryAttack()
 	{
-		return base.CanPrimaryAttack() && PrimaryClip > 0;
+		return base.CanPrimaryAttack() && PrimaryClip > 0 && !IsPrimaryReloading;
 	}
 	public override void PrimaryAttack()
 	{
@@ -64,7 +64,7 @@ public class GunComponent : WeaponComponent
 	//Owner.Player.Ammo.AmmoCount( PrimaryAmmoType )
 	public override bool CanSecondaryAttack()
 	{
-		return base.CanSecondaryAttack() && SecondaryClip > 0;
+		return base.CanSecondaryAttack() && SecondaryClip > 0 && !IsSecondaryReloading;
 	}
 	public override void SecondaryAttack()
 	{
