@@ -1,0 +1,58 @@
+{
+  "RootObject": {
+    "Id": "8e15b9fa-d789-4664-832e-2d7772619fcc",
+    "Name": "Smg",
+    "Enabled": true,
+    "Components": [
+      {
+        "__version": 0,
+        "__type": "ModelRenderer",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "weapons/rust_pistol/rust_pistol.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__version": 0,
+        "__type": "GunComponent",
+        "__enabled": true,
+        "AutomaticPrimary": false,
+        "AutomaticSecondary": false,
+        "HoldType": "Pistol",
+        "PrimaryAmmoType": "Pistol",
+        "PrimaryBulletCount": 1,
+        "PrimaryClipMax": 17,
+        "PrimaryDamage": 10,
+        "PrimaryForce": 10,
+        "PrimaryHeadshotMultiplier": 2,
+        "PrimaryMuzzleflash": null,
+        "PrimaryRecoil": 1,
+        "PrimaryShootSound": null,
+        "PrimarySpread": 0.024,
+        "SecondaryAmmoType": "None",
+        "SecondaryBulletCount": 1,
+        "SecondaryClipMax": 17,
+        "SecondaryDamage": 10,
+        "SecondaryForce": 10,
+        "SecondaryHeadshotMultiplier": 2,
+        "SecondaryMuzzleflash": null,
+        "SecondaryRecoil": 1,
+        "SecondaryShootSound": null,
+        "SecondarySpread": 0.024,
+        "TimeBetweenPrimaryAttack": 0.1,
+        "TimeBetweenSecondaryAttack": 0.1,
+        "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "rust.rust_pistol",
+    "rust.v_rust_pistol"
+  ]
+}

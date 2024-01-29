@@ -8,6 +8,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "MapInstance",
           "__enabled": true,
           "MapName": "thieves.dolls",
@@ -24,6 +25,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "NetworkManager",
           "__enabled": true,
           "PlayerPrefab": "prefabs/player.prefab",

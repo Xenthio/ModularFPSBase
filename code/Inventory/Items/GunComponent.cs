@@ -10,6 +10,7 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Primary Attack" )] public int PrimaryBulletCount { get; set; } = 1;
 	[Property, Group( "Primary Attack" )] public AmmoType PrimaryAmmoType { get; set; }
 	[Property, Group( "Primary Attack" )] public int PrimaryClipMax { get; set; } = 17;
+	[Property, Group( "Primary Attack" )] public float PrimaryReloadTime { get; set; } = 1.0f;
 	[Property, Group( "Primary Attack" )] public SoundEvent PrimaryShootSound { get; set; }
 	[Property, Group( "Primary Attack" )] public ParticleSystem PrimaryMuzzleflash { get; set; }
 
@@ -22,6 +23,7 @@ public class GunComponent : WeaponComponent
 	[Property, Group( "Secondary Attack" )] public int SecondaryBulletCount { get; set; } = 1;
 	[Property, Group( "Secondary Attack" )] public AmmoType SecondaryAmmoType { get; set; }
 	[Property, Group( "Secondary Attack" )] public int SecondaryClipMax { get; set; } = 17;
+	[Property, Group( "Secondary Attack" )] public float SecondaryReloadTime { get; set; } = 1.0f;
 	[Property, Group( "Secondary Attack" )] public SoundEvent SecondaryShootSound { get; set; }
 	[Property, Group( "Secondary Attack" )] public ParticleSystem SecondaryMuzzleflash { get; set; }
 
@@ -84,13 +86,40 @@ public class GunComponent : WeaponComponent
 		TriggerAttack();
 		base.SecondaryAttack();
 	}
-
+	TimeSince TimeSincePrimaryReload;
+	bool IsPrimaryReloading = false;
+	public override void CarriableUpdate()
+	{
+		if ( Input.Pressed( "Reload" ) )
+		{
+			ReloadPrimary();
+		}
+		if ( IsPrimaryReloading && TimeSincePrimaryReload > PrimaryReloadTime ) ReloadPrimaryCompleted();
+		if ( IsSecondaryReloading && TimeSincePrimaryReload > PrimaryReloadTime ) ReloadPrimaryCompleted();
+		base.CarriableUpdate();
+	}
 	public void ReloadPrimary()
 	{
+		if ( IsPrimaryReloading ) return;
+		IsPrimaryReloading = true;
+		TimeSincePrimaryReload = 0;
+	}
+	public void ReloadPrimaryCompleted()
+	{
+		IsPrimaryReloading = false;
 		PrimaryClip += Owner.Player.Ammo.TakeAmmo( PrimaryAmmoType, PrimaryClipMax - PrimaryClip );
 	}
+	TimeSince TimeSinceSecondaryReload;
+	bool IsSecondaryReloading = false;
 	public void ReloadSecondary()
 	{
+		if ( IsSecondaryReloading ) return;
+		IsSecondaryReloading = true;
+		TimeSinceSecondaryReload = 0;
+	}
+	public void ReloadSecondaryCompleted()
+	{
+		IsSecondaryReloading = false;
 		SecondaryClip += Owner.Player.Ammo.TakeAmmo( SecondaryAmmoType, SecondaryClipMax - SecondaryClip );
 	}
 	// how do we want this

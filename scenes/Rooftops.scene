@@ -7,9 +7,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "MapInstance",
-          "__enabled": true,
           "MapName": "thieves.rooftops",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
@@ -24,9 +22,7 @@
       "Position": "-416,0,128",
       "Components": [
         {
-          "__version": 0,
           "__type": "EnvmapProbe",
-          "__enabled": true,
           "Bounds": {
             "Mins": "-1024,-1024,-1024",
             "Maxs": "1024,1024,1024"
@@ -46,9 +42,9 @@
       "Tags": "light",
       "Components": [
         {
-          "__version": 0,
           "__type": "DirectionalLight",
-          "__enabled": true,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
           "LightColor": "1.82746,1.96078,2,1",
           "Shadows": true,
           "SkyColor": "0.05882,0.07451,0.08235,1"
@@ -61,10 +57,12 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "NetworkManager",
-          "__enabled": true,
-          "PlayerPrefab": "prefabs/player.prefab",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "go": "7be56b58-2990-4b75-888a-ea93c7a15a4e",
+            "prefab": "prefabs/player.prefab"
+          },
           "StartServer": true
         }
       ]
@@ -75,9 +73,7 @@
       "Position": "0,2176,64",
       "Components": [
         {
-          "__version": 0,
           "__type": "SkyBox2D",
-          "__enabled": true,
           "SkyMaterial": "materials/skybox/rustig_koppie_puresky.vmat",
           "Tint": "1,1,1,1"
         }
@@ -90,7 +86,6 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
@@ -106,9 +101,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SpawnPoint",
-          "__enabled": true,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
@@ -120,7 +113,6 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
@@ -135,7 +127,6 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
@@ -149,7 +140,6 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SpawnPoint",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
@@ -164,9 +154,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -175,18 +163,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -204,9 +188,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -215,18 +197,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -244,9 +222,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -255,18 +231,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -284,9 +256,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -295,18 +265,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -326,9 +292,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -337,18 +301,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -366,9 +326,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -377,18 +335,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -406,9 +360,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -417,18 +369,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -446,9 +394,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -457,18 +403,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -487,9 +429,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -498,9 +438,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -519,9 +457,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -530,9 +466,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -551,9 +485,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -562,9 +494,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -583,9 +513,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -594,9 +522,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -615,9 +541,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -626,9 +550,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -647,9 +569,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -658,9 +578,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -679,9 +597,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -690,9 +606,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -711,9 +625,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -722,9 +634,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -743,9 +653,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -754,9 +662,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -774,9 +680,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -785,9 +689,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -805,9 +707,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -816,9 +716,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -836,9 +734,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -847,9 +743,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -867,9 +761,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -878,9 +770,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -898,9 +788,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -909,9 +797,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -930,9 +816,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -941,9 +825,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -962,9 +844,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -973,9 +853,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -994,9 +872,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -1005,9 +881,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1025,9 +899,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
@@ -1036,9 +908,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1057,9 +927,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1068,9 +936,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1089,9 +955,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1100,9 +964,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1121,9 +983,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1132,9 +992,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1153,9 +1011,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1164,9 +1020,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1185,9 +1039,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1196,9 +1048,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1216,9 +1066,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1227,9 +1075,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1237,9 +1083,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1248,9 +1092,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "RotatePhysics",
-          "__enabled": true,
           "RotateAmount": 0.2
         }
       ]
@@ -1264,9 +1106,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1275,9 +1115,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1285,9 +1123,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1296,9 +1132,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "SineUpandDown",
-          "__enabled": true,
           "Strength": 128
         }
       ]
@@ -1312,9 +1146,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1323,9 +1155,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1333,9 +1163,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1344,9 +1172,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "SineUpandDown",
-          "__enabled": true,
           "Strength": 256
         }
       ]
@@ -1360,9 +1186,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1371,9 +1195,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1381,9 +1203,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1392,9 +1212,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "SineUpandDown",
-          "__enabled": true,
           "Strength": 64
         }
       ]
@@ -1408,9 +1226,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1419,9 +1235,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1429,9 +1243,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1440,9 +1252,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "SineUpandDown",
-          "__enabled": true,
           "Strength": 512
         }
       ]
@@ -1456,9 +1266,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1467,9 +1275,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1477,9 +1283,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1488,9 +1292,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "SineUpandDown",
-          "__enabled": true,
           "Strength": 1024
         }
       ]
@@ -1504,9 +1306,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1515,9 +1315,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1525,9 +1323,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1536,9 +1332,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "SineUpandDown",
-          "__enabled": true,
           "Strength": 2048
         }
       ]
@@ -1552,9 +1346,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1563,9 +1355,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1573,9 +1363,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1584,9 +1372,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "RotatePhysics",
-          "__enabled": true,
           "RotateAmount": -0.2
         }
       ]
@@ -1600,9 +1386,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1611,9 +1395,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1621,9 +1403,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1632,9 +1412,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "RotatePhysics",
-          "__enabled": true,
           "RotateAmount": 2
         }
       ]
@@ -1648,9 +1426,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1659,9 +1435,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1669,9 +1443,7 @@
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
@@ -1680,9 +1452,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "RotatePhysics",
-          "__enabled": true,
           "RotateAmount": -1
         }
       ]
@@ -1695,9 +1465,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1706,18 +1474,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1735,9 +1499,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1746,18 +1508,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1775,9 +1533,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1786,18 +1542,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1815,9 +1567,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -1826,18 +1576,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1857,9 +1603,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1868,9 +1612,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1879,9 +1621,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1899,9 +1639,7 @@
       "Networked": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1910,9 +1648,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1921,9 +1657,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1942,9 +1676,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1953,9 +1685,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1964,9 +1694,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1985,9 +1713,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -1996,9 +1722,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2007,9 +1731,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -2027,9 +1749,7 @@
       "Networked": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
@@ -2038,9 +1758,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2049,9 +1767,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -2067,9 +1783,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -2078,18 +1792,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/citizen_props/beachball.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2098,9 +1808,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "Duplicator",
-          "__enabled": true,
           "MaxDuplicates": 32,
           "SecondsPerDuplicate": 3
         }
@@ -2116,9 +1824,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -2127,18 +1833,14 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/sbox_props/low_wood_fence/low_wood_fence_beam_1.vmdl",
           "Static": false,
           "Surface": "surfaces/wood.surface"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2147,9 +1849,7 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "bridgecreatorlol",
-          "__enabled": true,
           "PlankCount": 52,
           "Slack": 1,
           "Spacing": 8
@@ -2165,9 +1865,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
@@ -2176,9 +1874,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "BoxCollider",
-          "__enabled": true,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -2195,9 +1891,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "DecalRenderer",
-          "__enabled": true,
           "CutoffAngle": 60,
           "CutoffAngleSoftness": 5,
           "Material": "materials/decals/default.vmat",
@@ -2216,9 +1910,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "DecalRenderer",
-          "__enabled": true,
           "CutoffAngle": 60,
           "CutoffAngleSoftness": 5,
           "Material": "materials/decals/default.vmat",
@@ -2232,15 +1924,13 @@
     {
       "Id": "d555ac63-050d-4775-8603-d06fd889ea24",
       "Name": "Weapon",
-      "Position": "182.3845,4.184235,-168.0001",
+      "Position": "182.3845,538.4875,-42.49963",
       "Tags": "item",
       "Networked": true,
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SkinnedModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "BoneMergeTarget": null,
           "CreateBoneObjects": false,
@@ -2251,9 +1941,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2262,18 +1950,14 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "Static": false,
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "GraphWeaponComponent",
-          "__enabled": true,
           "AutomaticPrimary": false,
           "AutomaticSecondary": false,
           "HoldType": "None",
@@ -2289,7 +1973,6 @@
           "Id": "d1b98f01-43ce-4284-af80-11b52f8f786d",
           "Name": "hold_R",
           "Position": "-1.848648,0,3.195877",
-          "Tags": "item",
           "Enabled": true
         }
       ]
@@ -2303,9 +1986,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SkinnedModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "BoneMergeTarget": null,
           "CreateBoneObjects": false,
@@ -2316,9 +1997,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2327,18 +2006,14 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
           "Static": false,
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "AmmoPickupComponent",
-          "__enabled": true,
           "AmmoCount": 17,
           "AmmoType": "Pistol"
         }
@@ -2353,9 +2028,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SkinnedModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "BoneMergeTarget": null,
           "CreateBoneObjects": false,
@@ -2366,9 +2039,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2377,18 +2048,14 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
           "Static": false,
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "AmmoPickupComponent",
-          "__enabled": true,
           "AmmoCount": 17,
           "AmmoType": "Pistol"
         }
@@ -2403,9 +2070,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SkinnedModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "BoneMergeTarget": null,
           "CreateBoneObjects": false,
@@ -2416,9 +2081,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2427,18 +2090,14 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
           "Static": false,
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "AmmoPickupComponent",
-          "__enabled": true,
           "AmmoCount": 17,
           "AmmoType": "Pistol"
         }
@@ -2447,15 +2106,13 @@
     {
       "Id": "450369ed-766d-47c0-9b18-a6364421d08d",
       "Name": "Weapon (1)",
-      "Position": "240.1327,591.6743,-24.7263",
+      "Position": "191.9438,29.67435,-171.8443",
       "Tags": "item",
       "Networked": true,
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SkinnedModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "BoneMergeTarget": null,
           "CreateBoneObjects": false,
@@ -2466,9 +2123,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__version": 0,
           "__type": "Rigidbody",
-          "__enabled": true,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -2477,18 +2132,14 @@
           "StartAsleep": false
         },
         {
-          "__version": 0,
           "__type": "ModelCollider",
-          "__enabled": true,
           "IsTrigger": false,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "Static": false,
           "Surface": null
         },
         {
-          "__version": 0,
           "__type": "GunComponent",
-          "__enabled": true,
           "AutomaticPrimary": false,
           "AutomaticSecondary": true,
           "HoldType": "Pistol",
@@ -2522,10 +2173,16 @@
           "Id": "38019e2c-b572-449b-8c0d-caee7ad1bb8e",
           "Name": "hold_R",
           "Position": "-1.848648,0,3.195877",
-          "Tags": "item",
           "Enabled": true
         }
       ]
+    },
+    {
+      "Id": "6f995814-1016-4875-9e31-7094b9e226ff",
+      "Name": "Smg",
+      "Position": "481.9389,33.04974,-186",
+      "Enabled": true,
+      "__Prefab": "prefabs/pistol.prefab"
     }
   ],
   "SceneProperties": {
@@ -2539,6 +2196,7 @@
   },
   "Title": "rooftops",
   "Description": "",
+  "LastSaved": "2024-01-30T08:34:48.4462376\u002B11:00",
   "__references": [
     "facepunch.low_wood_fence_beam_1",
     "polyhaven.rustig_koppie_puresky",
