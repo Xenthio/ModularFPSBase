@@ -32,7 +32,6 @@ public class PlayerComponent : Component
 		Life.OnTakeDamage += TakeDamage;
 		Life.OnKilled += Kill;
 		Life.OnRespawn += Respawn;
-		Life.OnNoclip += Noclip;
 	}
 	public void TakeDamage( DamageInfo info )
 	{
@@ -52,7 +51,7 @@ public class PlayerComponent : Component
 	{
 		foreach ( var i in GameManager.ActiveScene.Components.GetAll<PlayerComponent>() )
 		{
-			i.Life.OnNoclip();
+			Noclip();
 		}
 	}
 	[ConCmd( "respawn" )]
