@@ -1,4 +1,4 @@
-﻿namespace FPSKit;
+namespace FPSKit;
 
 /// <summary>
 ///  This is for adding a state of health to ANY object
@@ -26,7 +26,6 @@ public class LifeComponent : Component
 	public Action<DamageInfo> OnTakeDamage;
 	public Action OnKilled;
 	public Action OnRespawn;
-	public Action OnNoclip;
 
 	public void TakeDamage( DamageInfo info )
 	{
