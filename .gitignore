@@ -24,3 +24,4 @@ code/Editor/obj/modular_fps_base.editor.csproj.nuget.g.targets
 code/Editor/obj/project.assets.json
 code/Editor/obj/project.nuget.cache
 code/Editor/obj/Debug/modular_fps_base.editor.csproj.AssemblyReference.cache
+*.cache
