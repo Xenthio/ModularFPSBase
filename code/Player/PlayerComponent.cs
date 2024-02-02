@@ -51,7 +51,7 @@ public class PlayerComponent : Component
 	{
 		foreach ( var i in GameManager.ActiveScene.Components.GetAll<PlayerComponent>() )
 		{
-			Noclip();
+			i.Noclip();
 		}
 	}
 	[ConCmd( "respawn" )]
