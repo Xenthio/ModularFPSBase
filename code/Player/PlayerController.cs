@@ -16,7 +16,7 @@ public class PlayerController : Component
 	[Property, Group( "Measurements" )] public float DuckOffset { get; set; } = 40.0f;
 
 	[Property, Group( "Cheats" )] public bool Noclip { get; set; } = false;
-	[Property, Group( "Cheats" )] public float NoclipSpeed { get; set; } = 1000.0f;
+	[Property, Group( "Cheats" )] public float NoclipSpeed { get; set; } = 4;
 
 
 	[Property] public PlayerComponent Player { get; set; }
@@ -105,13 +105,17 @@ public class PlayerController : Component
 		// We can split this back up into componenets, but since all the standard movement stuff is here i dont wanna do it yet
 		if ( Noclip )
 		{
-			var movement = Input.AnalogMove * camera.EyeAngles * Time.Delta * NoclipSpeed;
-			if ( Input.Down( "run" ) ) movement *= 3;
-			if ( Input.Down( "jump" ) ) movement.z += 20.0f;
-			if ( Input.Down( "duck" ) ) movement.z -= 20.0f;
-			Transform.Position += movement;
-			WishVelocity = Input.AnalogMove * 200.0f;
+			cc.IsOnGround = false;
+			BaseVelocity = Vector3.Zero;
 
+			WishVelocity = BuildWishVelocity();
+			cc.Accelerate( WishVelocity * NoclipSpeed );
+			cc.ApplyFriction( 4.0f );
+			Transform.Position += cc.Velocity * Time.Delta;
+
+			PhysicsShadowUpdate();
+			PhysicsShadowReset();
+			PlayerShadowUpdate();
 			return;
 		}
 
@@ -399,7 +403,11 @@ public class PlayerController : Component
 		if ( Input.Down( "Left" ) ) wishVelocity += rot.Left;
 		if ( Input.Down( "Right" ) ) wishVelocity += rot.Right;
 
-		wishVelocity = wishVelocity.WithZ( 0 );
+		if ( Input.Down( "Jump" ) ) wishVelocity += Vector3.Up;
+		if ( Input.Down( "Duck" ) ) wishVelocity += Vector3.Down;
+
+		// or swimming, in the future
+		if ( !Noclip ) wishVelocity = wishVelocity.WithZ( 0 );
 
 		if ( !wishVelocity.IsNearZeroLength ) wishVelocity = wishVelocity.Normal;
 
