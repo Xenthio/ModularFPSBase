@@ -19,11 +19,15 @@
 
     </div>
 
-    <div class="item">
+	@if (@layer.Inventory.ActiveItem.Components.TryGet<GunComponent>(out var guncm)) 
+	{
 
-        <div class="value">16</div>
-        <div class="subvalue">67</div>
-    </div>
+		<div class="item">
+
+			<div class="value">@(MathF.Round(guncm.PrimaryClip))</div>
+			<div class="subvalue">67</div>
+		</div>
+	}
 
     <div class="overlay">
        
