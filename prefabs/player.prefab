@@ -82,6 +82,8 @@
         "DuckOffset": 40,
         "EyeHeight": 64,
         "Gravity": "0,0,800",
+        "Noclip": false,
+        "NoclipSpeed": 4,
         "NormalSpeed": 190,
         "PhysicsShadow": {
           "_type": "gameobject",
@@ -102,6 +104,7 @@
       {
         "__type": "CharacterController",
         "Acceleration": 10,
+        "Bounciness": 0.3,
         "GroundAngle": 45,
         "Height": 72,
         "IgnoreLayers": "player",
@@ -181,7 +184,6 @@
             },
             "Target": {
               "_type": "gameobject",
-              "go": "e7e9c25d-00e4-45fb-9d1b-3df27024ee35",
               "prefab": "prefabs/player.prefab"
             }
           },
