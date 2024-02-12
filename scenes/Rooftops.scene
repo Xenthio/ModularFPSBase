@@ -60,7 +60,6 @@
           "__type": "NetworkManager",
           "PlayerPrefab": {
             "_type": "gameobject",
-            "go": "7be56b58-2990-4b75-888a-ea93c7a15a4e",
             "prefab": "prefabs/player.prefab"
           },
           "StartServer": true
@@ -2194,11 +2193,23 @@
     "NetworkFrequency": 30,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
   },
   "Title": "rooftops",
   "Description": "",
-  "LastSaved": "2024-01-30T08:44:10.0428723\u002B11:00",
+  "LastSaved": "2024-02-12T15:58:13.1137163\u002B11:00",
   "__references": [
     "facepunch.low_wood_fence_beam_1",
     "polyhaven.rustig_koppie_puresky",
