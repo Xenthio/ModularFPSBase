@@ -3,6 +3,7 @@ root = true
 
 # C# files
 [*.{cs,razor}]
+# tab is correct method anyone else should reconsider their life choices
 indent_style = tab
 indent_size = 4
 tab_size = 4
