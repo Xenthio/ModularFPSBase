@@ -21,11 +21,12 @@
 
 	@if (Player.Inventory.ActiveItem != null &&	Player.Inventory.ActiveItem.Components.TryGet<GunComponent>(out var guncm))
 	{
-
+		var ammo = Player.Ammo.AmmoCount(guncm.PrimaryAmmoType);
 		<div class="item">
 
 			<div class="value">@(MathF.Round(guncm.PrimaryClip))</div>
-			<div class="subvalue">67</div>
+
+			<div class="subvalue">@ammo</div>
 		</div>
 	}
 
