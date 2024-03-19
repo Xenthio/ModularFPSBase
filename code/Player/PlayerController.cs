@@ -398,10 +398,11 @@ public class PlayerController : Component
 
 		wishVelocity = 0;
 
-		if ( Input.Down( "Forward" ) ) wishVelocity += rot.Forward;
-		if ( Input.Down( "Backward" ) ) wishVelocity += rot.Backward;
-		if ( Input.Down( "Left" ) ) wishVelocity += rot.Left;
-		if ( Input.Down( "Right" ) ) wishVelocity += rot.Right;
+		//if ( Input.Down( "Forward" ) ) wishVelocity += rot.Forward;
+		//if ( Input.Down( "Backward" ) ) wishVelocity += rot.Backward;
+		//if ( Input.Down( "Left" ) ) wishVelocity += rot.Left;
+		//if ( Input.Down( "Right" ) ) wishVelocity += rot.Right;
+		wishVelocity = rot * Input.AnalogMove;
 
 		if ( Input.Down( "Jump" ) ) wishVelocity += Vector3.Up;
 		if ( Input.Down( "Duck" ) ) wishVelocity += Vector3.Down;

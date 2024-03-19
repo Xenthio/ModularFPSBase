@@ -17,8 +17,7 @@ public class CameraController : Component
 			if ( Input.Pressed( "View" ) ) FirstPerson = !FirstPerson;
 
 			var eyeAngles = EyeAngles;
-			eyeAngles.pitch += Input.MouseDelta.y * 0.1f;
-			eyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+			EyeAngles += Input.AnalogLook * 0.5f;
 			eyeAngles.roll = 0;
 			eyeAngles.pitch = eyeAngles.pitch.Clamp( -89f, 89f );
 			EyeAngles = eyeAngles;
