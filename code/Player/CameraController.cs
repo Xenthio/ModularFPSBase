@@ -2,7 +2,7 @@
 
 public class CameraController : Component
 {
-	[Property, Group( "Settings" )] public bool FirstPerson { get; set; } = true;
+	[Property, Group("Settings")] public bool FirstPerson { get; set; } = true;
 
 	[Property] public PlayerComponent Player { get; set; }
 
@@ -11,20 +11,20 @@ public class CameraController : Component
 	{
 		base.OnUpdate();
 		Player.Camera.Enabled = !IsProxy && GameObject.Network.IsOwner;
-		Player.Viewmodel.Camera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner && Player.Viewmodel.Camera.Components.GetAll<ModelRenderer>().Where( x => x.Model != null && x.Model.ResourcePath != "models/dev/new_model/new_model.vmdl" ).Any();
-		if ( !IsProxy )
+		Player.Viewmodel.Camera.Enabled = !IsProxy && FirstPerson && GameObject.Network.IsOwner && Player.Viewmodel.Camera.Components.GetAll<ModelRenderer>().Where(x => x.Model != null && x.Model.ResourcePath != "models/dev/new_model/new_model.vmdl").Any();
+		if (!IsProxy)
 		{
-			if ( Input.Pressed( "View" ) ) FirstPerson = !FirstPerson;
+			if (Input.Pressed("View")) FirstPerson = !FirstPerson;
 
 			var eyeAngles = EyeAngles;
-			EyeAngles += Input.AnalogLook * 0.5f;
+			eyeAngles += Input.AnalogLook * 0.5f;
 			eyeAngles.roll = 0;
-			eyeAngles.pitch = eyeAngles.pitch.Clamp( -89f, 89f );
+			eyeAngles.pitch = eyeAngles.pitch.Clamp(-89f, 89f);
 			EyeAngles = eyeAngles;
 
 			Player.Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 
-			if ( FirstPerson )
+			if (FirstPerson)
 			{
 				Player.Camera.Transform.Position = Player.Eye.Transform.Position;
 				Player.Camera.Transform.Rotation = Player.Eye.Transform.Rotation;
@@ -49,9 +49,9 @@ public class CameraController : Component
 			Player.Eye.Transform.LocalRotation = EyeAngles.ToRotation();
 		}
 
-		foreach ( var i in GameObject.Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants ) )
+		foreach (var i in GameObject.Components.GetAll<ModelRenderer>(FindMode.EverythingInSelfAndDescendants))
 		{
-			if ( i.GameObject.Tags.Has( "viewmodel" ) == false )
+			if (i.GameObject.Tags.Has("viewmodel") == false)
 			{
 				i.RenderType = FirstPerson && !GameObject.IsProxy && GameObject.Network.IsOwner ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			}
