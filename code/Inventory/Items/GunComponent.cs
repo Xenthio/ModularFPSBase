@@ -57,7 +57,7 @@ public class GunComponent : WeaponComponent
 		PrimaryClip -= 1;
 		Sound.Play( PrimaryShootSound, Owner.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
-		CreateParticle( PrimaryMuzzleflash );
+		CreateParticle( PrimaryMuzzleflash, "muzzle" );
 		TriggerAttack();
 		base.PrimaryAttack();
 	}
@@ -82,7 +82,7 @@ public class GunComponent : WeaponComponent
 		SecondaryClip -= 1;
 		Sound.Play( SecondaryShootSound, Owner.Player.Aim.Transform.Position );
 		Bullet.ShootBullet( bulletinfo );
-		CreateParticle( SecondaryMuzzleflash );
+		CreateParticle( SecondaryMuzzleflash, "muzzle" );
 		TriggerAttack();
 		base.SecondaryAttack();
 	}

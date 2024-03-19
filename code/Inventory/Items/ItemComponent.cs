@@ -28,19 +28,19 @@ public class ItemComponent : Component
 			Owner.Player.Viewmodel.Model.Set( "fire", true );
 		}
 	}
-	public void CreateParticle( ParticleSystem particle )
+	public void CreateParticle( ParticleSystem particle, string attachment )
 	{
 		Transform transform = new Transform();
 		var mflash = LegacyParticle.Create( particle?.Name, transform.Position, transform.Rotation );
 		if ( !IsProxy && Owner.Player.Viewmodel.Camera.Enabled )
 		{
-			transform = Owner.Player.Viewmodel.Model.GetAttachment( "muzzle" ).Value;
+			transform = Owner.Player.Viewmodel.Model.GetAttachment( attachment ).Value;
 			mflash.GameObject.Tags.Add( "viewmodel" );
 			mflash.LegacyParticleSystem.SceneObject.Tags.Add( "viewmodel" );
 		}
 		else
 		{
-			transform = Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf ).GetAttachment( "muzzle" ).Value;
+			transform = Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelf ).GetAttachment( attachment ).Value;
 		}
 		mflash.Position = transform.Position;
 		mflash.Rotation = transform.Rotation;

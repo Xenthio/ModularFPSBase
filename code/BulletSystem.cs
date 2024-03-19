@@ -39,6 +39,7 @@ public partial class Bullet
 			Weapon = Weapon,
 		};
 	}
+
 	public static void ShootBullet( BulletInfo info = default, [ActionGraphProperty] int level = 0 )
 	{
 		for ( int i = 0; i < info.Count; i++ )
