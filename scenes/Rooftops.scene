@@ -1,28 +1,30 @@
 {
-  "Id": "3460441f-1418-4227-a761-dcf08a6d9bb4",
+  "__guid": "3460441f-1418-4227-a761-dcf08a6d9bb4",
   "GameObjects": [
     {
-      "Id": "b40b520f-f817-4b5a-b65b-83348fa3b793",
+      "__guid": "b40b520f-f817-4b5a-b65b-83348fa3b793",
       "Name": "Map",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MapInstance",
+          "__guid": "6f0d80fa-4042-46af-866c-70efc6815c81",
           "MapName": "thieves.rooftops",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
     },
     {
-      "Id": "9be169a6-5cf7-4881-9c9d-1f698c019e2d",
+      "__guid": "9be169a6-5cf7-4881-9c9d-1f698c019e2d",
       "Name": "Envmap Probe",
       "Position": "-416,0,128",
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "EnvmapProbe",
+          "__guid": "211a04fa-52d0-487c-a5d7-5205f5827543",
           "Bounds": {
             "Mins": "-1024,-1024,-1024",
             "Maxs": "1024,1024,1024"
@@ -35,14 +37,16 @@
       ]
     },
     {
-      "Id": "49efb184-1406-479c-9f81-1e83ad30f7b7",
+      "__guid": "49efb184-1406-479c-9f81-1e83ad30f7b7",
       "Name": "Sun",
       "Position": "0,2304,64",
       "Rotation": "0.08357476,0.262664,-0.2914574,0.9160106",
       "Tags": "light",
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DirectionalLight",
+          "__guid": "6b0051be-ba15-46d1-bd5b-08f4e429e35e",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.82746,1.96078,2,1",
@@ -52,12 +56,14 @@
       ]
     },
     {
-      "Id": "4e288c8f-4ae3-4fcb-94fd-3b7c28e6e2a9",
+      "__guid": "4e288c8f-4ae3-4fcb-94fd-3b7c28e6e2a9",
       "Name": "NetworkManager",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "NetworkManager",
+          "__guid": "4d03568a-116a-40a5-9cda-87292baf5904",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -67,102 +73,113 @@
       ]
     },
     {
-      "Id": "16e9110c-fe74-4782-8b7d-1fe671859eb1",
+      "__guid": "16e9110c-fe74-4782-8b7d-1fe671859eb1",
       "Name": "2D Skybox",
       "Position": "0,2176,64",
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SkyBox2D",
+          "__guid": "b51e55fb-011c-411c-996b-61ee165ca2a7",
           "SkyMaterial": "materials/skybox/rustig_koppie_puresky.vmat",
           "Tint": "1,1,1,1"
         }
       ]
     },
     {
-      "Id": "c16390d1-37fe-4e52-938f-4c99b67ddd31",
+      "__guid": "c16390d1-37fe-4e52-938f-4c99b67ddd31",
       "Name": "Spawn",
       "Position": "-307.1853,400,-192",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__guid": "be8e7898-305b-48d8-8396-84e0c2d205d8",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
     {
-      "Id": "d469b2e8-c245-4543-9df9-a9a95876eae6",
+      "__guid": "d469b2e8-c245-4543-9df9-a9a95876eae6",
       "Name": "Spawn (1)",
       "Position": "177.04,128,-192",
       "Rotation": "-0.00000005960318,0.0000000003027926,-1,-0.0000006397578",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__guid": "6d25b99d-44b3-4979-b347-393cb860a65b",
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
     {
-      "Id": "1ed81b85-0048-4e81-b529-39dac2c30fd9",
+      "__guid": "1ed81b85-0048-4e81-b529-39dac2c30fd9",
       "Name": "Spawn (2)",
       "Position": "177.04,2205.785,0",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__guid": "cdcb7e3d-de9c-4c19-975b-a8bae8cbb41b",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
     {
-      "Id": "b5f302d4-9368-44bc-89fc-165e8c011a9a",
+      "__guid": "b5f302d4-9368-44bc-89fc-165e8c011a9a",
       "Name": "Spawn (4)",
       "Position": "-392.7991,2328.697,0",
       "Rotation": "0,0,0.707107,0.7071065",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__guid": "78befd7d-f863-4db2-8d4e-9d1c52aaabbd",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
     {
-      "Id": "a5890dda-ddff-463a-abe2-41e73fb318dc",
+      "__guid": "a5890dda-ddff-463a-abe2-41e73fb318dc",
       "Name": "Spawn (3)",
       "Position": "177.04,1187.739,0",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__guid": "1282dc3c-10d9-40b0-a2f6-534209e35af0",
           "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
     {
-      "Id": "129708f5-8c76-44b1-bd42-f82b067b4467",
+      "__guid": "129708f5-8c76-44b1-bd42-f82b067b4467",
       "Name": "Cube (2)",
       "Position": "562.0869,294.0289,-133.8684",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "8f4534b2-94b8-4ec8-af3b-f9d6afff9e18",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "33df7592-68b7-4133-a545-0d256e857bd9",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -170,33 +187,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "ddd8822d-aac3-4ac2-801d-a10c3ed46556",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "0055332a-32ef-4799-a349-168b8ee13816",
+      "__guid": "0055332a-32ef-4799-a349-168b8ee13816",
       "Name": "Cube (4)",
       "Position": "562.0869,203.0085,-185.7309",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "2e66a8fc-7150-4dfe-b1fe-62bf8a947420",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "ecca82c1-5314-48fd-9c94-8b568959adb9",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -204,33 +224,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "5efc3475-1836-440d-a405-8a3fb86312c9",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "a577bed0-89a0-4797-9b9a-d7ea4cd9ad54",
+      "__guid": "a577bed0-89a0-4797-9b9a-d7ea4cd9ad54",
       "Name": "Cube (1)",
       "Position": "562.0869,228.5187,-141.895",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "29638979-684c-4db2-a657-74b1f2e9e316",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "f97abb8d-e386-41c7-8215-48d305e221c5",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -238,33 +261,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "df4a9fcc-d2db-4a71-8210-4bf853a02d53",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "e439d5bb-bed5-4d70-acae-678dad4128c8",
+      "__guid": "e439d5bb-bed5-4d70-acae-678dad4128c8",
       "Name": "Cube (28)",
       "Position": "449.6813,211.8098,-141.895",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "acb77c37-4980-47b5-bbc7-818ba48ffa4d",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "6a639c3a-dd15-44c4-a0d0-e1e3d93bfed0",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -272,35 +298,38 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "c1ca08a5-23b3-4847-b4d8-88385e38b1d4",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "b7bf00c3-ae45-4f76-85ec-938a4da20e78",
+      "__guid": "b7bf00c3-ae45-4f76-85ec-938a4da20e78",
       "Name": "Cube (37)",
       "Position": "229.2879,-156,-216",
       "Rotation": "0.0000000285511,-0.000000000000000451428,0.4790079,-0.8778116",
       "Tags": "solid",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "5f5c97fb-fa31-4015-943f-61535a4d7376",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "2e06cbcd-66d6-46df-9eb7-6531cfa7086e",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -308,33 +337,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "1644785c-86e4-42c2-9be3-03a708afefb5",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "4cc111d5-b9c7-4ebe-bf0c-9ae0f2527788",
+      "__guid": "4cc111d5-b9c7-4ebe-bf0c-9ae0f2527788",
       "Name": "Cube (25)",
       "Position": "562.0869,107.0688,-107.7396",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "fd847860-3e87-4813-80f8-0943be4290c3",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "ed93c7c6-4e33-4fc4-b98e-39afaa333fa7",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -342,33 +374,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "78ad06bf-1bd3-4f52-b4bd-4d52199d8a00",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "e326b4a2-f092-4c6f-bd27-ccf24cdd423a",
+      "__guid": "e326b4a2-f092-4c6f-bd27-ccf24cdd423a",
       "Name": "Cube (26)",
       "Position": "562.0869,45.94898,-107.7396",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "f6cec7c8-55c9-4767-83bd-4eaf54882586",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "0b7783b8-2b8a-4941-b0b4-fc694d01c3a0",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -376,33 +411,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "7f08e6db-6495-4232-835f-d0566c1b681e",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "17ef1852-51ca-4747-a23c-ac4c31a0aeb3",
+      "__guid": "17ef1852-51ca-4747-a23c-ac4c31a0aeb3",
       "Name": "Cube (27)",
       "Position": "562.0869,-13.00562,-107.7396",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "63d43964-c220-46e7-83ef-ce66a0fa361d",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "7cc5eeba-acd8-4e8f-9cf0-9be2e7a59ed8",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -410,55 +448,57 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "158d7517-4398-484f-80d3-d1b552f1af4f",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "b8ad6d34-a3b3-4600-a671-d921d744c8aa",
+      "__guid": "b8ad6d34-a3b3-4600-a671-d921d744c8aa",
       "Name": "Cube",
       "Position": "-257.5267,-64,-141.895",
       "Scale": "0.5999999,3.5,3.099999",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "43478f7c-cef5-4995-a3e7-dd2496e92455",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "aac45f2f-2412-4749-ad79-2d706dadb0cd",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "f6177c81-f188-4ff7-918e-ec0a5e7bc278",
+      "__guid": "f6177c81-f188-4ff7-918e-ec0a5e7bc278",
       "Name": "Cube (21)",
       "Position": "-137.8896,302.2592,-251.7449",
       "Rotation": "-0.9170617,-0,0,0.3987454",
       "Scale": "0.5999999,7.799998,3.099999",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "a58f2bad-57c6-4d26-b18b-881fcfb9d140",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -466,27 +506,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "0f08bc8a-7cae-462e-838e-779d794dae0a",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "b5739330-9609-4126-aab3-e6de41265966",
+      "__guid": "b5739330-9609-4126-aab3-e6de41265966",
       "Name": "Cube (22)",
       "Position": "-193.1865,277.6253,-239.7278",
       "Rotation": "-0.9408827,-0,0,0.3387324",
       "Scale": "0.5999999,7.799998,3.099999",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "6869d5e0-c11f-45c8-8ac2-c3d63946d9d0",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -494,27 +534,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "f4c3fecf-e4dc-4edc-ac65-c0bf3109a2f2",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "fd9ab2d5-ea6a-4d1c-9646-25248161c3ee",
+      "__guid": "fd9ab2d5-ea6a-4d1c-9646-25248161c3ee",
       "Name": "Cube (24)",
       "Position": "256,252.6729,-239.7278",
       "Rotation": "-0.9408827,-0,0,0.3387324",
       "Scale": "0.5999999,7.799998,3.099999",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "7fe05544-5e1b-475b-ab3a-1d0ba6f6e3be",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -522,27 +562,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "554e2f41-a642-460d-965f-491bf0e99fde",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "61342932-22a1-4ba7-8bdc-99cce4eee749",
+      "__guid": "61342932-22a1-4ba7-8bdc-99cce4eee749",
       "Name": "Cube (42)",
       "Position": "356,24.32405,-172.4165",
       "Rotation": "-0.9988476,0,-0,-0.0479941",
       "Scale": "0.6999999,0.26,0.09999915",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "b39db8f1-86ce-4db5-890e-a83f6507caf8",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -550,27 +590,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "0d513ed6-ccc0-46c3-b723-cee6e76f1e60",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "773d1d1b-f773-4603-b1cc-ba422aa7c824",
+      "__guid": "773d1d1b-f773-4603-b1cc-ba422aa7c824",
       "Name": "Cube (46)",
       "Position": "356,12,-170.1531",
       "Rotation": "0.9915559,0,0,0.1296796",
       "Scale": "0.7,0.26,0.09999915",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "109f87ab-7d6a-4eb5-aafb-9a5786c7a9d7",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -578,27 +618,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "09476687-a671-4b13-82de-ed786c3aa117",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "d3bbfed2-a625-4d58-9e44-e392b82fc1aa",
+      "__guid": "d3bbfed2-a625-4d58-9e44-e392b82fc1aa",
       "Name": "Cube (43)",
       "Position": "356,37.56311,-172.6501",
       "Rotation": "0.02704935,0,0,0.9996341",
       "Scale": "0.6999999,0.3,0.09999915",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "6026013c-fb6d-4646-a93c-d7be555d4a01",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -606,27 +646,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "182d8d3f-3e9c-4d8d-9a4b-94f3b77cb2e7",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "557ffb6f-7334-477e-97b5-b09c1e21b23b",
+      "__guid": "557ffb6f-7334-477e-97b5-b09c1e21b23b",
       "Name": "Cube (44)",
       "Position": "356,51.65348,-170.1993",
       "Rotation": "0.1443565,0,0,0.9895257",
       "Scale": "0.6999999,0.3,0.09999915",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "925fef2e-bcb7-48db-997e-23f5ea57f938",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -634,27 +674,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "6d31ad26-142e-4a68-b0ce-0abeb185a478",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "f0462c64-ac4b-46ca-9416-97c0d5f92ab8",
+      "__guid": "f0462c64-ac4b-46ca-9416-97c0d5f92ab8",
       "Name": "Cube (45)",
       "Position": "356,65.34641,-165.1595",
       "Rotation": "0.2113256,0,0,0.9774157",
       "Scale": "0.6999999,0.3,0.09999915",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "14924792-c77e-4458-a572-66d4db8f2f45",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -662,26 +702,26 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "8e560f1e-c7f9-4f31-a63b-eca5ac942f35",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "fb598b08-0a2e-4ec1-983d-543b09e4f092",
+      "__guid": "fb598b08-0a2e-4ec1-983d-543b09e4f092",
       "Name": "Cube (29)",
       "Position": "365.2079,88,-249.2772",
       "Scale": "10.1,6.400003,2.2",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "07ace23e-b7ff-4f10-bd06-de11bf4860d1",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -689,26 +729,26 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "3222106f-553b-4d80-b249-fd6c79847128",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "e39d8947-7879-494f-afed-71588948dfc1",
+      "__guid": "e39d8947-7879-494f-afed-71588948dfc1",
       "Name": "Cube (41)",
       "Position": "365.6079,-200,-248",
       "Scale": "10.6,5.200002,0.5999999",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "fd347e2a-cf40-41cf-98dd-533eed5053bd",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -716,26 +756,26 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "c2c2fa7d-0584-4803-9762-7d4408ba6495",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "322d7bd0-b48a-4359-9244-7fd52ca1b194",
+      "__guid": "322d7bd0-b48a-4359-9244-7fd52ca1b194",
       "Name": "Cube (31)",
       "Position": "-337.2825,357.2058,-224",
       "Scale": "12,12,1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "0d76f3a0-a984-42c7-b04a-4a5fae6a587c",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -743,26 +783,26 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "333dd5c0-e836-4c1c-93c6-feb2d543cc41",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "bf384c3a-eec0-4ab2-b5b4-a19d7aa8c127",
+      "__guid": "bf384c3a-eec0-4ab2-b5b4-a19d7aa8c127",
       "Name": "Cube (32)",
       "Position": "41.58489,128,-224",
       "Scale": "4.199993,2.099996,1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "a1066cae-75ea-4bb7-a7db-e6536d3094e4",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -770,26 +810,26 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "69342ff0-ee86-456c-8262-4a173b421bc0",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "f67be31d-cbc3-44e4-9e27-4c2ebfc2b8ce",
+      "__guid": "f67be31d-cbc3-44e4-9e27-4c2ebfc2b8ce",
       "Name": "Cube (36)",
       "Position": "356,-336,-192",
       "Scale": "10,0.24,2",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "4e9aaef8-1698-4302-bb75-b0013381f74e",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -797,27 +837,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "731d0203-117c-4c01-b494-7457c8d0fc3e",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "7cbdd704-b96e-4924-921c-931d966214a0",
+      "__guid": "7cbdd704-b96e-4924-921c-931d966214a0",
       "Name": "Cube (38)",
       "Position": "114.5,-128,-192",
       "Rotation": "-0.00000004214378,0.000000000003128164,-0.707107,0.7071065",
       "Scale": "8.399998,0.23,2",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "a37e4a6f-1967-473b-bfd3-321a7633965f",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -825,27 +865,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "bba6d3c2-8176-4596-a2bc-b9d9531cb7dc",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "f96f32bd-4126-4c36-80bb-f55235f7d69e",
+      "__guid": "f96f32bd-4126-4c36-80bb-f55235f7d69e",
       "Name": "Cube (40)",
       "Position": "600,-192,-192",
       "Rotation": "-0.00000004214378,0.000000000003128164,-0.707107,0.7071065",
       "Scale": "5.599999,0.24,2",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "25e9ac7a-fffa-4890-92f7-67ce5b6c81d3",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -853,27 +893,27 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "df8d9ac4-04c8-44f2-8157-10157fa9f71a",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "54a2d947-87c6-4523-8bec-a04cbf015444",
+      "__guid": "54a2d947-87c6-4523-8bec-a04cbf015444",
       "Name": "Cube (39)",
       "Position": "112,280,-192",
       "Rotation": "-0.00000004214378,0.000000000003128164,-0.707107,0.7071065",
       "Scale": "4,0.24,1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "b9ffddd7-5e03-408d-a43e-24a8a097d80b",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -881,26 +921,26 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "bc1c3a5f-fa9f-4e64-97f0-e0ac4fe84747",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "b5ae475c-5f3e-48bc-93f2-0c1d3a0e0dc0",
+      "__guid": "b5ae475c-5f3e-48bc-93f2-0c1d3a0e0dc0",
       "Name": "Cube (30)",
       "Position": "366.608,520.7932,-80.67646",
       "Scale": "8.299996,6.699998,1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "d6ccb9e1-d9ba-4596-9cf8-b5661515e1f6",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_grounds.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -908,166 +948,161 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "ba57f86c-ab4b-43b1-98d5-6144d67a55ed",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "be3b918e-f5b0-4856-bd6f-a98d5bddc3b7",
+      "__guid": "be3b918e-f5b0-4856-bd6f-a98d5bddc3b7",
       "Name": "Cube (9)",
       "Position": "-96,-64,64",
       "Rotation": "0.3826836,0,0,0.9238794",
       "Scale": "1.28,5.12,0.1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "6673ea84-9766-4e81-bcf8-c4ab9072bfbf",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "ac762e68-7c44-4922-8b19-793f98c15e6e",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "9c64f115-c2f3-4b30-bb17-909260aacb76",
+      "__guid": "9c64f115-c2f3-4b30-bb17-909260aacb76",
       "Name": "Cube (48)",
       "Position": "-96,-64,448",
       "Rotation": "0.3826836,0,0,0.9238794",
       "Scale": "1.28,5.12,0.1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "fd6f4734-b1cf-4833-90e1-e8f21150a88f",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "bbde1ad9-c920-4268-ba4b-6d0ca7a0f782",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "d3c6e849-263a-45eb-8927-7dcc51b358d2",
+      "__guid": "d3c6e849-263a-45eb-8927-7dcc51b358d2",
       "Name": "Cube (52)",
       "Position": "-96,-64,832",
       "Rotation": "0.3826836,0,0,0.9238794",
       "Scale": "1.28,5.12,0.1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "51e30d6e-d844-4a3f-a0cf-dfde1f674917",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "e0f82e20-9f30-4333-b90d-7b6527802c29",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "97a1d2d2-a386-4244-84d8-c8cd4219286c",
+      "__guid": "97a1d2d2-a386-4244-84d8-c8cd4219286c",
       "Name": "Cube (10)",
       "Position": "-96,-160,256",
       "Rotation": "-0.0000002448249,-0.3826836,-0.9238794,-0.0000005910591",
       "Scale": "1.28,5.12,0.1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "6be407af-a86b-4158-80c1-1fb909c121bc",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "a7b6b3fd-45c9-47d1-8571-34c54585d04d",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "20f0a49e-6f50-4019-a3e9-000556b22023",
+      "__guid": "20f0a49e-6f50-4019-a3e9-000556b22023",
       "Name": "Cube (35)",
       "Position": "-96,-160,640",
       "Rotation": "-0.0000002448249,-0.3826836,-0.9238794,-0.0000005910591",
       "Scale": "1.28,5.12,0.1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "a3ce94a3-4604-4169-95d1-6bcb803c0673",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "ab1172c7-400b-4f5f-8419-ae08f31ba9f9",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "a47ca550-26f8-44b6-b94b-161542dfb919",
+      "__guid": "a47ca550-26f8-44b6-b94b-161542dfb919",
       "Name": "Cube (5)",
       "Position": "-351.625,256,-176",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "ababec03-ca54-4264-b3e5-18bc725605fb",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1075,39 +1110,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "bb56b93f-1eb5-40fa-823f-f4a0cc3ce632",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "b91cf74a-8923-4398-80a4-42974a8d3186",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "RotatePhysics",
+          "__guid": "6f69dca2-dca1-4ea0-8c2d-cb59676eb87c",
           "RotateAmount": 0.2
         }
       ]
     },
     {
-      "Id": "1ed78451-90d7-4c80-ad5d-9f6fdf567326",
+      "__guid": "1ed78451-90d7-4c80-ad5d-9f6fdf567326",
       "Name": "Cube (12)",
       "Position": "-563.2471,-67.5291,-173.9913",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "fc94ea55-a73c-4835-95c2-8219a6461610",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1115,39 +1154,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "9eacd7d1-62cf-4d38-a232-597cd060a018",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "9a6cb5d1-511c-49a5-9643-1e395e75a9a7",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "SineUpandDown",
+          "__guid": "043f7121-f206-46fd-a294-54876927231a",
           "Strength": 128
         }
       ]
     },
     {
-      "Id": "2de1f23f-ea7a-4f1a-95bc-a99910a4bf10",
+      "__guid": "2de1f23f-ea7a-4f1a-95bc-a99910a4bf10",
       "Name": "Cube (15)",
       "Position": "-765.8656,-67.5291,-173.9913",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "e190a1bb-1bb5-4e04-b6b6-b4e82628fd6a",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1155,39 +1198,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "a13dd205-e719-420e-8c27-3e332266046d",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "b3115674-997e-4a46-ad46-35920b068f20",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "SineUpandDown",
+          "__guid": "758af18b-7c22-41a7-856b-fed22a349d95",
           "Strength": 256
         }
       ]
     },
     {
-      "Id": "bd74e936-da1f-433f-9759-95fc98595c76",
+      "__guid": "bd74e936-da1f-433f-9759-95fc98595c76",
       "Name": "Cube (14)",
       "Position": "-368.692,-67.5291,-173.9913",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "d198b7c0-5651-4ff9-89ae-a1b221420b7d",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1195,39 +1242,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "c7072e97-e42a-407c-a9fd-61cc84dae933",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "a0f21349-666f-4045-994a-a2d3cf2d05a4",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "SineUpandDown",
+          "__guid": "8e6cc9b0-fba4-4a6a-9e9f-071c93ca78bd",
           "Strength": 64
         }
       ]
     },
     {
-      "Id": "b1126d6a-7f61-4a1c-8839-c1d6ee544a02",
+      "__guid": "b1126d6a-7f61-4a1c-8839-c1d6ee544a02",
       "Name": "Cube (13)",
       "Position": "-764.907,142.0069,-173.9913",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "b8d26e5e-6bed-40fb-abea-7b95ba9a4c22",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1235,39 +1286,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "47566625-1dfc-495e-8f1a-418f30722849",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "4b2e42bc-254a-4c25-ad6c-57cff41e58d1",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "SineUpandDown",
+          "__guid": "9b522c2c-ec23-404b-aae6-382137c27c84",
           "Strength": 512
         }
       ]
     },
     {
-      "Id": "688836a0-12a1-4257-8059-f66749944446",
+      "__guid": "688836a0-12a1-4257-8059-f66749944446",
       "Name": "Cube (17)",
       "Position": "-764.907,459.3167,-173.9913",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "327ffa53-6988-43e4-b2b3-20dc907bdc86",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1275,79 +1330,86 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "f703e7ef-371f-41f0-8ce9-10d4e3444ab6",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "2653f93a-f8a9-4739-8720-2705fd667510",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "SineUpandDown",
+          "__guid": "3db6fb75-2ab1-416e-80b0-bc475bd86a01",
           "Strength": 1024
         }
       ]
     },
     {
-      "Id": "87fc8bbf-b3d8-4359-9be2-49005979fa88",
+      "__guid": "87fc8bbf-b3d8-4359-9be2-49005979fa88",
       "Name": "Cube (19)",
       "Position": "-764.907,662.5178,-173.9913",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "f1ac54fa-634e-4ea0-93ea-c0f5cd4239ab",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "677ee4ca-c028-475d-b8b3-999d0df54585",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "41caa56c-7f1a-4dc3-bfe3-fa447ace7bfd",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "SineUpandDown",
+          "__guid": "060e1956-0e1f-43fa-bddc-7ec01e5efb75",
           "Strength": 2048
         }
       ]
     },
     {
-      "Id": "879e595b-b16a-4142-80bd-b985fffa0bbe",
+      "__guid": "879e595b-b16a-4142-80bd-b985fffa0bbe",
       "Name": "Cube (7)",
       "Position": "-560,480,-176",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "c7ae74b9-67d5-4d80-b8ca-79d28f250c80",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1355,39 +1417,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "961652c9-f40d-402a-880d-d23e3ad19c85",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "2f9d5f4b-a994-4f30-ba3e-73ea658b4fdd",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "RotatePhysics",
+          "__guid": "1bead6ec-665e-476a-9574-5c25a81feed1",
           "RotateAmount": -0.2
         }
       ]
     },
     {
-      "Id": "c0d2e0d5-517c-4dbb-8f10-8669e6460229",
+      "__guid": "c0d2e0d5-517c-4dbb-8f10-8669e6460229",
       "Name": "Cube (23)",
       "Position": "418.6348,562.2764,-9.744995",
       "Scale": "3.499998,3.500001,0.3999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "003a04b7-a996-45dc-baa8-528ee869f9cb",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1395,39 +1461,43 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "c1dc9bf0-d1d0-44fb-bd33-7f838b53d252",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "7f5d5303-4306-407c-a77f-cf923bc48b4b",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "RotatePhysics",
+          "__guid": "31f6af5b-64b6-4386-a484-197af757d913",
           "RotateAmount": 2
         }
       ]
     },
     {
-      "Id": "bea20031-2d94-455e-be31-e3f57c3304ec",
+      "__guid": "bea20031-2d94-455e-be31-e3f57c3304ec",
       "Name": "Cube (20)",
       "Position": "-183.4977,480,-36.32221",
       "Scale": "4.399997,0.300002,0.6999995",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "d6c65c2d-a90e-460e-bd35-995709f9f239",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1435,45 +1505,49 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "b7c526e1-9217-4b8b-8a52-9c9cf1d49a64",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "Rigidbody",
+          "__guid": "270ffbdd-48c8-42dc-8000-3731379ceb5e",
           "AngularDamping": 0,
           "Gravity": false,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "RotatePhysics",
+          "__guid": "22de1e39-b2ff-4411-96c8-ee4fac5bec84",
           "RotateAmount": -1
         }
       ]
     },
     {
-      "Id": "0a7f577c-11a6-455d-987b-8d68777107d5",
+      "__guid": "0a7f577c-11a6-455d-987b-8d68777107d5",
       "Name": "Cube (3)",
       "Position": "507.9207,324.6194,-141.895",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "7d6717aa-a12a-4f76-b41e-0fbbeb0a5c56",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "c65a3064-7277-4090-9c54-e40c1c4402ff",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -1481,33 +1555,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "dd9b7fd9-5e8c-4fa7-b9d8-9ad360c8148f",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "7ea98a5a-1173-41be-80b7-698a0f6031c7",
+      "__guid": "7ea98a5a-1173-41be-80b7-698a0f6031c7",
       "Name": "Cube (6)",
       "Position": "-304,324.6194,-141.895",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "ea5615f6-4c0a-47cd-8e80-aff9f773c664",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "54ed7e18-8946-4f2c-a22c-9563e0ac837c",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -1515,33 +1592,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "dd67d165-b367-4c95-99bd-f654913dc947",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "f412dc08-5f9b-4335-ac3d-8d2f56b9129f",
+      "__guid": "f412dc08-5f9b-4335-ac3d-8d2f56b9129f",
       "Name": "Cube (16)",
       "Position": "-827.4566,200.1822,-141.895",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "6f284bce-ced8-4d50-8b91-e2dcd3b184b8",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "d84c59ed-27b4-4fc1-a583-4f35afb90901",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -1549,33 +1629,36 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "e0c39510-1b8c-4fe5-afb7-495e423a5eb6",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "96579586-4288-4acd-af4b-6cec2f30aaed",
+      "__guid": "96579586-4288-4acd-af4b-6cec2f30aaed",
       "Name": "Cube (18)",
       "Position": "-827.4566,484.0634,-141.895",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "eeeb0b35-1ce4-42de-a6e8-f19404492865",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/crate01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "e42faabf-5cd5-4e34-b7f9-bf716ca278d5",
           "IsTrigger": false,
           "Model": "models/citizen_props/crate01.vmdl",
           "Static": false,
@@ -1583,28 +1666,31 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "6695b131-e913-42b5-bfae-d18fbf871ba0",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "04941260-bd0d-4522-90b6-c33af017b510",
+      "__guid": "04941260-bd0d-4522-90b6-c33af017b510",
       "Name": "Cube (11)",
       "Position": "-96,-192,320",
       "Rotation": "0.00000002270604,-0.04361942,0.9990482,-0.0000005200531",
       "Scale": "0.64,0.64,0.64",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "c70722c3-4901-47c7-b5ec-fcb075faa83b",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1612,15 +1698,19 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "e2ef15cb-de06-436d-a0fd-53e0ebbd7661",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "BoxCollider",
+          "__guid": "dc11c6e3-256f-4ad9-8a33-849ea6f93957",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1630,17 +1720,17 @@
       ]
     },
     {
-      "Id": "2448ff34-55ce-4170-a3be-8decad5f39d5",
+      "__guid": "2448ff34-55ce-4170-a3be-8decad5f39d5",
       "Name": "Cube (34)",
       "Position": "-96,-192,704",
       "Rotation": "0.00000002270604,-0.04361942,0.9990482,-0.0000005200531",
       "Scale": "0.64,0.64,0.64",
-      "Networked": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "89dbbeaa-c8f9-4afa-804b-bf08aa9c638e",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1648,15 +1738,19 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "99d83229-7ae9-4245-a5e0-54e72a304daf",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "BoxCollider",
+          "__guid": "78e6f76e-7f9b-42b5-a28b-e3cc74796122",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1666,18 +1760,18 @@
       ]
     },
     {
-      "Id": "1a810431-9b62-4572-8444-6cc3f3df8a5b",
+      "__guid": "1a810431-9b62-4572-8444-6cc3f3df8a5b",
       "Name": "Cube (33)",
       "Position": "-96,-32,128",
       "Rotation": "-0.00000002790582,-0.04361932,-0.9990482,-0.0000006391489",
       "Scale": "0.64,0.64,0.64",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "e5545b20-dd1e-4047-b6a1-c73601d867f5",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1685,15 +1779,19 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "a7029c44-2f6f-442c-a684-a343b6d8fe26",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "BoxCollider",
+          "__guid": "8b2bb851-642e-4bcf-a5cf-f0bcbd207cbe",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1703,18 +1801,18 @@
       ]
     },
     {
-      "Id": "d4af0a2a-a915-49b6-818c-3a77d9fa5e5c",
+      "__guid": "d4af0a2a-a915-49b6-818c-3a77d9fa5e5c",
       "Name": "Cube (47)",
       "Position": "-96,-32,512",
       "Rotation": "-0.00000002790582,-0.04361932,-0.9990482,-0.0000006391489",
       "Scale": "0.64,0.64,0.64",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "9343166e-8564-4762-b32f-2a35f6696f25",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1722,15 +1820,19 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "bf083c3e-64c5-4ece-b9e9-250dd29f3c74",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "BoxCollider",
+          "__guid": "e6661b5c-845f-477b-93ba-eabf90492751",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1740,17 +1842,17 @@
       ]
     },
     {
-      "Id": "3ae3988c-4eb4-4ace-9aa7-d7c90a1db91e",
+      "__guid": "3ae3988c-4eb4-4ace-9aa7-d7c90a1db91e",
       "Name": "Cube (51)",
       "Position": "-96,-32,896",
       "Rotation": "-0.00000002790582,-0.04361932,-0.9990482,-0.0000006391489",
       "Scale": "0.64,0.64,0.64",
-      "Networked": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "b8b851e2-6e20-47dd-9d78-72a7f2074ce1",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
           "MaterialOverride": "materials/dev_objects.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
@@ -1758,15 +1860,19 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "cd93af62-31ae-4993-b0c3-f093e1e011b9",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "BoxCollider",
+          "__guid": "e505e7b8-59c3-4298-b859-b451fee96097",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -1776,22 +1882,23 @@
       ]
     },
     {
-      "Id": "15122826-d16b-4c63-9205-86b5cb8a3188",
+      "__guid": "15122826-d16b-4c63-9205-86b5cb8a3188",
       "Name": "Ball",
       "Position": "356,-504,196",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "8d7f74ac-f4ab-4b58-adcb-1646aa0c13b7",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/citizen_props/beachball.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "19df9576-fe89-4d0b-86f3-8dc4ebfc43f2",
           "IsTrigger": false,
           "Model": "models/citizen_props/beachball.vmdl",
           "Static": false,
@@ -1799,40 +1906,44 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "4db7d872-3e03-4433-ba29-8038a0afde53",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "Duplicator",
+          "__guid": "f88a0cb3-5f63-415a-a0e9-c43e85aac06d",
           "MaxDuplicates": 32,
           "SecondsPerDuplicate": 3
         }
       ]
     },
     {
-      "Id": "4c8ec3e0-9ac4-4329-bcf0-015a0f1db529",
+      "__guid": "4c8ec3e0-9ac4-4329-bcf0-015a0f1db529",
       "Name": "bridgeplank",
       "Position": "-93.42015,44,-192",
       "Rotation": "-0.05233598,-0,0,0.9986295",
       "Tags": "nocolthis",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "e2529aec-134f-45d1-871e-db3ab0cf0536",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/sbox_props/low_wood_fence/low_wood_fence_beam_1.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "ModelCollider",
+          "__guid": "226637d1-3227-4ae0-a23c-a367e367c36a",
           "IsTrigger": false,
           "Model": "models/sbox_props/low_wood_fence/low_wood_fence_beam_1.vmdl",
           "Static": false,
@@ -1840,15 +1951,19 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "646bf9b8-b2a3-4d87-a071-7a8aad7c9c88",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "bridgecreatorlol",
+          "__guid": "13f92b83-142f-4e23-aa6a-fad7ecc82ec6",
           "PlankCount": 52,
           "Slack": 1,
           "Spacing": 8
@@ -1856,41 +1971,42 @@
       ]
     },
     {
-      "Id": "64052782-598f-454e-91ab-a41910f281b3",
+      "__guid": "64052782-598f-454e-91ab-a41910f281b3",
       "Name": "Cube",
       "Position": "-104,-448,-172.9",
       "Scale": "2.56,2.56,1",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "9cd8b984-5972-4858-afc5-f791f20637a2",
           "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "BoxCollider",
+          "__guid": "b6c719aa-f49f-4dd1-91b3-13aa780dbdaa",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Static": false
         }
       ]
     },
     {
-      "Id": "9c3e8bc6-34cc-4f27-a1bc-9e1f794e739b",
+      "__guid": "9c3e8bc6-34cc-4f27-a1bc-9e1f794e739b",
       "Name": "Decal",
       "Position": "352,338.4066,-144",
       "Rotation": "0,0,0.707107,0.7071065",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DecalRenderer",
+          "__guid": "c39ddf13-d366-42cc-a73c-35b4a2b947ca",
           "CutoffAngle": 60,
           "CutoffAngleSoftness": 5,
           "Material": "materials/decals/default.vmat",
@@ -1902,14 +2018,16 @@
       ]
     },
     {
-      "Id": "ceffe191-2f0d-4ac0-bc35-2608aab7c5d8",
+      "__guid": "ceffe191-2f0d-4ac0-bc35-2608aab7c5d8",
       "Name": "Decal (1)",
       "Position": "160.3348,338.4066,-144",
       "Rotation": "0,0,0.707107,0.7071065",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DecalRenderer",
+          "__guid": "bb90d8c0-874c-4614-a285-5ff10c3f031e",
           "CutoffAngle": 60,
           "CutoffAngleSoftness": 5,
           "Material": "materials/decals/default.vmat",
@@ -1921,47 +2039,47 @@
       ]
     },
     {
-      "Id": "d555ac63-050d-4775-8603-d06fd889ea24",
+      "__guid": "d555ac63-050d-4775-8603-d06fd889ea24",
       "Name": "Weapon",
       "Position": "182.3845,538.4875,-42.49963",
       "Tags": "item",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "__guid": "be3dcbf4-3ccd-41db-a350-3ca045717677",
           "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
           "CreateBoneObjects": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "Rigidbody",
+          "__guid": "153cd6d1-8afa-41b8-98a0-d8ba13420d5f",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
+          "__guid": "dbd2d986-fd05-4744-b45e-ebea638678aa",
           "IsTrigger": false,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "GraphWeaponComponent",
+          "__guid": "c991bc08-117a-4dfe-a90d-1caf344aed08",
           "AutomaticPrimary": false,
           "AutomaticSecondary": false,
           "HoldType": "None",
-          "PrimaryAttackAction": null,
-          "SecondaryAttackAction": null,
           "TimeBetweenPrimaryAttack": 0.1,
           "TimeBetweenSecondaryAttack": 0.1,
           "Viewmodel": "weapons/rust_pistol/v_rust_pistol.vmdl"
@@ -1969,176 +2087,185 @@
       ],
       "Children": [
         {
-          "Id": "d1b98f01-43ce-4284-af80-11b52f8f786d",
+          "__guid": "d1b98f01-43ce-4284-af80-11b52f8f786d",
           "Name": "hold_R",
           "Position": "-1.848648,0,3.195877",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
     {
-      "Id": "e274f0fd-7f43-4843-acf9-82087ceba86f",
+      "__guid": "e274f0fd-7f43-4843-acf9-82087ceba86f",
       "Name": "Ammo (1)",
       "Position": "308.2773,54.12901,-168.0001",
       "Tags": "item",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "__guid": "33bd9dad-400e-4aa7-a454-4d6cf38118ee",
           "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
           "CreateBoneObjects": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "Model": "models/dev/error.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "Rigidbody",
+          "__guid": "b71cbe6a-9b69-437c-9d7f-02680828d0ce",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
+          "__guid": "f0de22f2-3388-4e9f-8c35-74c8ceadf730",
           "IsTrigger": false,
-          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
-          "Static": false,
-          "Surface": null
+          "Model": "models/dev/error.vmdl",
+          "Static": false
         },
         {
           "__type": "AmmoPickupComponent",
+          "__guid": "c4e2a35e-d5ad-42eb-9cae-783d5a5d1975",
           "AmmoCount": 17,
           "AmmoType": "Pistol"
         }
       ]
     },
     {
-      "Id": "1f9c9462-dcda-479c-ab2c-f56d9e257224",
+      "__guid": "1f9c9462-dcda-479c-ab2c-f56d9e257224",
       "Name": "Ammo (2)",
       "Position": "308.2773,26.24578,-168.0001",
       "Tags": "item",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "__guid": "759fc120-2a4a-48bc-b620-dfa9755ea5b4",
           "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
           "CreateBoneObjects": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "Model": "models/dev/error.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "Rigidbody",
+          "__guid": "9bb7fd8a-0951-40fd-bedb-366810110f2d",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
+          "__guid": "87290d65-daf3-41ca-a2b1-4bc2f000cd2a",
           "IsTrigger": false,
-          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
-          "Static": false,
-          "Surface": null
+          "Model": "models/dev/error.vmdl",
+          "Static": false
         },
         {
           "__type": "AmmoPickupComponent",
+          "__guid": "da66898b-adab-42d5-8b78-6c764a97240e",
           "AmmoCount": 17,
           "AmmoType": "Pistol"
         }
       ]
     },
     {
-      "Id": "5a51f7e3-c2f9-47a7-83fe-9289d72a5e4f",
+      "__guid": "5a51f7e3-c2f9-47a7-83fe-9289d72a5e4f",
       "Name": "Ammo (3)",
       "Position": "308.2773,-0.2030659,-168.0001",
       "Tags": "item",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "__guid": "91f1b373-f97f-4678-ae49-c126274ddbe6",
           "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
           "CreateBoneObjects": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
+          "Model": "models/dev/error.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "Rigidbody",
+          "__guid": "f82237a7-b844-4134-89d3-72e31e9aeda6",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
+          "__guid": "6883e29b-860e-4d31-9aac-502c74f31626",
           "IsTrigger": false,
-          "Model": "models/ammo/ammo_smg/ammo_smg.vmdl",
-          "Static": false,
-          "Surface": null
+          "Model": "models/dev/error.vmdl",
+          "Static": false
         },
         {
           "__type": "AmmoPickupComponent",
+          "__guid": "1d90c965-1591-40a7-804e-193e21f0759b",
           "AmmoCount": 17,
           "AmmoType": "Pistol"
         }
       ]
     },
     {
-      "Id": "450369ed-766d-47c0-9b18-a6364421d08d",
+      "__guid": "450369ed-766d-47c0-9b18-a6364421d08d",
       "Name": "Weapon (1)",
       "Position": "191.9438,29.67435,-171.8443",
       "Tags": "item",
-      "Networked": true,
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "__guid": "0ddd7420-6b24-4e08-946c-3785e07f7fe9",
           "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
           "CreateBoneObjects": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "Rigidbody",
+          "__guid": "dc1a119b-7d5d-4e77-9bb9-813877d2cebd",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
+          "__guid": "571a8767-17b3-4a81-ab57-df2a6bbe3a61",
           "IsTrigger": false,
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
-          "Static": false,
-          "Surface": null
+          "Static": false
         },
         {
           "__type": "GunComponent",
+          "__guid": "1ed095bd-ea9b-4b97-a571-ed1e536c83e1",
           "AutomaticPrimary": false,
           "AutomaticSecondary": true,
           "HoldType": "Pistol",
@@ -2171,18 +2298,20 @@
       ],
       "Children": [
         {
-          "Id": "38019e2c-b572-449b-8c0d-caee7ad1bb8e",
+          "__guid": "38019e2c-b572-449b-8c0d-caee7ad1bb8e",
           "Name": "hold_R",
           "Position": "-1.848648,0,3.195877",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
     {
-      "Id": "6f995814-1016-4875-9e31-7094b9e226ff",
+      "__guid": "6f995814-1016-4875-9e31-7094b9e226ff",
       "Name": "Smg",
       "Position": "481.9389,33.04974,-186",
       "Enabled": true,
+      "NetworkMode": 2,
       "__Prefab": "prefabs/pistol.prefab"
     }
   ],
@@ -2209,7 +2338,9 @@
   },
   "Title": "rooftops",
   "Description": "",
-  "LastSaved": "2024-02-12T15:58:13.1137163\u002B11:00",
+  "LastSaved": "2024-03-21T08:49:17.0360517\u002B11:00",
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
     "facepunch.low_wood_fence_beam_1",
     "polyhaven.rustig_koppie_puresky",
