@@ -55,4 +55,13 @@ public class LegacyParticle
 
 		LegacyParticleSystem.SceneObject.SetControlPoint( index, flt );
 	}
+
+	public void SetNamedValue( string name, float value )
+	{
+		LegacyParticleSystem.SceneObject.SetNamedValue( name, value );
+	}
+	public void SetNamedValue( string name, Vector3 value )
+	{
+		LegacyParticleSystem.SceneObject.SetNamedValue( name, value );
+	}
 }
