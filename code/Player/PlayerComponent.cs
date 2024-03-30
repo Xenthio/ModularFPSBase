@@ -76,6 +76,8 @@ public class PlayerComponent : Component
 		Controller.PhysicsShadow.Enabled = false;
 		Controller.PlayerShadow.Enabled = false;
 
+  		//Bone velocity from bone delta, used to have a builtin function for this but this doesn't exist anymore :(
+
 		//Body.Components.Get<ModelPhysics>( true ).GameObject.Tags
 		//Body.SetParent( null );
 		//Body.Components.Get<CitizenAnimationHelper>( true ).Enabled = false;
