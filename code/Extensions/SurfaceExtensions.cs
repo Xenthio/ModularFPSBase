@@ -11,11 +11,11 @@ public static class SurfaceExtensions
 			//
 			// Drop a decal
 			//
-			var decalPath = Game.Random.FromArray( self.ImpactEffects.BulletDecal );
+			var decalPath = Game.Random.FromList( self.ImpactEffects.BulletDecal );
 
 			while ( string.IsNullOrWhiteSpace( decalPath ) && surf != null )
 			{
-				decalPath = Game.Random.FromArray( surf.ImpactEffects.BulletDecal );
+				decalPath = Game.Random.FromList( surf.ImpactEffects.BulletDecal );
 				surf = surf.GetBaseSurface();
 			}
 
@@ -55,14 +55,14 @@ public static class SurfaceExtensions
 
 			// Xenthio self note: Garry's new mesh tracing stuff (when it works) could allow us to tint the flecks of debris to the colour of the material it is coming off, say we shoot red bricks the particle would be coloured red.
 
-			string particleName = Game.Random.FromArray( self.ImpactEffects.Bullet );
-			if ( string.IsNullOrWhiteSpace( particleName ) ) particleName = Game.Random.FromArray( self.ImpactEffects.Regular );
+			string particleName = Game.Random.FromList( self.ImpactEffects.Bullet );
+			if ( string.IsNullOrWhiteSpace( particleName ) ) particleName = Game.Random.FromList( self.ImpactEffects.Regular );
 
 			surf = self.GetBaseSurface();
 			while ( string.IsNullOrWhiteSpace( particleName ) && surf != null )
 			{
-				particleName = Game.Random.FromArray( surf.ImpactEffects.Bullet );
-				if ( string.IsNullOrWhiteSpace( particleName ) ) particleName = Game.Random.FromArray( surf.ImpactEffects.Regular );
+				particleName = Game.Random.FromList( surf.ImpactEffects.Bullet );
+				if ( string.IsNullOrWhiteSpace( particleName ) ) particleName = Game.Random.FromList( surf.ImpactEffects.Regular );
 
 				surf = surf.GetBaseSurface();
 			}
